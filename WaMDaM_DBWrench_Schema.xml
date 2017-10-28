@@ -637,42 +637,6 @@
     <CustomTypes/>
   </Sch>
   <Sch Cm="" nm="DataValues">
-    <Tbl UsSo="1" nm="Bridge">
-      <TblOpts/>
-      <Pk ClNs="BridgeID" nm="pkBridge"/>
-      <Cl au="1" df="" nm="BridgeID" nu="0">
-        <DT arr="0" ds="Integer" en="" id="4" ln="null" sc="null" sg="1" un="0"/>
-        <Cm>Primary key identifier</Cm>
-      </Cl>
-      <Cl au="0" df="" nm="MultiColumnID" nu="1">
-        <DT arr="0" ds="Integer" en="" id="4" ln="null" sc="null" sg="1" un="0"/>
-        <Cm>Primary key identifier</Cm>
-      </Cl>
-      <Cl au="0" df="" nm="MultiColumnValueID" nu="1">
-        <DT arr="0" ds="Integer" en="" id="4" ln="null" sc="null" sg="1" un="0"/>
-        <Cm>Primary key identifier</Cm>
-      </Cl>
-      <Cl au="0" df="" nm="DataValuesMapperID" nu="0">
-        <DT arr="0" ds="Integer" en="" id="4" ln="null" sc="null" sg="1" un="0"/>
-      </Cl>
-      <Fk deAc="3" nm="fk_Bridge_MultiColumnArrays" prLkCl="MultiAttributeSeriesID" upAc="3">
-        <PrTb mn="0" nm="MultiAttributeSeries" oe="1" sch="DataValues" zr="1"/>
-        <CdTb mn="1" nm="Bridge" oe="0" sch="DataValues" zr="1"/>
-        <ClPr cdCl="MultiColumnID" prCl="MultiAttributeSeriesID"/>
-      </Fk>
-      <Fk deAc="3" nm="fk_Bridge_MultiColumnArrays2" prLkCl="DataValuesMapperID" upAc="3">
-        <PrTb mn="0" nm="MultiAttributeSeries" oe="1" sch="DataValues" zr="0"/>
-        <CdTb mn="1" nm="Bridge" oe="0" sch="DataValues" zr="1"/>
-        <ClPr cdCl="DataValuesMapperID" prCl="DataValuesMapperID"/>
-      </Fk>
-      <Fk deAc="3" nm="fk_Bridge_MultiColumnValues" prLkCl="MultiAttributeSeriesValueID" upAc="3">
-        <PrTb mn="0" nm="MultiAttributeSeriesValues" oe="1" sch="DataValues" zr="1"/>
-        <CdTb mn="1" nm="Bridge" oe="0" sch="DataValues" zr="1"/>
-        <ClPr cdCl="MultiColumnValueID" prCl="MultiAttributeSeriesValueID"/>
-      </Fk>
-      <UniqueConstraints/>
-      <SchTrHis/>
-    </Tbl>
     <Tbl UsSo="1" nm="DataValuesMapper">
       <Cm>The DataValuesMapper is a bridge table that allows users to relate the same data value to many instances for the same attribute. For example, an evaporation time series can be related to many reservoir or demand site instances.  It also allows the same attribute to have many data values. For example, reservoir purpose has irrigation and hydropower text data values.</Cm>
       <TblOpts/>
@@ -1237,7 +1201,8 @@
       </SchTrHis>
     </Tbl>
     <Tbl UsSo="1" nm="InstanceCategory">
-      <TblOpts>Organizes instances under a group as in their original data source (e.g., riverine instances)</TblOpts>
+      <Cm>Organizes instances under a group as in their original data source (e.g., riverine instances)</Cm>
+      <TblOpts/>
       <Pk ClNs="InstanceCategoryID" nm="pkInstanceCategory"/>
       <Cl au="1" df="" nm="InstanceCategoryID" nu="0">
         <DT arr="0" ds="Integer" en="" id="4" ln="null" sc="null" sg="1" un="0"/>
@@ -1483,7 +1448,7 @@
     <CustomTypes/>
   </Sch>
   <Dgm nm="01_WaMDaM">
-    <RnCf ClkAct="false" FtSz="18" lkStgy="RightAngleStrategy" zm="1.0">
+    <RnCf ClkAct="false" FtSz="18" lkStgy="RightAngleStrategy" zm="0.75">
       <VbCfg>
         <Fg ky="Auto Number" vl="0"/>
         <Fg ky="Check" vl="0"/>
@@ -1679,14 +1644,15 @@
         <positionableLine lineRole="SINGLE_LINE" x1="1028" x2="1028" y1="830" y2="692"/>
       </positionableLines>
     </FkGl>
-    <FkGl bkCl="ff000000" childEdge="WEST" nm="Networks.ScenarioMapping.fk_ScenarioMapping_Mapping" parentEdge="EAST" positioner="OneLineUserLinkPositioner">
+    <FkGl bkCl="ff000000" childEdge="WEST" nm="Networks.ScenarioMapping.fk_ScenarioMapping_Mapping" parentEdge="NORTH" positioner="TwoLineUserLinkPositioner">
       <positionableLines>
-        <positionableLine lineRole="SINGLE_LINE" x1="1240" x2="1342" y1="556" y2="556"/>
+        <positionableLine lineRole="PARENT_LINE" x1="1235" x2="1235" y1="527" y2="526"/>
+        <positionableLine lineRole="CHILD_LINE" x1="1342" x2="1239" y1="522" y2="522"/>
       </positionableLines>
     </FkGl>
     <FkGl bkCl="ff000000" childEdge="NORTH" nm="Networks.ScenarioMapping.fk_ScenarioMapping_Scenarios" parentEdge="SOUTH" positioner="OneLineUserLinkPositioner">
       <positionableLines>
-        <positionableLine lineRole="SINGLE_LINE" x1="1491" x2="1491" y1="440" y2="492"/>
+        <positionableLine lineRole="SINGLE_LINE" x1="1482" x2="1482" y1="440" y2="492"/>
       </positionableLines>
     </FkGl>
     <FkGl bkCl="ff000000" childEdge="NORTH" nm="Networks.Scenarios.fk_Scenarios_MasterNetworks" parentEdge="SOUTH" positioner="OneLineUserLinkPositioner">
@@ -4655,22 +4621,12 @@
     </BasicOptionMgr>
   </DbDocOptionMgr>
   <OpenEditors>
-    <OpenEditor ClsNm="Diagram" fqn="null.01_WaMDaM" selected="1"/>
+    <OpenEditor ClsNm="Diagram" fqn="null.01_WaMDaM" selected="0"/>
     <OpenEditor ClsNm="Diagram" fqn="null.02_WaMDaM_WCVs" selected="0"/>
     <OpenEditor ClsNm="Diagram" fqn="null.03_CVs" selected="0"/>
   </OpenEditors>
   <TreePaths>
     <TreePath/>
-    <TreePath>/Schemas (5)</TreePath>
-    <TreePath>/Schemas (5)/CVs</TreePath>
-    <TreePath>/Schemas (5)/DatasetStructure</TreePath>
-    <TreePath>/Schemas (5)/Metadata</TreePath>
-    <TreePath>/Schemas (5)/Networks</TreePath>
-    <TreePath>/Diagrams (3)</TreePath>
-    <TreePath>/Diagrams (3)/01_WaMDaM</TreePath>
-    <TreePath>/Diagrams (3)/01_WaMDaM/Zones (4)</TreePath>
-    <TreePath>/Diagrams (3)/03_CVs</TreePath>
-    <TreePath>/Diagrams (3)/03_CVs/Zones (1)</TreePath>
   </TreePaths>
   <SqlTexts/>
 </Db>
