@@ -39,7 +39,7 @@ Documentation of the mapping
 
 
 ### Licensing  
-WaM-DaM and materials in this GitHub repository are disturbed under a BSD 3-Clause license (see[LICENSE](https://github.com/amabdallah/WaM-DaM/blob/master/LICENSE.md)). 
+WaM-DaM and materials in this GitHub repository are disturbed under a BSD 3-Clause license (see[LICENSE](/LICENSE.md)). 
 For alternative licensing arrangements, contact Adel M. Abdallah or David E. Rosenberg directly.    
 
 
