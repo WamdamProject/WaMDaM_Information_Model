@@ -5,4 +5,4 @@ Simply copy all this [script](/schemas/SQLite/WaMDaM_Nov2017_SQLite.sql) and pas
 Then click Run SQL. The script should run successfully and create the 41 empty tables of WaMDaM
 
 
-Alternativily, you could restore a [back up copy](/schemas/SQLite/Blank_db_copy) of WaMDaM SQLite database
+Alternativily, you could connect to a [copy](/schemas/SQLite/Blank_db_copy) of WaMDaM SQLite database
