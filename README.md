@@ -14,8 +14,8 @@ Documentation of the mapping
 ## 3. Script to create blank WaMDaM databases OR copies of db to restore 
 * [Microsoft SQL Server](schemas/MS_SQL_Server)
 * [MySQL](schemas/MySQL)
-* [PostgreSQL]()
-* [SQLite]()
+* [PostgreSQL](/schemas/PostgreSQL)
+* [SQLite](/schemas/SQLite)
 
 
 
