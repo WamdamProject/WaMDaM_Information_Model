@@ -11,9 +11,9 @@ The Water Management Data Model (WaMDaM) is information model to organize water 
 Documentation of the mapping 
 
 
-## 3. Script to create blank WaMDaM databases 
-* [Microsoft SQL Server](schemas/MS_SQL_Server/WaMDaM_Nov2017_MSSQL.sql)
-* [MySQL]()
+## 3. Script to create blank WaMDaM databases OR copies of db to restore 
+* [Microsoft SQL Server](schemas/MS_SQL_Server)
+* [MySQL](schemas/MySQL)
 * [PostgreSQL]()
 * [SQLite]()
 
