@@ -1,4 +1,6 @@
+## WaMDaM for SQLite
 
+To create a blank WaMDaM SQLite database, 
 Use the SQLite Manager Add-on to Mozilla Firefox
 Create a new empty database. Click on the Execute SQL button and delete the text "SELECT * FROM tablename"
 Simply copy all this [script](/schemas/SQLite/WaMDaM_Nov2017_SQLite.sql) and paste into this Execute SQL window
