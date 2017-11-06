@@ -1,5 +1,6 @@
+## WaMDaM for MySQL
 
-Open MySQL Workbench, Create a New SQL Tab for Executing queries
+To create a blank WaMDaM schema for MySQL, Open MySQL Workbench, Create a New SQL Tab for Executing queries
 Simply copy all this [script](/schemas/MySQL/WaMDaM_Nov2017_MySQL.sql) and paste into the new window of "create query"
 Then click execute. The script should run successfully and create the 41 empty tables of WaMDaM
 
