@@ -37,11 +37,14 @@
 <td> </td><td><a href="../columns/DataValues_SeasonalNumericValues_SeasonOrder.html">SeasonOrder</a></td><td>Integer</td><td> </td><td> </td><td> </td><td>incremental integer to preserve the order of seasons within the same attribute</td><td> </td>
 </tr>
 <tr class="altRow">
-<td> </td><td><a href="../columns/DataValues_SeasonalNumericValues_SeasonNameCV.html">SeasonNameCV</a></td><td>VarChar(255)</td><td>
+<td class="FkCol"> </td><td class="FkCol"><a href="../columns/DataValues_SeasonalNumericValues_SeasonNameCV.html">SeasonNameCV</a></td><td class="FkCol">VarChar(255)</td><td class="FkCol">
 <p class="boolImg">
 <img src="../images/ok12d.gif"></p>
-</td><td> </td><td> </td><td>CV term to a universal season name	
-</td><td> </td>
+</td><td class="FkCol"> </td><td class="FkCol"> </td><td class="FkCol">CV term to a universal season name	
+</td><td class="FkCol">
+<p class="boolImg">
+<img src="../images/ok12d.gif"></p>
+</td>
 </tr>
 <tr>
 <td> </td><td><a href="../columns/DataValues_SeasonalNumericValues_SeasonNumericValue.html">SeasonNumericValue</a></td><td>Float</td><td> </td><td> </td><td> </td><td>a numeric value for the season like 100 that corresponds to the Summer season	</td><td> </td>
@@ -65,7 +68,10 @@
 <td class="header">Name</td><td class="header">Parent Table</td><td class="header">Child Table</td><td class="header">Parent Columns</td><td class="header">Child Columns</td>
 </tr>
 <tr>
-<td><a href="../foreignKeys/DataValues_SeasonalNumericValues_fk_Parameters_DataValuesMapper.html">fk_Parameters_DataValuesMapper</a></td><td><a href="../tables/DataValues_DataValuesMapper.html">DataValues.DataValuesMapper</a></td><td><a href="../tables/DataValues_SeasonalNumericValues.html">DataValues.SeasonalNumericValues</a></td><td>DataValuesMapperID</td><td>DataValuesMapperID</td>
+<td><a href="../foreignKeys/DataValues_SeasonalNumericValues_fk_SeasonalNumericValues_CV_SeasonName.html">fk_SeasonalNumericValues_CV_SeasonName</a></td><td><a href="../tables/CVs_CV_SeasonName.html">CVs.CV_SeasonName</a></td><td><a href="../tables/DataValues_SeasonalNumericValues.html">DataValues.SeasonalNumericValues</a></td><td>Name</td><td>SeasonNameCV</td>
+</tr>
+<tr>
+<td><a href="../foreignKeys/DataValues_SeasonalNumericValues_fk_SeasonalNumericValues_DataValuesMapper.html">fk_SeasonalNumericValues_DataValuesMapper</a></td><td><a href="../tables/DataValues_DataValuesMapper.html">DataValues.DataValuesMapper</a></td><td><a href="../tables/DataValues_SeasonalNumericValues.html">DataValues.SeasonalNumericValues</a></td><td>DataValuesMapperID</td><td>DataValuesMapperID</td>
 </tr>
 </table>
 <br>

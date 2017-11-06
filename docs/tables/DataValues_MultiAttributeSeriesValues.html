@@ -31,10 +31,7 @@
 </td><td class="PkCol"> </td><td class="PkCol">Primary key identifier</td><td class="PkCol"> </td>
 </tr>
 <tr>
-<td class="FkCol"> </td><td class="FkCol"><a href="../columns/DataValues_MultiAttributeSeriesValues_MultiAttributeSeriesID.html">MultiAttributeSeriesID</a></td><td class="FkCol">Integer</td><td class="FkCol">
-<p class="boolImg">
-<img src="../images/ok12d.gif"></p>
-</td><td class="FkCol"> </td><td class="FkCol"> </td><td class="FkCol">Foreign key identifier</td><td class="FkCol">
+<td class="FkCol"> </td><td class="FkCol"><a href="../columns/DataValues_MultiAttributeSeriesValues_MultiAttributeSeriesID.html">MultiAttributeSeriesID</a></td><td class="FkCol">Integer</td><td class="FkCol"> </td><td class="FkCol"> </td><td class="FkCol"> </td><td class="FkCol">Foreign key identifier</td><td class="FkCol">
 <p class="boolImg">
 <img src="../images/ok12d.gif"></p>
 </td>
@@ -44,15 +41,6 @@
 </tr>
 <tr>
 <td> </td><td><a href="../columns/DataValues_MultiAttributeSeriesValues_ValueOrder.html">ValueOrder</a></td><td>Integer</td><td> </td><td> </td><td> </td><td>An integer as an ascending order that coresponds to the Values of the column. The order of the value preserves the pairing of data values across columns of the same MultiColumn array</td><td> </td>
-</tr>
-<tr>
-<td class="FkCol"> </td><td class="FkCol"><a href="../columns/DataValues_MultiAttributeSeriesValues_DataValuesMapperID.html">DataValuesMapperID</a></td><td class="FkCol">Integer</td><td class="FkCol">
-<p class="boolImg">
-<img src="../images/ok12d.gif"></p>
-</td><td class="FkCol"> </td><td class="FkCol"> </td><td class="FkCol">Foreign key identifier for a DataValueMapper record</td><td class="FkCol">
-<p class="boolImg">
-<img src="../images/ok12d.gif"></p>
-</td>
 </tr>
 </table>
 <br>
@@ -67,10 +55,7 @@
 <td class="header">Name</td><td class="header">Parent Table</td><td class="header">Child Table</td><td class="header">Parent Columns</td><td class="header">Child Columns</td>
 </tr>
 <tr>
-<td><a href="../foreignKeys/DataValues_MultiAttributeSeriesValues_fk_MultiColumnValues_MultiColumnArrays1.html">fk_MultiColumnValues_MultiColumnArrays1</a></td><td><a href="../tables/DataValues_MultiAttributeSeries.html">DataValues.MultiAttributeSeries</a></td><td><a href="../tables/DataValues_MultiAttributeSeriesValues.html">DataValues.MultiAttributeSeriesValues</a></td><td>DataValuesMapperID</td><td>DataValuesMapperID</td>
-</tr>
-<tr>
-<td><a href="../foreignKeys/DataValues_MultiAttributeSeriesValues_fk_MultiColumnValues_MultiColumnArrays2.html">fk_MultiColumnValues_MultiColumnArrays2</a></td><td><a href="../tables/DataValues_MultiAttributeSeries.html">DataValues.MultiAttributeSeries</a></td><td><a href="../tables/DataValues_MultiAttributeSeriesValues.html">DataValues.MultiAttributeSeriesValues</a></td><td>MultiAttributeSeriesID</td><td>MultiAttributeSeriesID</td>
+<td><a href="../foreignKeys/DataValues_MultiAttributeSeriesValues_fk_MultiAttributeSeriesValues_MultiAttributeSeries.html">fk_MultiAttributeSeriesValues_MultiAttributeSeries</a></td><td><a href="../tables/DataValues_MultiAttributeSeries.html">DataValues.MultiAttributeSeries</a></td><td><a href="../tables/DataValues_MultiAttributeSeriesValues.html">DataValues.MultiAttributeSeriesValues</a></td><td>MultiAttributeSeriesID</td><td>MultiAttributeSeriesID</td>
 </tr>
 </table>
 <br>
