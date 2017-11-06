@@ -1,0 +1,2326 @@
+<?xml version="1.0" encoding="UTF-8"?><Db flnm="Final" nm="newDb" ver="1.3.4">
+  <VerLbl/>
+  <VerNotes/>
+  <DefTblOpts/>
+  <DocFolder>C:\AdelAbdallah\PhD\CI-Water\WaM-DaM\WaMDaM April</DocFolder>
+  <Sch Cm="" nm="TestApril">
+    <Tbl UsSo="1" nm="Affiliations">
+      <TblOpts/>
+      <Pk ClNs="AffiliationID" nm="pkAffiliations"/>
+      <Cl au="1" df="" nm="AffiliationID" nu="0">
+        <DT arr="0" ds="Integer" en="" id="4" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="AffiliationStartDate" nu="1">
+        <DT arr="0" ds="Date" en="" id="91" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="AffiliationEndDate" nu="1">
+        <DT arr="0" ds="Date" en="" id="91" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="Phone" nu="1">
+        <DT arr="0" ds="Integer" en="" id="4" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="Email" nu="1">
+        <DT arr="0" ds="VarChar" en="" id="12" ln="255" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="OrganizationID" nu="0">
+        <DT arr="0" ds="Integer" en="" id="4" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="PersonID" nu="1">
+        <DT arr="0" ds="Integer" en="" id="4" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="Webpage" nu="1">
+        <DT arr="0" ds="VarChar" en="" id="12" ln="255" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="Address" nu="1">
+        <DT arr="0" ds="VarChar" en="" id="12" ln="255" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Fk deAc="3" nm="fk_Affiliations_Organization" prLkCl="OrganizationID" upAc="3">
+        <PrTb mn="0" nm="Organization" oe="1" sch="TestApril" zr="0"/>
+        <CdTb mn="1" nm="Affiliations" oe="0" sch="TestApril" zr="1"/>
+        <ClPr cdCl="OrganizationID" prCl="OrganizationID"/>
+      </Fk>
+      <Fk deAc="3" nm="fk_Affiliations_Peopel" prLkCl="PersonID" upAc="3">
+        <PrTb mn="0" nm="Peopel" oe="1" sch="TestApril" zr="0"/>
+        <CdTb mn="1" nm="Affiliations" oe="0" sch="TestApril" zr="1"/>
+        <ClPr cdCl="PersonID" prCl="PersonID"/>
+      </Fk>
+      <UniqueConstraints/>
+      <SchTrHis/>
+    </Tbl>
+    <Tbl UsSo="1" nm="AffiliationSources">
+      <TblOpts/>
+      <Pk ClNs="AffiliationSource" nm="pkAffiliationSources"/>
+      <Cl au="1" df="" nm="AffiliationSource" nu="0">
+        <DT arr="0" ds="Integer" en="" id="4" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="AffiliationID" nu="0">
+        <DT arr="0" ds="Integer" en="" id="4" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="SourceID" nu="0">
+        <DT arr="0" ds="Integer" en="" id="4" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Fk deAc="3" nm="fk_AffiliationSources_Affiliations" prLkCl="AffiliationID" upAc="3">
+        <PrTb mn="0" nm="Affiliations" oe="1" sch="TestApril" zr="0"/>
+        <CdTb mn="1" nm="AffiliationSources" oe="0" sch="TestApril" zr="1"/>
+        <ClPr cdCl="AffiliationID" prCl="AffiliationID"/>
+      </Fk>
+      <Fk deAc="3" nm="fk_AffiliationSources_Sources" prLkCl="SourceID" upAc="3">
+        <PrTb mn="0" nm="Sources" oe="1" sch="TestApril" zr="0"/>
+        <CdTb mn="1" nm="AffiliationSources" oe="0" sch="TestApril" zr="1"/>
+        <ClPr cdCl="SourceID" prCl="SourceID"/>
+      </Fk>
+      <UniqueConstraints/>
+      <SchTrHis/>
+    </Tbl>
+    <Tbl UsSo="1" nm="AttributeFormatCV">
+      <TblOpts/>
+      <Pk ClNs="AttributeFormat" nm="pkAttributeFormatCV"/>
+      <Cl au="0" df="" nm="AttributeFormat" nu="0">
+        <DT arr="0" ds="VarChar" en="" id="12" ln="255" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="Definition" nu="1">
+        <DT arr="0" ds="VarChar" en="" id="12" ln="500" sc="null" sg="1" un="0"/>
+      </Cl>
+      <UniqueConstraints/>
+      <SchTrHis/>
+    </Tbl>
+    <Tbl UsSo="1" nm="AttributeNameCV">
+      <TblOpts/>
+      <Pk ClNs="AttributeName" nm="pkAttributeNameCV"/>
+      <Cl au="0" df="" nm="AttributeName" nu="0">
+        <DT arr="0" ds="VarChar" en="" id="12" ln="255" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="Definition" nu="1">
+        <DT arr="0" ds="VarChar" en="" id="12" ln="500" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="ObjectName" nu="0">
+        <DT arr="0" ds="VarChar" en="" id="12" ln="255" sc="null" sg="1" un="0"/>
+      </Cl>
+      <UniqueConstraints/>
+      <SchTrHis/>
+    </Tbl>
+    <Tbl UsSo="1" nm="Attributes">
+      <TblOpts/>
+      <Pk ClNs="AttributeID" nm="pkAttributes"/>
+      <Cl au="1" df="" nm="AttributeID" nu="0">
+        <DT arr="0" ds="Integer" en="" id="4" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="AttributeNameCV" nu="0">
+        <DT arr="0" ds="VarChar" en="" id="12" ln="255" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="Description" nu="1">
+        <DT arr="0" ds="VarChar" en="" id="12" ln="500" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="AttributeCode" nu="1">
+        <DT arr="0" ds="VarChar" en="" id="12" ln="50" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="NoDataValue" nu="1">
+        <DT arr="0" ds="VarChar" en="" id="12" ln="500" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Fk deAc="3" nm="fk_Attributes_AttributeNameCV" prLkCl="AttributeName" upAc="3">
+        <PrTb mn="0" nm="AttributeNameCV" oe="1" sch="TestApril" zr="0"/>
+        <CdTb mn="1" nm="Attributes" oe="0" sch="TestApril" zr="1"/>
+        <ClPr cdCl="AttributeNameCV" prCl="AttributeName"/>
+      </Fk>
+      <UniqueConstraints/>
+      <SchTrHis/>
+    </Tbl>
+    <Tbl UsSo="1" nm="AttributeScenarioData">
+      <TblOpts/>
+      <Pk ClNs="AttributeScenarioDataID" nm="pkAttributeScenarioData"/>
+      <Cl au="1" df="" nm="AttributeScenarioDataID" nu="0">
+        <DT arr="0" ds="Integer" en="" id="4" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="AttributesID" nu="0">
+        <DT arr="0" ds="Integer" en="" id="4" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="AttributeFormat" nu="0">
+        <DT arr="0" ds="VarChar" en="" id="12" ln="255" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="UnitID" nu="0">
+        <DT arr="0" ds="Integer" en="" id="4" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="DataType" nu="0">
+        <DT arr="0" ds="VarChar" en="" id="12" ln="255" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="MethodID" nu="1">
+        <DT arr="0" ds="Integer" en="" id="4" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Fk deAc="3" nm="fk_InstanceAttributeScenarioData_AttributeFormatCV" prLkCl="AttributeFormat" upAc="3">
+        <PrTb mn="0" nm="AttributeFormatCV" oe="1" sch="TestApril" zr="0"/>
+        <CdTb mn="1" nm="AttributeScenarioData" oe="0" sch="TestApril" zr="1"/>
+        <ClPr cdCl="AttributeFormat" prCl="AttributeFormat"/>
+      </Fk>
+      <Fk deAc="3" nm="fk_InstanceAttributeScenarioData_Attributes" prLkCl="AttributeID" upAc="3">
+        <PrTb mn="0" nm="Attributes" oe="1" sch="TestApril" zr="0"/>
+        <CdTb mn="1" nm="AttributeScenarioData" oe="0" sch="TestApril" zr="1"/>
+        <ClPr cdCl="AttributesID" prCl="AttributeID"/>
+      </Fk>
+      <Fk deAc="3" nm="fk_InstanceAttributeScenarioData_DataTypeCV" prLkCl="DataType" upAc="3">
+        <PrTb mn="0" nm="DataTypeCV" oe="1" sch="TestApril" zr="0"/>
+        <CdTb mn="1" nm="AttributeScenarioData" oe="0" sch="TestApril" zr="1"/>
+        <ClPr cdCl="DataType" prCl="DataType"/>
+      </Fk>
+      <Fk deAc="3" nm="fk_InstanceAttributeScenarioData_Methods" prLkCl="MethodID" upAc="3">
+        <PrTb mn="0" nm="Methods" oe="1" sch="TestApril" zr="0"/>
+        <CdTb mn="1" nm="AttributeScenarioData" oe="0" sch="TestApril" zr="1"/>
+        <ClPr cdCl="MethodID" prCl="MethodID"/>
+      </Fk>
+      <Fk deAc="3" nm="fk_InstanceAttributeScenarioData_Units" prLkCl="UnitID" upAc="3">
+        <PrTb mn="0" nm="Units" oe="1" sch="TestApril" zr="0"/>
+        <CdTb mn="1" nm="AttributeScenarioData" oe="0" sch="TestApril" zr="1"/>
+        <ClPr cdCl="UnitID" prCl="UnitID"/>
+      </Fk>
+      <UniqueConstraints/>
+      <SchTrHis/>
+    </Tbl>
+    <Tbl UsSo="1" nm="BinaryData">
+      <TblOpts/>
+      <Pk ClNs="BinaryID" nm="pkBinaryData"/>
+      <Cl au="1" df="" nm="BinaryID" nu="0">
+        <DT arr="0" ds="Integer" en="" id="4" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="BinaryValue" nu="1">
+        <DT arr="0" ds="Binary" en="" id="-2" ln="1" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="ValueMeaning " nu="0">
+        <DT arr="0" ds="Binary" en="" id="-2" ln="1" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="AttributeScenarioDataID" nu="0">
+        <DT arr="0" ds="Integer" en="" id="4" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Fk deAc="3" nm="fk_BinaryData_InstanceAttributeScenarioData" prLkCl="AttributeScenarioDataID" upAc="3">
+        <PrTb mn="0" nm="AttributeScenarioData" oe="1" sch="TestApril" zr="0"/>
+        <CdTb mn="1" nm="BinaryData" oe="0" sch="TestApril" zr="1"/>
+        <ClPr cdCl="AttributeScenarioDataID" prCl="AttributeScenarioDataID"/>
+      </Fk>
+      <UniqueConstraints/>
+      <SchTrHis/>
+    </Tbl>
+    <Tbl UsSo="1" nm="CensorCodeCV">
+      <TblOpts/>
+      <Pk ClNs="CensorCode" nm="pkCensorCodeCV"/>
+      <Cl au="0" df="" nm="CensorCode" nu="0">
+        <DT arr="0" ds="Char" en="" id="1" ln="2" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="Definition" nu="1">
+        <DT arr="0" ds="VarChar" en="" id="12" ln="500" sc="null" sg="1" un="0"/>
+      </Cl>
+      <UniqueConstraints/>
+      <SchTrHis/>
+    </Tbl>
+    <Tbl UsSo="1" nm="Columns">
+      <TblOpts/>
+      <Pk ClNs="ColumnID" nm="pkColumns"/>
+      <Cl au="1" df="" nm="ColumnID" nu="0">
+        <DT arr="0" ds="Integer" en="" id="4" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="AttributeScenarioDataID" nu="0">
+        <DT arr="0" ds="Integer" en="" id="4" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Fk deAc="3" nm="fk_Columns_InstanceAttributeScenarioData" prLkCl="AttributeScenarioDataID" upAc="3">
+        <PrTb mn="0" nm="AttributeScenarioData" oe="1" sch="TestApril" zr="0"/>
+        <CdTb mn="1" nm="Columns" oe="0" sch="TestApril" zr="1"/>
+        <ClPr cdCl="AttributeScenarioDataID" prCl="AttributeScenarioDataID"/>
+      </Fk>
+      <UniqueConstraints/>
+      <SchTrHis/>
+    </Tbl>
+    <Tbl UsSo="1" nm="DataTypeCV">
+      <TblOpts/>
+      <Pk ClNs="DataType" nm="pkDataTypeCV"/>
+      <Cl au="0" df="" nm="DataType" nu="0">
+        <DT arr="0" ds="VarChar" en="" id="12" ln="255" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="Definition" nu="1">
+        <DT arr="0" ds="VarChar" en="" id="12" ln="500" sc="null" sg="1" un="0"/>
+      </Cl>
+      <UniqueConstraints/>
+      <SchTrHis/>
+    </Tbl>
+    <Tbl UsSo="1" nm="FileBased">
+      <TblOpts/>
+      <Pk ClNs="FileBasedID" nm="pkFileBased"/>
+      <Cl au="1" df="" nm="FileBasedID" nu="0">
+        <DT arr="0" ds="Integer" en="" id="4" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="FileName" nu="1">
+        <DT arr="0" ds="VarChar" en="" id="12" ln="255" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="FileType" nu="0">
+        <DT arr="0" ds="VarChar" en="" id="12" ln="255" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="Description" nu="1">
+        <DT arr="0" ds="VarChar" en="" id="12" ln="500" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="FileLocationOnDesk" nu="0">
+        <DT arr="0" ds="VarChar" en="" id="12" ln="255" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="FileWebpage" nu="1">
+        <DT arr="0" ds="VarChar" en="" id="12" ln="255" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="AttributeScenarioDataID" nu="0">
+        <DT arr="0" ds="Integer" en="" id="4" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Fk deAc="3" nm="fk_FileBased_InstanceAttributeScenarioData" prLkCl="AttributeScenarioDataID" upAc="3">
+        <PrTb mn="0" nm="AttributeScenarioData" oe="1" sch="TestApril" zr="0"/>
+        <CdTb mn="1" nm="FileBased" oe="0" sch="TestApril" zr="1"/>
+        <ClPr cdCl="AttributeScenarioDataID" prCl="AttributeScenarioDataID"/>
+      </Fk>
+      <UniqueConstraints/>
+      <SchTrHis/>
+    </Tbl>
+    <Tbl UsSo="1" nm="LabMethods">
+      <TblOpts/>
+      <Cl au="1" df="" nm="LabMethodID" nu="0">
+        <DT arr="0" ds="Integer" en="" id="4" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="LabName" nu="1">
+        <DT arr="0" ds="VarChar" en="" id="12" ln="255" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="LabOrganization" nu="1">
+        <DT arr="0" ds="VarChar" en="" id="12" ln="255" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="LabMethodName" nu="1">
+        <DT arr="0" ds="VarChar" en="" id="12" ln="255" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="LabMethodDescription" nu="1">
+        <DT arr="0" ds="VarChar" en="" id="12" ln="500" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="SampleID" nu="1">
+        <DT arr="0" ds="Integer" en="" id="4" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <UniqueConstraints/>
+      <SchTrHis/>
+    </Tbl>
+    <Tbl UsSo="1" nm="LinkAttributeCategory">
+      <TblOpts/>
+      <Pk ClNs="LinkCategotyID" nm="pkLinkAttributeCategory"/>
+      <Cl au="1" df="" nm="LinkCategotyID" nu="0">
+        <DT arr="0" ds="Integer" en="" id="4" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="LinkAttributeCategotyCV" nu="0">
+        <DT arr="0" ds="VarChar" en="" id="12" ln="255" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="ParentLinkAttributeCategoryID" nu="1">
+        <DT arr="0" ds="Integer" en="" id="4" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Fk deAc="3" nm="fk_LinkAttributeCategory_LinkAttributeCategory" prLkCl="LinkCategotyID" upAc="3">
+        <PrTb mn="0" nm="LinkAttributeCategory" oe="1" sch="TestApril" zr="0"/>
+        <CdTb mn="1" nm="LinkAttributeCategory" oe="0" sch="TestApril" zr="1"/>
+        <ClPr cdCl="ParentLinkAttributeCategoryID" prCl="LinkCategotyID"/>
+      </Fk>
+      <Fk deAc="3" nm="fk_LinkAttributeCategory_LinkAttributeCategoryCV" prLkCl="LinkAttributeCategoty" upAc="3">
+        <PrTb mn="0" nm="LinkAttributeCategoryCV" oe="1" sch="TestApril" zr="0"/>
+        <CdTb mn="1" nm="LinkAttributeCategory" oe="0" sch="TestApril" zr="1"/>
+        <ClPr cdCl="LinkAttributeCategotyCV" prCl="LinkAttributeCategoty"/>
+      </Fk>
+      <UniqueConstraints/>
+      <SchTrHis/>
+    </Tbl>
+    <Tbl UsSo="1" nm="LinkAttributeCategoryCV">
+      <TblOpts/>
+      <Pk ClNs="LinkAttributeCategoty" nm="pkLinkAttributeCategoryCV"/>
+      <Cl au="0" df="" nm="LinkAttributeCategoty" nu="0">
+        <DT arr="0" ds="VarChar" en="" id="12" ln="255" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="Definition" nu="1">
+        <DT arr="0" ds="VarChar" en="" id="12" ln="500" sc="null" sg="1" un="0"/>
+      </Cl>
+      <UniqueConstraints/>
+      <SchTrHis/>
+    </Tbl>
+    <Tbl UsSo="1" nm="LinkInstanceAttributeScenarioData">
+      <TblOpts/>
+      <Pk ClNs="LinkInstanceAttributeScenarioDataID" nm="pkLinkInstanceAttributeScenarioData"/>
+      <Cl au="1" df="" nm="LinkInstanceAttributeScenarioDataID" nu="0">
+        <DT arr="0" ds="Integer" en="" id="4" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="LinkInstanceID" nu="0">
+        <DT arr="0" ds="Integer" en="" id="4" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="AttributeScenarioDataID" nu="0">
+        <DT arr="0" ds="Integer" en="" id="4" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Fk deAc="3" nm="fk_LinkInstanceData_InstanceAttributeScenarioData" prLkCl="AttributeScenarioDataID" upAc="3">
+        <PrTb mn="0" nm="AttributeScenarioData" oe="1" sch="TestApril" zr="0"/>
+        <CdTb mn="1" nm="LinkInstanceAttributeScenarioData" oe="0" sch="TestApril" zr="1"/>
+        <ClPr cdCl="AttributeScenarioDataID" prCl="AttributeScenarioDataID"/>
+      </Fk>
+      <Fk deAc="3" nm="fk_LinkInstanceData_LinkInstances" prLkCl="LinkInstanceID" upAc="3">
+        <PrTb mn="0" nm="LinkInstances" oe="1" sch="TestApril" zr="0"/>
+        <CdTb mn="1" nm="LinkInstanceAttributeScenarioData" oe="0" sch="TestApril" zr="1"/>
+        <ClPr cdCl="LinkInstanceID" prCl="LinkInstanceID"/>
+      </Fk>
+      <UniqueConstraints/>
+      <SchTrHis/>
+    </Tbl>
+    <Tbl UsSo="1" nm="LinkInstances">
+      <TblOpts/>
+      <Pk ClNs="LinkInstanceID" nm="pkLinkInstances"/>
+      <Cl au="1" df="" nm="LinkInstanceID" nu="0">
+        <DT arr="0" ds="Integer" en="" id="4" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="LinkInstanceName" nu="0">
+        <DT arr="0" ds="VarChar" en="" id="12" ln="255" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="LinkInstanceCode" nu="1">
+        <DT arr="0" ds="VarChar" en="" id="12" ln="50" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="Length_m" nu="1">
+        <DT arr="0" ds="Float" en="" id="6" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="Description" nu="1">
+        <DT arr="0" ds="VarChar" en="" id="12" ln="500" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="ExistingOrProposed" nu="1">
+        <DT arr="0" ds="VarChar" en="" id="12" ln="50" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="StartNodeInstanceID" nu="0">
+        <DT arr="0" ds="Integer" en="" id="4" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="EndNodeInstanceID" nu="0">
+        <DT arr="0" ds="Integer" en="" id="4" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="NetworkID" nu="0">
+        <DT arr="0" ds="Integer" en="" id="4" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="LinkObjectID" nu="0">
+        <DT arr="0" ds="Integer" en="" id="4" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Fk deAc="3" nm="fk_LinkInstances_LinkObjects" prLkCl="LinkObjectID" upAc="3">
+        <PrTb mn="0" nm="LinkObjects" oe="1" sch="TestApril" zr="0"/>
+        <CdTb mn="1" nm="LinkInstances" oe="0" sch="TestApril" zr="1"/>
+        <ClPr cdCl="LinkObjectID" prCl="LinkObjectID"/>
+      </Fk>
+      <Fk deAc="3" nm="fk_LinkInstances_Networks" prLkCl="NetworkID" upAc="3">
+        <PrTb mn="0" nm="Networks" oe="1" sch="TestApril" zr="0"/>
+        <CdTb mn="1" nm="LinkInstances" oe="0" sch="TestApril" zr="1"/>
+        <ClPr cdCl="NetworkID" prCl="NetworkID"/>
+      </Fk>
+      <Fk deAc="3" nm="fk_LinkInstances_NodeInstances" prLkCl="NodeInstanceID" upAc="3">
+        <PrTb mn="0" nm="NodeInstances" oe="1" sch="TestApril" zr="0"/>
+        <CdTb mn="1" nm="LinkInstances" oe="0" sch="TestApril" zr="1"/>
+        <ClPr cdCl="StartNodeInstanceID" prCl="NodeInstanceID"/>
+        <ClPr cdCl="EndNodeInstanceID" prCl="NodeInstanceID"/>
+      </Fk>
+      <UniqueConstraints/>
+      <SchTrHis/>
+    </Tbl>
+    <Tbl UsSo="1" nm="LinkObjectAttributes">
+      <Cm>a Bridge table that connects Link Objects with Attributes and Attributes Category. It maps out the many to many relation between attributes and Link Objects </Cm>
+      <TblOpts/>
+      <Pk ClNs="LinkObjectAttributeID" nm="pkLinkObjectAttributes"/>
+      <Cl au="1" df="" nm="LinkObjectAttributeID" nu="0">
+        <DT arr="0" ds="Integer" en="" id="4" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="AttributesID" nu="1">
+        <DT arr="0" ds="Integer" en="" id="4" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="LinkObjectID" nu="1">
+        <DT arr="0" ds="Integer" en="" id="4" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="LinkCategotyID" nu="1">
+        <DT arr="0" ds="Integer" en="" id="4" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Fk deAc="3" nm="fk_LinkObjectAttributes_Attributes" prLkCl="AttributeID" upAc="3">
+        <PrTb mn="0" nm="Attributes" oe="1" sch="TestApril" zr="0"/>
+        <CdTb mn="1" nm="LinkObjectAttributes" oe="0" sch="TestApril" zr="1"/>
+        <ClPr cdCl="AttributesID" prCl="AttributeID"/>
+      </Fk>
+      <Fk deAc="3" nm="fk_LinkObjectAttributes_LinkAttributeCategory" prLkCl="LinkCategotyID" upAc="3">
+        <PrTb mn="0" nm="LinkAttributeCategory" oe="1" sch="TestApril" zr="0"/>
+        <CdTb mn="1" nm="LinkObjectAttributes" oe="0" sch="TestApril" zr="1"/>
+        <ClPr cdCl="LinkCategotyID" prCl="LinkCategotyID"/>
+      </Fk>
+      <Fk deAc="3" nm="fk_LinkObjectAttributes_LinkObjects" prLkCl="LinkObjectID" upAc="3">
+        <PrTb mn="0" nm="LinkObjects" oe="1" sch="TestApril" zr="0"/>
+        <CdTb mn="1" nm="LinkObjectAttributes" oe="0" sch="TestApril" zr="1"/>
+        <ClPr cdCl="LinkObjectID" prCl="LinkObjectID"/>
+      </Fk>
+      <UniqueConstraints/>
+      <SchTrHis/>
+    </Tbl>
+    <Tbl UsSo="1" nm="LinkObjectCategory">
+      <TblOpts/>
+      <Pk ClNs="LinkObjectCategoryID" nm="pkLinkObjectCategory"/>
+      <Cl au="1" df="" nm="LinkObjectCategoryID" nu="0">
+        <DT arr="0" ds="Integer" en="" id="4" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="LinkObjectCategoryCV" nu="0">
+        <DT arr="0" ds="VarChar" en="" id="12" ln="255" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="ParentLinkObjectCategoryID" nu="1">
+        <DT arr="0" ds="Integer" en="" id="4" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Fk deAc="3" nm="fk_LinkObjectCategory_LinkObjectCategory" prLkCl="LinkObjectCategoryID" upAc="3">
+        <PrTb mn="0" nm="LinkObjectCategory" oe="1" sch="TestApril" zr="0"/>
+        <CdTb mn="1" nm="LinkObjectCategory" oe="0" sch="TestApril" zr="1"/>
+        <ClPr cdCl="ParentLinkObjectCategoryID" prCl="LinkObjectCategoryID"/>
+      </Fk>
+      <Fk deAc="3" nm="fk_LinkObjectCategory_LinkObjectCategoryCV" prLkCl="LinkObjectCategory" upAc="3">
+        <PrTb mn="0" nm="LinkObjectCategoryCV" oe="1" sch="TestApril" zr="0"/>
+        <CdTb mn="1" nm="LinkObjectCategory" oe="0" sch="TestApril" zr="1"/>
+        <ClPr cdCl="LinkObjectCategoryCV" prCl="LinkObjectCategory"/>
+      </Fk>
+      <UniqueConstraints/>
+      <SchTrHis/>
+    </Tbl>
+    <Tbl UsSo="1" nm="LinkObjectCategoryCV">
+      <TblOpts/>
+      <Pk ClNs="LinkObjectCategory" nm="pkLinkObjectCategoryCV"/>
+      <Cl au="0" df="" nm="LinkObjectCategory" nu="0">
+        <DT arr="0" ds="VarChar" en="" id="12" ln="255" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="Definition" nu="1">
+        <DT arr="0" ds="VarChar" en="" id="12" ln="500" sc="null" sg="1" un="0"/>
+      </Cl>
+      <UniqueConstraints/>
+      <SchTrHis/>
+    </Tbl>
+    <Tbl UsSo="1" nm="LinkObjectNameCV">
+      <TblOpts/>
+      <Pk ClNs="LinkObjectName" nm="pkLinkObjectNameCV"/>
+      <Cl au="0" df="" nm="LinkObjectName" nu="0">
+        <DT arr="0" ds="VarChar" en="" id="12" ln="255" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="Definition" nu="1">
+        <DT arr="0" ds="VarChar" en="" id="12" ln="500" sc="null" sg="1" un="0"/>
+      </Cl>
+      <UniqueConstraints/>
+      <SchTrHis/>
+    </Tbl>
+    <Tbl UsSo="1" nm="LinkObjects">
+      <TblOpts/>
+      <Pk ClNs="LinkObjectID" nm="pkLinkObjects"/>
+      <Cl au="1" df="" nm="LinkObjectID" nu="0">
+        <DT arr="0" ds="Integer" en="" id="4" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="LinkObjectNameCV" nu="0">
+        <DT arr="0" ds="VarChar" en="" id="12" ln="255" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="Description" nu="1">
+        <DT arr="0" ds="VarChar" en="" id="12" ln="500" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="Color" nu="1">
+        <DT arr="0" ds="VarChar" en="" id="12" ln="50" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="Shape" nu="1">
+        <DT arr="0" ds="VarChar" en="" id="12" ln="50" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="LinkObjectCode" nu="1">
+        <DT arr="0" ds="VarChar" en="" id="12" ln="50" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="ProjectID" nu="0">
+        <DT arr="0" ds="Integer" en="" id="4" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="LinkObjectCategoryID" nu="0">
+        <DT arr="0" ds="Integer" en="" id="4" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Fk deAc="3" nm="fk_LinkObjects_LinkObjectCategory" prLkCl="LinkObjectCategoryID" upAc="3">
+        <PrTb mn="0" nm="LinkObjectCategory" oe="1" sch="TestApril" zr="0"/>
+        <CdTb mn="1" nm="LinkObjects" oe="0" sch="TestApril" zr="1"/>
+        <ClPr cdCl="LinkObjectCategoryID" prCl="LinkObjectCategoryID"/>
+      </Fk>
+      <Fk deAc="3" nm="fk_LinkObjects_LinkObjectNameCV" prLkCl="LinkObjectName" upAc="3">
+        <PrTb mn="0" nm="LinkObjectNameCV" oe="1" sch="TestApril" zr="0"/>
+        <CdTb mn="1" nm="LinkObjects" oe="0" sch="TestApril" zr="1"/>
+        <ClPr cdCl="LinkObjectNameCV" prCl="LinkObjectName"/>
+      </Fk>
+      <Fk deAc="3" nm="fk_NodeObjects_Projects" prLkCl="ProjectID" upAc="3">
+        <PrTb mn="0" nm="Projects" oe="1" sch="TestApril" zr="0"/>
+        <CdTb mn="1" nm="LinkObjects" oe="0" sch="TestApril" zr="1"/>
+        <ClPr cdCl="ProjectID" prCl="ProjectID"/>
+      </Fk>
+      <UniqueConstraints/>
+      <SchTrHis/>
+    </Tbl>
+    <Tbl UsSo="1" nm="Methods">
+      <TblOpts/>
+      <Pk ClNs="MethodID" nm="pkMethods"/>
+      <Cl au="1" df="" nm="MethodID" nu="0">
+        <DT arr="0" ds="Integer" en="" id="4" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="MethodName" nu="0">
+        <DT arr="0" ds="VarChar" en="" id="12" ln="255" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="MethodLink" nu="1">
+        <DT arr="0" ds="VarChar" en="" id="12" ln="255" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="MethodDescription" nu="1">
+        <DT arr="0" ds="VarChar" en="" id="12" ln="500" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="OrganizationID" nu="1">
+        <DT arr="0" ds="Integer" en="" id="4" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="PersonID" nu="1">
+        <DT arr="0" ds="Integer" en="" id="4" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="MethodTypeCV" nu="0">
+        <DT arr="0" ds="VarChar" en="" id="12" ln="255" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Fk deAc="3" nm="fk_Methods_MethodTypeCV" prLkCl="MethodType" upAc="3">
+        <PrTb mn="0" nm="MethodTypeCV" oe="1" sch="TestApril" zr="0"/>
+        <CdTb mn="1" nm="Methods" oe="0" sch="TestApril" zr="1"/>
+        <ClPr cdCl="MethodTypeCV" prCl="MethodType"/>
+      </Fk>
+      <Fk deAc="3" nm="fk_Methods_Organization" prLkCl="OrganizationID" upAc="3">
+        <PrTb mn="0" nm="Organization" oe="1" sch="TestApril" zr="0"/>
+        <CdTb mn="1" nm="Methods" oe="0" sch="TestApril" zr="1"/>
+        <ClPr cdCl="OrganizationID" prCl="OrganizationID"/>
+      </Fk>
+      <Fk deAc="3" nm="fk_Methods_Peopel" prLkCl="PersonID" upAc="3">
+        <PrTb mn="0" nm="Peopel" oe="1" sch="TestApril" zr="0"/>
+        <CdTb mn="1" nm="Methods" oe="0" sch="TestApril" zr="1"/>
+        <ClPr cdCl="PersonID" prCl="PersonID"/>
+      </Fk>
+      <UniqueConstraints/>
+      <SchTrHis/>
+    </Tbl>
+    <Tbl UsSo="1" nm="MethodTypeCV">
+      <TblOpts/>
+      <Pk ClNs="MethodType" nm="pkMethodTypeCV"/>
+      <Cl au="0" df="" nm="MethodType" nu="0">
+        <DT arr="0" ds="VarChar" en="" id="12" ln="255" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="Definition" nu="1">
+        <DT arr="0" ds="VarChar" en="" id="12" ln="500" sc="null" sg="1" un="0"/>
+      </Cl>
+      <UniqueConstraints/>
+      <SchTrHis/>
+    </Tbl>
+    <Tbl UsSo="1" nm="Models">
+      <TblOpts/>
+      <Pk ClNs="ModelID" nm="pkModels"/>
+      <Cl au="1" df="" nm="ModelID" nu="0">
+        <DT arr="0" ds="Integer" en="" id="4" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="ModelName" nu="0">
+        <DT arr="0" ds="VarChar" en="" id="12" ln="255" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="Citation" nu="1">
+        <DT arr="0" ds="VarChar" en="" id="12" ln="255" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="ModelMainPurpose" nu="1">
+        <DT arr="0" ds="VarChar" en="" id="12" ln="255" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="SoftwareUsed" nu="0">
+        <DT arr="0" ds="VarChar" en="" id="12" ln="255" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="Description" nu="1">
+        <DT arr="0" ds="VarChar" en="" id="12" ln="500" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="ModelDateCreated" nu="0">
+        <DT arr="0" ds="Date" en="" id="91" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <UniqueConstraints/>
+      <SchTrHis/>
+    </Tbl>
+    <Tbl UsSo="1" nm="MultiColumns">
+      <TblOpts/>
+      <Pk ClNs="MultiColumnID" nm="pkMultiColumns"/>
+      <Cl au="1" df="" nm="MultiColumnID" nu="0">
+        <DT arr="0" ds="Integer" en="" id="4" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="AttributeScenarioDataID" nu="0">
+        <DT arr="0" ds="Integer" en="" id="4" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="ColumnID" nu="0">
+        <DT arr="0" ds="Integer" en="" id="4" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Fk deAc="3" nm="fk_MultiColumns_Columns" prLkCl="ColumnID" upAc="3">
+        <PrTb mn="0" nm="Columns" oe="1" sch="TestApril" zr="0"/>
+        <CdTb mn="1" nm="MultiColumns" oe="0" sch="TestApril" zr="1"/>
+        <ClPr cdCl="ColumnID" prCl="ColumnID"/>
+      </Fk>
+      <Fk deAc="3" nm="fk_MultiColumns_InstanceAttributeScenarioData" prLkCl="AttributeScenarioDataID" upAc="3">
+        <PrTb mn="0" nm="AttributeScenarioData" oe="1" sch="TestApril" zr="0"/>
+        <CdTb mn="1" nm="MultiColumns" oe="0" sch="TestApril" zr="1"/>
+        <ClPr cdCl="AttributeScenarioDataID" prCl="AttributeScenarioDataID"/>
+      </Fk>
+      <UniqueConstraints/>
+      <SchTrHis/>
+    </Tbl>
+    <Tbl UsSo="1" nm="MultiColumnValues">
+      <TblOpts/>
+      <Pk ClNs="MultiColumnValueID" nm="pkMultiColumnValues"/>
+      <Cl au="1" df="" nm="MultiColumnValueID" nu="0">
+        <DT arr="0" ds="Integer" en="" id="4" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="Value" nu="0">
+        <DT arr="0" ds="Float" en="" id="6" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="ValueOrder" nu="0">
+        <DT arr="0" ds="Integer" en="" id="4" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="MultiColumnID" nu="0">
+        <DT arr="0" ds="Integer" en="" id="4" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Fk deAc="3" nm="fk_MultiColumnValues_MultiColumns" prLkCl="MultiColumnID" upAc="3">
+        <PrTb mn="0" nm="MultiColumns" oe="1" sch="TestApril" zr="0"/>
+        <CdTb mn="1" nm="MultiColumnValues" oe="0" sch="TestApril" zr="1"/>
+        <ClPr cdCl="MultiColumnID" prCl="MultiColumnID"/>
+      </Fk>
+      <UniqueConstraints/>
+      <SchTrHis/>
+    </Tbl>
+    <Tbl UsSo="1" nm="Networks">
+      <TblOpts/>
+      <Pk ClNs="NetworkID" nm="pkNetworks"/>
+      <Cl au="1" df="" nm="NetworkID" nu="0">
+        <DT arr="0" ds="Integer" en="" id="4" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="NetworkName" nu="0">
+        <DT arr="0" ds="VarChar" en="" id="12" ln="255" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="Description" nu="1">
+        <DT arr="0" ds="VarChar" en="" id="12" ln="500" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="DateCreated" nu="1">
+        <DT arr="0" ds="Date" en="" id="91" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="ProjectID" nu="0">
+        <DT arr="0" ds="Integer" en="" id="4" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Fk deAc="3" nm="fk_Networks_Projects" prLkCl="ProjectID" upAc="3">
+        <PrTb mn="0" nm="Projects" oe="1" sch="TestApril" zr="0"/>
+        <CdTb mn="1" nm="Networks" oe="0" sch="TestApril" zr="1"/>
+        <ClPr cdCl="ProjectID" prCl="ProjectID"/>
+      </Fk>
+      <UniqueConstraints/>
+      <SchTrHis/>
+    </Tbl>
+    <Tbl UsSo="1" nm="NodeAttributeCategory">
+      <TblOpts/>
+      <Pk ClNs="NodeAttributeCategotyID" nm="pkNodeAttributeCategory"/>
+      <Cl au="1" df="" nm="NodeAttributeCategotyID" nu="0">
+        <DT arr="0" ds="Integer" en="" id="4" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="NodeAttributeCategotyCV" nu="0">
+        <DT arr="0" ds="VarChar" en="" id="12" ln="255" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="ParentNodeAttributeCategoryID" nu="1">
+        <DT arr="0" ds="Integer" en="" id="4" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Fk deAc="3" nm="fk_NodeAttributeCategory_NodeAttributeCategory" prLkCl="NodeAttributeCategotyID" upAc="3">
+        <PrTb mn="0" nm="NodeAttributeCategory" oe="1" sch="TestApril" zr="0"/>
+        <CdTb mn="1" nm="NodeAttributeCategory" oe="0" sch="TestApril" zr="1"/>
+        <ClPr cdCl="ParentNodeAttributeCategoryID" prCl="NodeAttributeCategotyID"/>
+      </Fk>
+      <Fk deAc="3" nm="fk_NodeAttributeCategory_NodeAttributeCategoryCV" prLkCl="NodeAttributeCategoty" upAc="3">
+        <PrTb mn="0" nm="NodeAttributeCategoryCV" oe="1" sch="TestApril" zr="0"/>
+        <CdTb mn="1" nm="NodeAttributeCategory" oe="0" sch="TestApril" zr="1"/>
+        <ClPr cdCl="NodeAttributeCategotyCV" prCl="NodeAttributeCategoty"/>
+      </Fk>
+      <UniqueConstraints/>
+      <SchTrHis/>
+    </Tbl>
+    <Tbl UsSo="1" nm="NodeAttributeCategoryCV">
+      <TblOpts/>
+      <Pk ClNs="NodeAttributeCategoty" nm="pkNodeAttributeCategoryCV"/>
+      <Cl au="0" df="" nm="NodeAttributeCategoty" nu="0">
+        <DT arr="0" ds="VarChar" en="" id="12" ln="255" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="Definition" nu="1">
+        <DT arr="0" ds="VarChar" en="" id="12" ln="500" sc="null" sg="1" un="0"/>
+      </Cl>
+      <UniqueConstraints/>
+      <SchTrHis/>
+    </Tbl>
+    <Tbl UsSo="1" nm="NodeInstanceAttributeScenarioData">
+      <Cm>Brisge that maps out many to many relations between an instance and its data. A reserovoir instance can have multiple data and a data like a dam owner can apply to may reservoirs </Cm>
+      <TblOpts/>
+      <Pk ClNs="NodeInstanceAttributeScenarioDataID" nm="pkNodeInstanceAttributeScenarioData"/>
+      <Cl au="1" df="" nm="NodeInstanceAttributeScenarioDataID" nu="0">
+        <DT arr="0" ds="Integer" en="" id="4" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="NodeInstanceID" nu="0">
+        <DT arr="0" ds="Integer" en="" id="4" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="AttributeScenarioDataID" nu="0">
+        <DT arr="0" ds="Integer" en="" id="4" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Fk deAc="3" nm="fk_NodeInstanceData_InstanceAttributeScenarioData" prLkCl="AttributeScenarioDataID" upAc="3">
+        <PrTb mn="0" nm="AttributeScenarioData" oe="1" sch="TestApril" zr="0"/>
+        <CdTb mn="1" nm="NodeInstanceAttributeScenarioData" oe="0" sch="TestApril" zr="1"/>
+        <ClPr cdCl="AttributeScenarioDataID" prCl="AttributeScenarioDataID"/>
+      </Fk>
+      <Fk deAc="3" nm="fk_NodeInstanceData_NodeInstances" prLkCl="NodeInstanceID" upAc="3">
+        <PrTb mn="0" nm="NodeInstances" oe="1" sch="TestApril" zr="0"/>
+        <CdTb mn="1" nm="NodeInstanceAttributeScenarioData" oe="0" sch="TestApril" zr="1"/>
+        <ClPr cdCl="NodeInstanceID" prCl="NodeInstanceID"/>
+      </Fk>
+      <UniqueConstraints/>
+      <SchTrHis/>
+    </Tbl>
+    <Tbl UsSo="1" nm="NodeInstances">
+      <TblOpts/>
+      <Pk ClNs="NodeInstanceID" nm="pkNodeInstances"/>
+      <Cl au="1" df="" nm="NodeInstanceID" nu="0">
+        <DT arr="0" ds="Integer" en="" id="4" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="NodeInstanceName" nu="0">
+        <DT arr="0" ds="VarChar" en="" id="12" ln="255" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="Description" nu="1">
+        <DT arr="0" ds="VarChar" en="" id="12" ln="500" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="NodeInstanceCode" nu="1">
+        <DT arr="0" ds="VarChar" en="" id="12" ln="50" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="ExistingOrProposed" nu="1">
+        <DT arr="0" ds="VarChar" en="" id="12" ln="50" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="Longitude" nu="1">
+        <DT arr="0" ds="Float" en="" id="6" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="Latitude" nu="1">
+        <DT arr="0" ds="Float" en="" id="6" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="LocalX" nu="1">
+        <DT arr="0" ds="Float" en="" id="6" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="LocalY" nu="1">
+        <DT arr="0" ds="Float" en="" id="6" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="NetworkID" nu="0">
+        <DT arr="0" ds="Integer" en="" id="4" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="SpatialReferenceID" nu="1">
+        <DT arr="0" ds="Integer" en="" id="4" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="NodeObjectID" nu="0">
+        <DT arr="0" ds="Integer" en="" id="4" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Fk deAc="3" nm="fk_NodeInstances_Networks" prLkCl="NetworkID" upAc="3">
+        <PrTb mn="0" nm="Networks" oe="1" sch="TestApril" zr="0"/>
+        <CdTb mn="1" nm="NodeInstances" oe="0" sch="TestApril" zr="1"/>
+        <ClPr cdCl="NetworkID" prCl="NetworkID"/>
+      </Fk>
+      <Fk deAc="3" nm="fk_NodeInstances_NodeObjects" prLkCl="NodeObjectID" upAc="3">
+        <PrTb mn="0" nm="NodeObjects" oe="1" sch="TestApril" zr="0"/>
+        <CdTb mn="1" nm="NodeInstances" oe="0" sch="TestApril" zr="1"/>
+        <ClPr cdCl="NodeObjectID" prCl="NodeObjectID"/>
+      </Fk>
+      <Fk deAc="3" nm="fk_NodeInstances_SpatialReference" prLkCl="SpatialReferenceID" upAc="3">
+        <PrTb mn="0" nm="SpatialReference" oe="1" sch="TestApril" zr="0"/>
+        <CdTb mn="1" nm="NodeInstances" oe="0" sch="TestApril" zr="1"/>
+        <ClPr cdCl="SpatialReferenceID" prCl="SpatialReferenceID"/>
+      </Fk>
+      <UniqueConstraints/>
+      <SchTrHis/>
+    </Tbl>
+    <Tbl UsSo="1" nm="NodeObjectAttributes">
+      <Cm>a Bridge table that connects Node Objects with Attributes and Attributes Category. It maps out the many to many relation between attributes and Node Objects </Cm>
+      <TblOpts/>
+      <Pk ClNs="NodeObjectAttributeID" nm="pkNodeObjectAttributes"/>
+      <Cl au="1" df="" nm="NodeObjectAttributeID" nu="0">
+        <DT arr="0" ds="Integer" en="" id="4" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="NodeObjectID" nu="0">
+        <DT arr="0" ds="Integer" en="" id="4" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="AttributeID" nu="0">
+        <DT arr="0" ds="Integer" en="" id="4" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="CategotyID" nu="0">
+        <DT arr="0" ds="Integer" en="" id="4" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Fk deAc="3" nm="fk_NodeObjectAttributes_Attributes" prLkCl="AttributeID" upAc="3">
+        <PrTb mn="0" nm="Attributes" oe="1" sch="TestApril" zr="0"/>
+        <CdTb mn="1" nm="NodeObjectAttributes" oe="0" sch="TestApril" zr="1"/>
+        <ClPr cdCl="AttributeID" prCl="AttributeID"/>
+      </Fk>
+      <Fk deAc="3" nm="fk_NodeObjectAttributes_NodeAttributeCategory" prLkCl="NodeAttributeCategotyID" upAc="3">
+        <PrTb mn="0" nm="NodeAttributeCategory" oe="1" sch="TestApril" zr="0"/>
+        <CdTb mn="1" nm="NodeObjectAttributes" oe="0" sch="TestApril" zr="1"/>
+        <ClPr cdCl="CategotyID" prCl="NodeAttributeCategotyID"/>
+      </Fk>
+      <Fk deAc="3" nm="fk_NodeObjectAttributes_NodeObjects" prLkCl="NodeObjectID" upAc="3">
+        <PrTb mn="0" nm="NodeObjects" oe="1" sch="TestApril" zr="0"/>
+        <CdTb mn="1" nm="NodeObjectAttributes" oe="0" sch="TestApril" zr="1"/>
+        <ClPr cdCl="NodeObjectID" prCl="NodeObjectID"/>
+      </Fk>
+      <UniqueConstraints/>
+      <SchTrHis/>
+    </Tbl>
+    <Tbl UsSo="1" nm="NodeObjectCategory">
+      <TblOpts/>
+      <Pk ClNs="NodeObjectCategoryID" nm="pkNodeObjectCategory"/>
+      <Cl au="1" df="" nm="NodeObjectCategoryID" nu="0">
+        <DT arr="0" ds="Integer" en="" id="4" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="NodeObjectCategoryCV" nu="0">
+        <DT arr="0" ds="VarChar" en="" id="12" ln="255" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="ParentNodeObjectCategoryID" nu="1">
+        <DT arr="0" ds="Integer" en="" id="4" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Fk deAc="3" nm="fk_NodeObjectCategory_NodeObjectCategory" prLkCl="NodeObjectCategoryID" upAc="3">
+        <PrTb mn="0" nm="NodeObjectCategory" oe="1" sch="TestApril" zr="0"/>
+        <CdTb mn="1" nm="NodeObjectCategory" oe="0" sch="TestApril" zr="1"/>
+        <ClPr cdCl="ParentNodeObjectCategoryID" prCl="NodeObjectCategoryID"/>
+      </Fk>
+      <Fk deAc="3" nm="fk_NodeObjectCategory_NodeObjectCategoryCV" prLkCl="NodeObjectCategory" upAc="3">
+        <PrTb mn="0" nm="NodeObjectCategoryCV" oe="1" sch="TestApril" zr="0"/>
+        <CdTb mn="1" nm="NodeObjectCategory" oe="0" sch="TestApril" zr="1"/>
+        <ClPr cdCl="NodeObjectCategoryCV" prCl="NodeObjectCategory"/>
+      </Fk>
+      <UniqueConstraints/>
+      <SchTrHis/>
+    </Tbl>
+    <Tbl UsSo="1" nm="NodeObjectCategoryCV">
+      <TblOpts/>
+      <Pk ClNs="NodeObjectCategory" nm="pkNodeObjectCategoryCV"/>
+      <Cl au="0" df="" nm="NodeObjectCategory" nu="0">
+        <DT arr="0" ds="VarChar" en="" id="12" ln="255" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="Definition" nu="1">
+        <DT arr="0" ds="VarChar" en="" id="12" ln="500" sc="null" sg="1" un="0"/>
+      </Cl>
+      <UniqueConstraints/>
+      <SchTrHis/>
+    </Tbl>
+    <Tbl UsSo="1" nm="NodeObjectNameCV">
+      <TblOpts/>
+      <Pk ClNs="NodeObjectName" nm="pkNodeObjectNameCV"/>
+      <Cl au="0" df="" nm="NodeObjectName" nu="0">
+        <DT arr="0" ds="VarChar" en="" id="12" ln="255" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="Definition" nu="1">
+        <DT arr="0" ds="VarChar" en="" id="12" ln="500" sc="null" sg="1" un="0"/>
+      </Cl>
+      <UniqueConstraints/>
+      <SchTrHis/>
+    </Tbl>
+    <Tbl UsSo="1" nm="NodeObjects">
+      <TblOpts/>
+      <Pk ClNs="NodeObjectID" nm="pkNodeObjects"/>
+      <Cl au="1" df="" nm="NodeObjectID" nu="0">
+        <DT arr="0" ds="Integer" en="" id="4" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="NodeObjectNameCV" nu="0">
+        <DT arr="0" ds="VarChar" en="" id="12" ln="255" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="Description" nu="1">
+        <DT arr="0" ds="VarChar" en="" id="12" ln="500" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="Color" nu="1">
+        <DT arr="0" ds="VarChar" en="" id="12" ln="50" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="Shape" nu="1">
+        <DT arr="0" ds="VarChar" en="" id="12" ln="50" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="NodeObjectCode" nu="1">
+        <DT arr="0" ds="VarChar" en="" id="12" ln="50" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="ProjectID" nu="0">
+        <DT arr="0" ds="Integer" en="" id="4" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="NodeObjectCategoryID" nu="0">
+        <DT arr="0" ds="Integer" en="" id="4" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Fk deAc="3" nm="fk_NodeObjects_NodeObjectCategoryCV" prLkCl="NodeObjectCategoryCV" upAc="3">
+        <PrTb mn="0" nm="NodeObjectCategory" oe="1" sch="TestApril" zr="0"/>
+        <CdTb mn="1" nm="NodeObjects" oe="0" sch="TestApril" zr="1"/>
+        <ClPr cdCl="NodeObjectCategoryID" prCl="NodeObjectCategoryCV"/>
+      </Fk>
+      <Fk deAc="3" nm="fk_NodeObjects_NodeObjectNameCV" prLkCl="NodeObjectName" upAc="3">
+        <PrTb mn="0" nm="NodeObjectNameCV" oe="1" sch="TestApril" zr="0"/>
+        <CdTb mn="1" nm="NodeObjects" oe="0" sch="TestApril" zr="1"/>
+        <ClPr cdCl="NodeObjectNameCV" prCl="NodeObjectName"/>
+      </Fk>
+      <Fk deAc="3" nm="fk_NodeObjects_Projects" prLkCl="ProjectID" upAc="3">
+        <PrTb mn="0" nm="Projects" oe="1" sch="TestApril" zr="0"/>
+        <CdTb mn="1" nm="NodeObjects" oe="0" sch="TestApril" zr="1"/>
+        <ClPr cdCl="ProjectID" prCl="ProjectID"/>
+      </Fk>
+      <UniqueConstraints/>
+      <SchTrHis/>
+    </Tbl>
+    <Tbl UsSo="1" nm="Organization">
+      <TblOpts/>
+      <Pk ClNs="OrganizationID" nm="pkOrganization"/>
+      <Cl au="1" df="" nm="OrganizationID" nu="0">
+        <DT arr="0" ds="Integer" en="" id="4" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="OrganizationTypeCV" nu="1">
+        <DT arr="0" ds="VarChar" en="" id="12" ln="255" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="OrganizationCode" nu="1">
+        <DT arr="0" ds="VarChar" en="" id="12" ln="50" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="OrganizationName" nu="1">
+        <DT arr="0" ds="VarChar" en="" id="12" ln="255" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="OrganizationLink" nu="1">
+        <DT arr="0" ds="VarChar" en="" id="12" ln="255" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="OrganizationDescription" nu="1">
+        <DT arr="0" ds="VarChar" en="" id="12" ln="500" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="ParentOrganizationID" nu="1">
+        <DT arr="0" ds="Integer" en="" id="4" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Fk deAc="3" nm="fk_Organization_Organization" prLkCl="OrganizationID" upAc="3">
+        <PrTb mn="0" nm="Organization" oe="1" sch="TestApril" zr="0"/>
+        <CdTb mn="1" nm="Organization" oe="0" sch="TestApril" zr="1"/>
+        <ClPr cdCl="ParentOrganizationID" prCl="OrganizationID"/>
+      </Fk>
+      <Fk deAc="3" nm="fk_Organization_OrganizationType" prLkCl="OrganizationTypeCV" upAc="3">
+        <PrTb mn="0" nm="OrganizationType" oe="1" sch="TestApril" zr="0"/>
+        <CdTb mn="1" nm="Organization" oe="0" sch="TestApril" zr="1"/>
+        <ClPr cdCl="OrganizationTypeCV" prCl="OrganizationTypeCV"/>
+      </Fk>
+      <UniqueConstraints/>
+      <SchTrHis/>
+    </Tbl>
+    <Tbl UsSo="1" nm="OrganizationType">
+      <TblOpts/>
+      <Pk ClNs="OrganizationTypeCV" nm="pkOrganizationType"/>
+      <Cl au="0" df="" nm="OrganizationTypeCV" nu="0">
+        <DT arr="0" ds="VarChar" en="" id="12" ln="255" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="Definition" nu="1">
+        <DT arr="0" ds="VarChar" en="" id="12" ln="500" sc="null" sg="1" un="0"/>
+      </Cl>
+      <UniqueConstraints/>
+      <SchTrHis/>
+    </Tbl>
+    <Tbl UsSo="1" nm="Parameter">
+      <TblOpts/>
+      <Pk ClNs="ParameterID" nm="pkParameter"/>
+      <Cl au="1" df="" nm="ParameterID" nu="0">
+        <DT arr="0" ds="Integer" en="" id="4" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="DateCollected" nu="1">
+        <DT arr="0" ds="Date" en="" id="91" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="Assumptions" nu="1">
+        <DT arr="0" ds="VarChar" en="" id="12" ln="500" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="ParameterValue" nu="0">
+        <DT arr="0" ds="Float" en="" id="6" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="Description" nu="1">
+        <DT arr="0" ds="VarChar" en="" id="12" ln="500" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="AttributeScenarioDataID" nu="0">
+        <DT arr="0" ds="Integer" en="" id="4" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Fk deAc="3" nm="fk_Parameter_InstanceAttributeScenarioData" prLkCl="AttributeScenarioDataID" upAc="3">
+        <PrTb mn="0" nm="AttributeScenarioData" oe="1" sch="TestApril" zr="0"/>
+        <CdTb mn="1" nm="Parameter" oe="0" sch="TestApril" zr="1"/>
+        <ClPr cdCl="AttributeScenarioDataID" prCl="AttributeScenarioDataID"/>
+      </Fk>
+      <UniqueConstraints/>
+      <SchTrHis/>
+    </Tbl>
+    <Tbl UsSo="1" nm="Peopel">
+      <TblOpts/>
+      <Pk ClNs="PersonID" nm="pkPeopel"/>
+      <Cl au="1" df="" nm="PersonID" nu="0">
+        <DT arr="0" ds="Integer" en="" id="4" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="PersonFirstName" nu="0">
+        <DT arr="0" ds="VarChar" en="" id="12" ln="255" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="PersonMiddleName" nu="1">
+        <DT arr="0" ds="VarChar" en="" id="12" ln="255" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="PersonLastName" nu="0">
+        <DT arr="0" ds="VarChar" en="" id="12" ln="255" sc="null" sg="1" un="0"/>
+      </Cl>
+      <UniqueConstraints/>
+      <SchTrHis/>
+    </Tbl>
+    <Tbl UsSo="1" nm="PoliticalJurisdictionalNodeInstace">
+      <TblOpts/>
+      <Pk ClNs="PoliticalJurisdictionNodeInstaceID" nm="pkPoliticalJurisdictionalNodeInstace"/>
+      <Cl au="1" df="" nm="PoliticalJurisdictionNodeInstaceID" nu="0">
+        <DT arr="0" ds="Integer" en="" id="4" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="NodeInstanceID" nu="0">
+        <DT arr="0" ds="Integer" en="" id="4" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="PoliticalJurisdictionID" nu="0">
+        <DT arr="0" ds="Integer" en="" id="4" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Fk deAc="3" nm="fk_PoliticalJurisdictionalNodeInstace_NodeInstances" prLkCl="NodeInstanceID" upAc="3">
+        <PrTb mn="0" nm="NodeInstances" oe="1" sch="TestApril" zr="0"/>
+        <CdTb mn="1" nm="PoliticalJurisdictionalNodeInstace" oe="0" sch="TestApril" zr="1"/>
+        <ClPr cdCl="NodeInstanceID" prCl="NodeInstanceID"/>
+      </Fk>
+      <Fk deAc="3" nm="fk_PoliticalJurisdictionalNodeInstace_PoliticalJurisdictions" prLkCl="PoliticalJurisdictionID" upAc="3">
+        <PrTb mn="0" nm="PoliticalJurisdictions" oe="1" sch="TestApril" zr="0"/>
+        <CdTb mn="1" nm="PoliticalJurisdictionalNodeInstace" oe="0" sch="TestApril" zr="1"/>
+        <ClPr cdCl="PoliticalJurisdictionID" prCl="PoliticalJurisdictionID"/>
+      </Fk>
+      <UniqueConstraints/>
+      <SchTrHis/>
+    </Tbl>
+    <Tbl UsSo="1" nm="PoliticalJurisdictions">
+      <TblOpts/>
+      <Pk ClNs="PoliticalJurisdictionID" nm="pkPoliticalJurisdictions"/>
+      <Cl au="1" df="" nm="PoliticalJurisdictionID" nu="0">
+        <DT arr="0" ds="Integer" en="" id="4" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="JurisdictionName" nu="0">
+        <DT arr="0" ds="VarChar" en="" id="12" ln="255" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="State" nu="1">
+        <DT arr="0" ds="VarChar" en="" id="12" ln="255" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="County" nu="1">
+        <DT arr="0" ds="VarChar" en="" id="12" ln="255" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="Country" nu="1">
+        <DT arr="0" ds="VarChar" en="" id="12" ln="255" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="AgreementName" nu="1">
+        <DT arr="0" ds="VarChar" en="" id="12" ln="255" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="City" nu="1">
+        <DT arr="0" ds="VarChar" en="" id="12" ln="255" sc="null" sg="1" un="0"/>
+      </Cl>
+      <UniqueConstraints/>
+      <SchTrHis/>
+    </Tbl>
+    <Tbl UsSo="1" nm="Projects">
+      <TblOpts/>
+      <Pk ClNs="ProjectID" nm="pkProjects"/>
+      <Cl au="1" df="" nm="ProjectID" nu="0">
+        <DT arr="0" ds="Integer" en="" id="4" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="ProjectName" nu="0">
+        <DT arr="0" ds="VarChar" en="" id="12" ln="255" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="Description" nu="1">
+        <DT arr="0" ds="VarChar" en="" id="12" ln="500" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="Purpose" nu="1">
+        <DT arr="0" ds="VarChar" en="" id="12" ln="500" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="Domain" nu="1">
+        <DT arr="0" ds="VarChar" en="" id="12" ln="255" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="DateCreated" nu="1">
+        <DT arr="0" ds="Date" en="" id="91" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="Status" nu="1">
+        <DT arr="0" ds="VarChar" en="" id="12" ln="255" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="UserID" nu="0">
+        <DT arr="0" ds="Integer" en="" id="4" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Fk deAc="3" nm="fk_Projects_Users" prLkCl="UserID" upAc="3">
+        <PrTb mn="0" nm="Users" oe="1" sch="TestApril" zr="0"/>
+        <CdTb mn="1" nm="Projects" oe="0" sch="TestApril" zr="1"/>
+        <ClPr cdCl="UserID" prCl="UserID"/>
+      </Fk>
+      <UniqueConstraints/>
+      <SchTrHis/>
+    </Tbl>
+    <Tbl UsSo="1" nm="SampleMediumCV">
+      <TblOpts/>
+      <Pk ClNs="SampleMedium" nm="pkSampleMediumCV"/>
+      <Cl au="0" df="" nm="SampleMedium" nu="0">
+        <DT arr="0" ds="Integer" en="" id="4" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="Definition" nu="1">
+        <DT arr="0" ds="VarChar" en="" id="12" ln="500" sc="null" sg="1" un="0"/>
+      </Cl>
+      <UniqueConstraints/>
+      <SchTrHis/>
+    </Tbl>
+    <Tbl UsSo="1" nm="Samples">
+      <TblOpts/>
+      <Pk ClNs="SampleID" nm="pkSamples"/>
+      <Cl au="1" df="" nm="SampleID" nu="0">
+        <DT arr="0" ds="Integer" en="" id="4" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="SampleTypeCV" nu="0">
+        <DT arr="0" ds="VarChar" en="" id="12" ln="255" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="LabSampleCode" nu="1">
+        <DT arr="0" ds="VarChar" en="" id="12" ln="50" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="SampleMediumCV" nu="1">
+        <DT arr="0" ds="Integer" en="" id="4" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Fk deAc="3" nm="fk_Samples_SampleMediumCV" prLkCl="SampleMedium" upAc="3">
+        <PrTb mn="0" nm="SampleMediumCV" oe="1" sch="TestApril" zr="0"/>
+        <CdTb mn="1" nm="Samples" oe="0" sch="TestApril" zr="1"/>
+        <ClPr cdCl="SampleMediumCV" prCl="SampleMedium"/>
+      </Fk>
+      <Fk deAc="3" nm="fk_Samples_SampleType" prLkCl="SampleType" upAc="3">
+        <PrTb mn="0" nm="SampleType" oe="1" sch="TestApril" zr="0"/>
+        <CdTb mn="1" nm="Samples" oe="0" sch="TestApril" zr="1"/>
+        <ClPr cdCl="SampleTypeCV" prCl="SampleType"/>
+      </Fk>
+      <UniqueConstraints/>
+      <SchTrHis/>
+    </Tbl>
+    <Tbl UsSo="1" nm="SampleType">
+      <TblOpts/>
+      <Pk ClNs="SampleType" nm="pkSampleType"/>
+      <Cl au="0" df="" nm="SampleType" nu="0">
+        <DT arr="0" ds="Char" en="" id="1" ln="255" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="Definition" nu="1">
+        <DT arr="0" ds="VarChar" en="" id="12" ln="500" sc="null" sg="1" un="0"/>
+      </Cl>
+      <UniqueConstraints/>
+      <SchTrHis/>
+    </Tbl>
+    <Tbl UsSo="1" nm="ScenarioData">
+      <TblOpts/>
+      <Pk ClNs="ScenarioDataID" nm="pkScenarioData"/>
+      <Cl au="1" df="" nm="ScenarioDataID" nu="0">
+        <DT arr="0" ds="Integer" en="" id="4" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="AttributeScenarioDataID" nu="0">
+        <DT arr="0" ds="Integer" en="" id="4" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="ScenarioID" nu="0">
+        <DT arr="0" ds="Integer" en="" id="4" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Fk deAc="3" nm="fk_ScenarioData_InstanceAttributeScenarioData" prLkCl="AttributeScenarioDataID" upAc="3">
+        <PrTb mn="0" nm="AttributeScenarioData" oe="1" sch="TestApril" zr="0"/>
+        <CdTb mn="1" nm="ScenarioData" oe="0" sch="TestApril" zr="1"/>
+        <ClPr cdCl="AttributeScenarioDataID" prCl="AttributeScenarioDataID"/>
+      </Fk>
+      <Fk deAc="3" nm="fk_ScenarioData_Scenarios" prLkCl="ScenarioID" upAc="3">
+        <PrTb mn="0" nm="Scenarios" oe="1" sch="TestApril" zr="0"/>
+        <CdTb mn="1" nm="ScenarioData" oe="0" sch="TestApril" zr="1"/>
+        <ClPr cdCl="ScenarioID" prCl="ScenarioID"/>
+      </Fk>
+      <UniqueConstraints/>
+      <SchTrHis/>
+    </Tbl>
+    <Tbl UsSo="1" nm="Scenarios">
+      <TblOpts/>
+      <Pk ClNs="ScenarioID" nm="pkScenarios"/>
+      <Cl au="1" df="" nm="ScenarioID" nu="0">
+        <DT arr="0" ds="Integer" en="" id="4" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="ScenarioName" nu="0">
+        <DT arr="0" ds="VarChar" en="" id="12" ln="255" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="Abbreviation" nu="1">
+        <DT arr="0" ds="VarChar" en="" id="12" ln="50" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="TimeHorizon" nu="1">
+        <DT arr="0" ds="VarChar" en="" id="12" ln="50" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="ReferenceStudyName" nu="1">
+        <DT arr="0" ds="VarChar" en="" id="12" ln="255" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="NetworkID" nu="0">
+        <DT arr="0" ds="Integer" en="" id="4" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="Description" nu="1">
+        <DT arr="0" ds="VarChar" en="" id="12" ln="500" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Fk deAc="3" nm="fk_Scenarios_Networks" prLkCl="NetworkID" upAc="3">
+        <PrTb mn="0" nm="Networks" oe="1" sch="TestApril" zr="0"/>
+        <CdTb mn="1" nm="Scenarios" oe="0" sch="TestApril" zr="1"/>
+        <ClPr cdCl="NetworkID" prCl="NetworkID"/>
+      </Fk>
+      <UniqueConstraints/>
+      <SchTrHis/>
+    </Tbl>
+    <Tbl UsSo="1" nm="SeasonalParameter">
+      <TblOpts/>
+      <Pk ClNs="SeasonalParameterID" nm="pkSeasonalParameter"/>
+      <Cl au="1" df="" nm="SeasonalParameterID" nu="0">
+        <DT arr="0" ds="Integer" en="" id="4" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="SeasonName" nu="0">
+        <DT arr="0" ds="VarChar" en="" id="12" ln="255" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="Value" nu="0">
+        <DT arr="0" ds="Float" en="" id="6" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="Description" nu="1">
+        <DT arr="0" ds="Float" en="" id="6" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="AttributeScenarioDataID" nu="1">
+        <DT arr="0" ds="Integer" en="" id="4" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Fk deAc="3" nm="fk_SeasonalParameter_InstanceAttributeScenarioData" prLkCl="AttributeScenarioDataID" upAc="3">
+        <PrTb mn="0" nm="AttributeScenarioData" oe="1" sch="TestApril" zr="0"/>
+        <CdTb mn="1" nm="SeasonalParameter" oe="0" sch="TestApril" zr="1"/>
+        <ClPr cdCl="AttributeScenarioDataID" prCl="AttributeScenarioDataID"/>
+      </Fk>
+      <UniqueConstraints/>
+      <SchTrHis/>
+    </Tbl>
+    <Tbl UsSo="1" nm="SourceData">
+      <TblOpts/>
+      <Pk ClNs="SouceDataID" nm="pkSourceData"/>
+      <Cl au="1" df="" nm="SouceDataID" nu="0">
+        <DT arr="0" ds="Integer" en="" id="4" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="SourceOriginOrder" nu="0">
+        <DT arr="0" ds="Integer" en="" id="4" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="AttributeScenarioData" nu="0">
+        <DT arr="0" ds="Integer" en="" id="4" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="SourceID" nu="0">
+        <DT arr="0" ds="Integer" en="" id="4" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Fk deAc="3" nm="fk_SourceData_InstanceAttributeScenarioData" prLkCl="AttributeScenarioDataID" upAc="3">
+        <PrTb mn="0" nm="AttributeScenarioData" oe="1" sch="TestApril" zr="0"/>
+        <CdTb mn="1" nm="SourceData" oe="0" sch="TestApril" zr="1"/>
+        <ClPr cdCl="AttributeScenarioData" prCl="AttributeScenarioDataID"/>
+      </Fk>
+      <Fk deAc="3" nm="fk_SourceData_Sources" prLkCl="SourceID" upAc="3">
+        <PrTb mn="0" nm="Sources" oe="1" sch="TestApril" zr="0"/>
+        <CdTb mn="1" nm="SourceData" oe="0" sch="TestApril" zr="1"/>
+        <ClPr cdCl="SourceID" prCl="SourceID"/>
+      </Fk>
+      <UniqueConstraints/>
+      <SchTrHis/>
+    </Tbl>
+    <Tbl UsSo="1" nm="Sources">
+      <TblOpts/>
+      <Pk ClNs="SourceID" nm="pkSources"/>
+      <Cl au="1" df="" nm="SourceID" nu="0">
+        <DT arr="0" ds="Integer" en="" id="4" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="SourceName" nu="0">
+        <DT arr="0" ds="VarChar" en="" id="12" ln="255" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="SourceWebpage" nu="1">
+        <DT arr="0" ds="VarChar" en="" id="12" ln="255" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="Citation" nu="1">
+        <DT arr="0" ds="VarChar" en="" id="12" ln="255" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="OrganizationID" nu="0">
+        <DT arr="0" ds="Integer" en="" id="4" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="ModelID" nu="1">
+        <DT arr="0" ds="Integer" en="" id="4" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="SampleID" nu="1">
+        <DT arr="0" ds="Integer" en="" id="4" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Fk deAc="3" nm="fk_Sources_Models" prLkCl="ModelID" upAc="3">
+        <PrTb mn="0" nm="Models" oe="1" sch="TestApril" zr="0"/>
+        <CdTb mn="1" nm="Sources" oe="0" sch="TestApril" zr="1"/>
+        <ClPr cdCl="ModelID" prCl="ModelID"/>
+      </Fk>
+      <Fk deAc="3" nm="fk_Sources_Organization" prLkCl="OrganizationID" upAc="3">
+        <PrTb mn="0" nm="Organization" oe="1" sch="TestApril" zr="0"/>
+        <CdTb mn="1" nm="Sources" oe="0" sch="TestApril" zr="1"/>
+        <ClPr cdCl="OrganizationID" prCl="OrganizationID"/>
+      </Fk>
+      <Fk deAc="3" nm="fk_Sources_Samples" prLkCl="SampleID" upAc="3">
+        <PrTb mn="0" nm="Samples" oe="1" sch="TestApril" zr="0"/>
+        <CdTb mn="1" nm="Sources" oe="0" sch="TestApril" zr="1"/>
+        <ClPr cdCl="SampleID" prCl="SampleID"/>
+      </Fk>
+      <UniqueConstraints/>
+      <SchTrHis/>
+    </Tbl>
+    <Tbl UsSo="1" nm="SpatialReference">
+      <TblOpts/>
+      <Pk ClNs="SpatialReferenceID" nm="pkSpatialReference"/>
+      <Cl au="1" df="" nm="SpatialReferenceID" nu="0">
+        <DT arr="0" ds="Integer" en="" id="4" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="SRSID" nu="0">
+        <DT arr="0" ds="Integer" en="" id="4" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="IsGeographic" nu="0">
+        <DT arr="0" ds="Bit" en="" id="-7" ln="5" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="Notes" nu="1">
+        <DT arr="0" ds="VarChar" en="" id="12" ln="500" sc="null" sg="1" un="0"/>
+      </Cl>
+      <UniqueConstraints/>
+      <SchTrHis/>
+    </Tbl>
+    <Tbl UsSo="1" nm="TextDescriptorControlled">
+      <TblOpts/>
+      <Pk ClNs="TextControlledID" nm="pkTextDescriptorControlled"/>
+      <Cl au="1" df="" nm="TextControlledID" nu="0">
+        <DT arr="0" ds="Integer" en="" id="4" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="Definition" nu="1">
+        <DT arr="0" ds="VarChar" en="" id="12" ln="500" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="TextValueControlled" nu="1">
+        <DT arr="0" ds="VarChar" en="" id="12" ln="255" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="AttributeScenarioDataID" nu="0">
+        <DT arr="0" ds="Integer" en="" id="4" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Fk deAc="3" nm="fk_TextDescriptorControlled_InstanceAttributeScenarioData" prLkCl="AttributeScenarioDataID" upAc="3">
+        <PrTb mn="0" nm="AttributeScenarioData" oe="1" sch="TestApril" zr="0"/>
+        <CdTb mn="1" nm="TextDescriptorControlled" oe="0" sch="TestApril" zr="1"/>
+        <ClPr cdCl="AttributeScenarioDataID" prCl="AttributeScenarioDataID"/>
+      </Fk>
+      <Fk deAc="3" nm="fk_TextDescriptorControlled_TextValueControlledCV" prLkCl="TextValueControlled" upAc="3">
+        <PrTb mn="0" nm="TextValueControlledCV" oe="1" sch="TestApril" zr="0"/>
+        <CdTb mn="1" nm="TextDescriptorControlled" oe="0" sch="TestApril" zr="1"/>
+        <ClPr cdCl="TextValueControlled" prCl="TextValueControlled"/>
+      </Fk>
+      <UniqueConstraints/>
+      <SchTrHis/>
+    </Tbl>
+    <Tbl UsSo="1" nm="TextDescriptorFree">
+      <TblOpts/>
+      <Pk ClNs="TextFreeID" nm="pkTextDescriptorFree"/>
+      <Cl au="1" df="" nm="TextFreeID" nu="0">
+        <DT arr="0" ds="Integer" en="" id="4" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="TextValue" nu="0">
+        <DT arr="0" ds="VarChar" en="" id="12" ln="500" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="Description" nu="0">
+        <DT arr="0" ds="VarChar" en="" id="12" ln="500" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="AttributeScenarioDataID" nu="0">
+        <DT arr="0" ds="Integer" en="" id="4" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Fk deAc="3" nm="fk_TextDescriptorFree_InstanceAttributeScenarioData" prLkCl="AttributeScenarioDataID" upAc="3">
+        <PrTb mn="0" nm="AttributeScenarioData" oe="1" sch="TestApril" zr="0"/>
+        <CdTb mn="1" nm="TextDescriptorFree" oe="0" sch="TestApril" zr="1"/>
+        <ClPr cdCl="AttributeScenarioDataID" prCl="AttributeScenarioDataID"/>
+      </Fk>
+      <UniqueConstraints/>
+      <SchTrHis/>
+    </Tbl>
+    <Tbl UsSo="1" nm="TextValueControlledCV">
+      <TblOpts/>
+      <Pk ClNs="TextValueControlled" nm="pkTextValueControlledCV"/>
+      <Cl au="0" df="" nm="TextValueControlled" nu="0">
+        <DT arr="0" ds="VarChar" en="" id="12" ln="255" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="Definition" nu="1">
+        <DT arr="0" ds="VarChar" en="" id="12" ln="500" sc="null" sg="1" un="0"/>
+      </Cl>
+      <UniqueConstraints/>
+      <SchTrHis/>
+    </Tbl>
+    <Tbl UsSo="1" nm="TimeSeries">
+      <TblOpts/>
+      <Pk ClNs="TimeSeriesID" nm="pkTimeSeries"/>
+      <Cl au="1" df="" nm="TimeSeriesID" nu="0">
+        <DT arr="0" ds="Integer" en="" id="4" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="LocalDateTime" nu="0">
+        <DT arr="0" ds="DateTime" en="" id="700" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="DateTimeUTC" nu="1">
+        <DT arr="0" ds="DateTime" en="" id="700" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="Value" nu="0">
+        <DT arr="0" ds="Float" en="" id="6" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="CensorCode" nu="1">
+        <DT arr="0" ds="Char" en="" id="1" ln="50" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="TimeSereisMetadataID" nu="1">
+        <DT arr="0" ds="Integer" en="" id="4" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="AttributeScenarioDataID" nu="1">
+        <DT arr="0" ds="Integer" en="" id="4" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Fk deAc="3" nm="fk_TimeSeries_CensorCodeCV" prLkCl="CensorCode" upAc="3">
+        <PrTb mn="0" nm="CensorCodeCV" oe="1" sch="TestApril" zr="0"/>
+        <CdTb mn="1" nm="TimeSeries" oe="0" sch="TestApril" zr="1"/>
+        <ClPr cdCl="CensorCode" prCl="CensorCode"/>
+      </Fk>
+      <Fk deAc="3" nm="fk_TimeSeries_InstanceAttributeScenarioData" prLkCl="AttributeScenarioDataID" upAc="3">
+        <PrTb mn="0" nm="AttributeScenarioData" oe="1" sch="TestApril" zr="0"/>
+        <CdTb mn="1" nm="TimeSeries" oe="0" sch="TestApril" zr="1"/>
+        <ClPr cdCl="AttributeScenarioDataID" prCl="AttributeScenarioDataID"/>
+      </Fk>
+      <Fk deAc="3" nm="fk_TimeSeries_TimeSeriesMetadata" prLkCl="TimeSereisMetadataID" upAc="3">
+        <PrTb mn="0" nm="TimeSeriesMetadata" oe="1" sch="TestApril" zr="0"/>
+        <CdTb mn="1" nm="TimeSeries" oe="0" sch="TestApril" zr="1"/>
+        <ClPr cdCl="TimeSereisMetadataID" prCl="TimeSereisMetadataID"/>
+      </Fk>
+      <UniqueConstraints/>
+      <SchTrHis/>
+    </Tbl>
+    <Tbl UsSo="1" nm="TimeSeriesMetadata">
+      <TblOpts/>
+      <Pk ClNs="TimeSereisMetadataID" nm="pkTimeSeriesMetadata"/>
+      <Cl au="1" df="" nm="TimeSereisMetadataID" nu="0">
+        <DT arr="0" ds="Integer" en="" id="4" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="SiteLatitude" nu="1">
+        <DT arr="0" ds="Float" en="" id="6" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="ODMSiteName" nu="1">
+        <DT arr="0" ds="VarChar" en="" id="12" ln="255" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="SiteLongitude" nu="1">
+        <DT arr="0" ds="Float" en="" id="6" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="IsRegular" nu="1">
+        <DT arr="0" ds="Bit" en="" id="-7" ln="5" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="TimeSupport" nu="1">
+        <DT arr="0" ds="Integer" en="" id="4" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="UTCOffset" nu="0">
+        <DT arr="0" ds="Float" en="" id="6" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="TimeUnitID" nu="0">
+        <DT arr="0" ds="Integer" en="" id="4" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Fk deAc="3" nm="fk_TimeSeriesMetadata_Units" prLkCl="UnitID" upAc="3">
+        <PrTb mn="0" nm="Units" oe="1" sch="TestApril" zr="0"/>
+        <CdTb mn="1" nm="TimeSeriesMetadata" oe="0" sch="TestApril" zr="1"/>
+        <ClPr cdCl="TimeUnitID" prCl="UnitID"/>
+      </Fk>
+      <UniqueConstraints/>
+      <SchTrHis/>
+    </Tbl>
+    <Tbl UsSo="1" nm="Units">
+      <TblOpts/>
+      <Pk ClNs="UnitID" nm="pkUnits"/>
+      <Cl au="0" df="" nm="UnitID" nu="0">
+        <DT arr="0" ds="Integer" en="" id="4" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="UnitType" nu="0">
+        <DT arr="0" ds="VarChar" en="" id="12" ln="255" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="UnitName" nu="0">
+        <DT arr="0" ds="VarChar" en="" id="12" ln="255" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="UnitAbbreviation" nu="0">
+        <DT arr="0" ds="Char" en="" id="1" ln="50" sc="null" sg="1" un="0"/>
+      </Cl>
+      <UniqueConstraints/>
+      <SchTrHis/>
+    </Tbl>
+    <Tbl UsSo="1" nm="Users">
+      <TblOpts/>
+      <Pk ClNs="UserID" nm="pkUsers"/>
+      <Cl au="1" df="" nm="UserID" nu="0">
+        <DT arr="0" ds="Integer" en="" id="4" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="Description" nu="1">
+        <DT arr="0" ds="VarChar" en="" id="12" ln="500" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="PersonID" nu="0">
+        <DT arr="0" ds="Integer" en="" id="4" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Fk deAc="3" nm="fk_Users_Peopel" prLkCl="PersonID" upAc="3">
+        <PrTb mn="0" nm="Peopel" oe="1" sch="TestApril" zr="0"/>
+        <CdTb mn="1" nm="Users" oe="0" sch="TestApril" zr="1"/>
+        <ClPr cdCl="PersonID" prCl="PersonID"/>
+      </Fk>
+      <UniqueConstraints/>
+      <SchTrHis/>
+    </Tbl>
+    <Tbl UsSo="1" nm="VerticalDatumCV">
+      <TblOpts/>
+      <Pk ClNs="VerticalDatum" nm="pkVerticalDatumCV"/>
+      <Cl au="0" df="" nm="VerticalDatum" nu="0">
+        <DT arr="0" ds="VarChar" en="" id="12" ln="255" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="Definition" nu="1">
+        <DT arr="0" ds="VarChar" en="" id="12" ln="500" sc="null" sg="1" un="0"/>
+      </Cl>
+      <UniqueConstraints/>
+      <SchTrHis/>
+    </Tbl>
+    <CustomTypes/>
+  </Sch>
+  <Dgm nm="WaMDaM">
+    <RnCf ClkAct="true" FtSz="13" lkStgy="OffsetDirect" zm="1.0">
+      <VbCfg>
+        <Fg ky="Auto Number" vl="1"/>
+        <Fg ky="Check" vl="0"/>
+        <Fg ky="Comment" vl="0"/>
+        <Fg ky="Data Type" vl="1"/>
+        <Fg ky="Default" vl="0"/>
+        <Fg ky="ENUM Values" vl="0"/>
+        <Fg ky="Length" vl="1"/>
+        <Fg ky="Name" vl="1"/>
+        <Fg ky="Nullable" vl="1"/>
+        <Fg ky="Schema Name" vl="0"/>
+        <Fg ky="Signed" vl="0"/>
+      </VbCfg>
+    </RnCf>
+    <DiaProps>
+      <Show AllCols="1" FkCols="1" FkNms="0" PkCols="1"/>
+      <ErNotation>DbwErNotation</ErNotation>
+      <DbTableRectangleFill>BasicRectangleFill</DbTableRectangleFill>
+      <svg path=""/>
+    </DiaProps>
+    <TbGl bkCl="ffc3e57e" sch="TestApril" tbl="Users" x="106" y="112"/>
+    <TbGl bkCl="ffc3e57e" sch="TestApril" tbl="Projects" x="58" y="836"/>
+    <TbGl bkCl="ffc3e57e" sch="TestApril" tbl="NodeObjects" x="305" y="601"/>
+    <TbGl bkCl="ffc3e57e" sch="TestApril" tbl="LinkObjects" x="334" y="1091"/>
+    <TbGl bkCl="ffc3e57e" sch="TestApril" tbl="NodeObjectAttributes" x="794" y="674"/>
+    <TbGl bkCl="ffc3e57e" sch="TestApril" tbl="LinkObjectAttributes" x="862" y="1128"/>
+    <TbGl bkCl="ffc3e57e" sch="TestApril" tbl="Attributes" x="794" y="967"/>
+    <TbGl bkCl="ff7ec3e5" sch="TestApril" tbl="Networks" x="1129" y="837"/>
+    <TbGl bkCl="ff7ec3e5" sch="TestApril" tbl="Scenarios" x="1488" y="834"/>
+    <TbGl bkCl="ff7ec3e5" sch="TestApril" tbl="LinkInstances" x="1193" y="1267"/>
+    <TbGl bkCl="ff7ec3e5" sch="TestApril" tbl="NodeInstances" x="1293" y="404"/>
+    <TbGl bkCl="ffe5b181" sch="TestApril" tbl="Methods" x="1915" y="483"/>
+    <TbGl bkCl="ffe5b181" sch="TestApril" tbl="Models" x="3006" y="712"/>
+    <TbGl bkCl="ffe5b181" sch="TestApril" tbl="PoliticalJurisdictionalNodeInstace" x="2170" y="240"/>
+    <TbGl bkCl="ffe5b181" sch="TestApril" tbl="PoliticalJurisdictions" x="2460" y="0"/>
+    <TbGl bkCl="ff8f7ee5" sch="TestApril" tbl="NodeObjectNameCV" x="257" y="456"/>
+    <TbGl bkCl="ff8f7ee5" sch="TestApril" tbl="LinkObjectNameCV" x="174" y="1358"/>
+    <TbGl bkCl="ff8f7ee5" sch="TestApril" tbl="NodeAttributeCategoryCV" x="847" y="252"/>
+    <TbGl bkCl="ff8f7ee5" sch="TestApril" tbl="LinkAttributeCategoryCV" x="652" y="1669"/>
+    <TbGl bkCl="ff8f7ee5" sch="TestApril" tbl="AttributeNameCV" x="432" y="955"/>
+    <TbGl bkCl="ff8f7ee5" sch="TestApril" tbl="SpatialReference" x="1251" y="228"/>
+    <TbGl bkCl="ff8f7ee5" sch="TestApril" tbl="AttributeFormatCV" x="1417" y="1065"/>
+    <TbGl bkCl="ff8f7ee5" sch="TestApril" tbl="SampleMediumCV" x="3030" y="629"/>
+    <TbGl bkCl="ff8f7ee5" sch="TestApril" tbl="DataTypeCV" x="2177" y="838"/>
+    <TbGl bkCl="ff8f7ee5" sch="TestApril" tbl="Units" x="2476" y="877"/>
+    <TbGl bkCl="ff8f7ee5" sch="TestApril" tbl="CensorCodeCV" x="3018" y="1086"/>
+    <TbGl bkCl="ff8f7ee5" sch="TestApril" tbl="TextValueControlledCV" x="1028" y="1713"/>
+    <TbGl bkCl="ff8f7ee5" sch="TestApril" tbl="SampleType" x="3161" y="385"/>
+    <TbGl bkCl="ffc3e57e" sch="TestApril" tbl="NodeAttributeCategory" x="769" y="500"/>
+    <TbGl bkCl="ffc3e57e" sch="TestApril" tbl="LinkAttributeCategory" x="714" y="1442"/>
+    <TbGl bkCl="ffc3e57e" sch="TestApril" tbl="LinkObjectCategory" x="245" y="1523"/>
+    <TbGl bkCl="ff8f7ee5" sch="TestApril" tbl="LinkObjectCategoryCV" x="226" y="1697"/>
+    <TbGl bkCl="ffc3e57e" sch="TestApril" tbl="NodeObjectCategory" x="482" y="360"/>
+    <TbGl bkCl="ff8f7ee5" sch="TestApril" tbl="NodeObjectCategoryCV" x="482" y="212"/>
+    <TbGl bkCl="ffe5b181" sch="TestApril" tbl="Organization" x="2660" y="448"/>
+    <TbGl bkCl="ff8f7ee5" sch="TestApril" tbl="OrganizationType" x="2618" y="338"/>
+    <TbGl bkCl="ffe5b181" sch="TestApril" tbl="Peopel" x="2002" y="114"/>
+    <TbGl bkCl="ff8f7ee5" sch="TestApril" tbl="MethodTypeCV" x="2127" y="372"/>
+    <TbGl bkCl="ffe5b181" sch="TestApril" tbl="Affiliations" x="3042" y="65"/>
+    <TbGl bkCl="ffe5b181" sch="TestApril" tbl="Samples" x="3016" y="474"/>
+    <TbGl bkCl="ffe5b181" sch="TestApril" tbl="Sources" x="2583" y="659"/>
+    <TbGl bkCl="ffe5b181" sch="TestApril" tbl="AffiliationSources" x="3007" y="278"/>
+    <TbGl bkCl="ffe57e7e" sch="TestApril" tbl="AttributeScenarioData" x="1743" y="1000"/>
+    <TbGl bkCl="ffe57e7e" sch="TestApril" tbl="Parameter" x="1567" y="1433"/>
+    <TbGl bkCl="ffe57e7e" sch="TestApril" tbl="SeasonalParameter" x="2781" y="1578"/>
+    <TbGl bkCl="ffe57e7e" sch="TestApril" tbl="FileBased" x="1912" y="1750"/>
+    <TbGl bkCl="ffe57e7e" sch="TestApril" tbl="MultiColumns" x="2463" y="1262"/>
+    <TbGl bkCl="ffe57e7e" sch="TestApril" tbl="Columns" x="2935" y="1218"/>
+    <TbGl bkCl="ffe57e7e" sch="TestApril" tbl="MultiColumnValues" x="3024" y="1431"/>
+    <TbGl bkCl="ffe57e7e" sch="TestApril" tbl="BinaryData" x="2044" y="1525"/>
+    <TbGl bkCl="ffe57e7e" sch="TestApril" tbl="TextDescriptorFree" x="2335" y="1662"/>
+    <TbGl bkCl="ffe57e7e" sch="TestApril" tbl="TextDescriptorControlled" x="1445" y="1696"/>
+    <TbGl bkCl="ffe57e7e" sch="TestApril" tbl="TimeSeries" x="2454" y="1016"/>
+    <TbGl bkCl="ffe5b181" sch="TestApril" tbl="TimeSeriesMetadata" x="2974" y="887"/>
+    <TbGl bkCl="ffe5b181" sch="TestApril" tbl="SourceData" x="2072" y="689"/>
+    <TbGl bkCl="ff7ec3e5" sch="TestApril" tbl="LinkInstanceAttributeScenarioData" x="1159" y="1579"/>
+    <TbGl bkCl="ff7ec3e5" sch="TestApril" tbl="NodeInstanceAttributeScenarioData" x="1651" y="246"/>
+    <TbGl bkCl="ff7ec3e5" sch="TestApril" tbl="ScenarioData" x="1450" y="642"/>
+    <FkGl bkCl="ff000000" childEdge="SOUTH" nm="TestApril.Affiliations.fk_Affiliations_Organization" parentEdge="NORTH" positioner="">
+      <positionableLines/>
+    </FkGl>
+    <FkGl bkCl="ff000000" childEdge="WEST" nm="TestApril.Affiliations.fk_Affiliations_Peopel" parentEdge="EAST" positioner="">
+      <positionableLines/>
+    </FkGl>
+    <FkGl bkCl="ff000000" childEdge="NORTH" nm="TestApril.AffiliationSources.fk_AffiliationSources_Affiliations" parentEdge="SOUTH" positioner="">
+      <positionableLines/>
+    </FkGl>
+    <FkGl bkCl="ff000000" childEdge="SOUTH" nm="TestApril.AffiliationSources.fk_AffiliationSources_Sources" parentEdge="NORTH" positioner="">
+      <positionableLines/>
+    </FkGl>
+    <FkGl bkCl="ff000000" childEdge="WEST" nm="TestApril.Attributes.fk_Attributes_AttributeNameCV" parentEdge="EAST" positioner="">
+      <positionableLines/>
+    </FkGl>
+    <FkGl bkCl="ff000000" childEdge="SOUTH" nm="TestApril.AttributeScenarioData.fk_InstanceAttributeScenarioData_AttributeFormatCV" parentEdge="EAST" positioner="">
+      <positionableLines/>
+    </FkGl>
+    <FkGl bkCl="ff000000" childEdge="WEST" nm="TestApril.AttributeScenarioData.fk_InstanceAttributeScenarioData_Attributes" parentEdge="EAST" positioner="">
+      <positionableLines/>
+    </FkGl>
+    <FkGl bkCl="ff000000" childEdge="SOUTH" nm="TestApril.AttributeScenarioData.fk_InstanceAttributeScenarioData_DataTypeCV" parentEdge="EAST" positioner="">
+      <positionableLines/>
+    </FkGl>
+    <FkGl bkCl="ff000000" childEdge="NORTH" nm="TestApril.AttributeScenarioData.fk_InstanceAttributeScenarioData_Methods" parentEdge="EAST" positioner="">
+      <positionableLines/>
+    </FkGl>
+    <FkGl bkCl="ff000000" childEdge="NORTH" nm="TestApril.AttributeScenarioData.fk_InstanceAttributeScenarioData_Units" parentEdge="WEST" positioner="">
+      <positionableLines/>
+    </FkGl>
+    <FkGl bkCl="ff000000" childEdge="WEST" nm="TestApril.BinaryData.fk_BinaryData_InstanceAttributeScenarioData" parentEdge="SOUTH" positioner="">
+      <positionableLines/>
+    </FkGl>
+    <FkGl bkCl="ff000000" childEdge="WEST" nm="TestApril.Columns.fk_Columns_InstanceAttributeScenarioData" parentEdge="SOUTH" positioner="">
+      <positionableLines/>
+    </FkGl>
+    <FkGl bkCl="ff000000" childEdge="NORTH" nm="TestApril.FileBased.fk_FileBased_InstanceAttributeScenarioData" parentEdge="SOUTH" positioner="">
+      <positionableLines/>
+    </FkGl>
+    <FkGl bkCl="ff000000" childEdge="SOUTH" nm="TestApril.LinkAttributeCategory.fk_LinkAttributeCategory_LinkAttributeCategory" parentEdge="NORTH" positioner="">
+      <positionableLines/>
+    </FkGl>
+    <FkGl bkCl="ff000000" childEdge="SOUTH" nm="TestApril.LinkAttributeCategory.fk_LinkAttributeCategory_LinkAttributeCategoryCV" parentEdge="NORTH" positioner="">
+      <positionableLines/>
+    </FkGl>
+    <FkGl bkCl="ff000000" childEdge="EAST" nm="TestApril.LinkInstanceAttributeScenarioData.fk_LinkInstanceData_InstanceAttributeScenarioData" parentEdge="SOUTH" positioner="">
+      <positionableLines/>
+    </FkGl>
+    <FkGl bkCl="ff000000" childEdge="WEST" nm="TestApril.LinkInstanceAttributeScenarioData.fk_LinkInstanceData_LinkInstances" parentEdge="EAST" positioner="">
+      <positionableLines/>
+    </FkGl>
+    <FkGl bkCl="ff000000" childEdge="" nm="TestApril.LinkInstances.fk_LinkInstances_LinkObjects" parentEdge="" positioner="">
+      <positionableLines/>
+    </FkGl>
+    <FkGl bkCl="ff000000" childEdge="NORTH" nm="TestApril.LinkInstances.fk_LinkInstances_Networks" parentEdge="SOUTH" positioner="">
+      <positionableLines/>
+    </FkGl>
+    <FkGl bkCl="ff000000" childEdge="NORTH" nm="TestApril.LinkInstances.fk_LinkInstances_NodeInstances" parentEdge="SOUTH" positioner="">
+      <positionableLines/>
+    </FkGl>
+    <FkGl bkCl="ff000000" childEdge="NORTH" nm="TestApril.LinkObjectAttributes.fk_LinkObjectAttributes_Attributes" parentEdge="SOUTH" positioner="">
+      <positionableLines/>
+    </FkGl>
+    <FkGl bkCl="ff000000" childEdge="SOUTH" nm="TestApril.LinkObjectAttributes.fk_LinkObjectAttributes_LinkAttributeCategory" parentEdge="NORTH" positioner="">
+      <positionableLines/>
+    </FkGl>
+    <FkGl bkCl="ff000000" childEdge="WEST" nm="TestApril.LinkObjectAttributes.fk_LinkObjectAttributes_LinkObjects" parentEdge="EAST" positioner="">
+      <positionableLines/>
+    </FkGl>
+    <FkGl bkCl="ff000000" childEdge="SOUTH" nm="TestApril.LinkObjectCategory.fk_LinkObjectCategory_LinkObjectCategory" parentEdge="NORTH" positioner="">
+      <positionableLines/>
+    </FkGl>
+    <FkGl bkCl="ff000000" childEdge="SOUTH" nm="TestApril.LinkObjectCategory.fk_LinkObjectCategory_LinkObjectCategoryCV" parentEdge="NORTH" positioner="">
+      <positionableLines/>
+    </FkGl>
+    <FkGl bkCl="ff000000" childEdge="SOUTH" nm="TestApril.LinkObjects.fk_LinkObjects_LinkObjectCategory" parentEdge="NORTH" positioner="">
+      <positionableLines/>
+    </FkGl>
+    <FkGl bkCl="ff000000" childEdge="SOUTH" nm="TestApril.LinkObjects.fk_LinkObjects_LinkObjectNameCV" parentEdge="NORTH" positioner="">
+      <positionableLines/>
+    </FkGl>
+    <FkGl bkCl="ff000000" childEdge="NORTH" nm="TestApril.LinkObjects.fk_NodeObjects_Projects" parentEdge="EAST" positioner="">
+      <positionableLines/>
+    </FkGl>
+    <FkGl bkCl="ff000000" childEdge="SOUTH" nm="TestApril.Methods.fk_Methods_MethodTypeCV" parentEdge="NORTH" positioner="">
+      <positionableLines/>
+    </FkGl>
+    <FkGl bkCl="ff000000" childEdge="EAST" nm="TestApril.Methods.fk_Methods_Organization" parentEdge="WEST" positioner="">
+      <positionableLines/>
+    </FkGl>
+    <FkGl bkCl="ff000000" childEdge="NORTH" nm="TestApril.Methods.fk_Methods_Peopel" parentEdge="SOUTH" positioner="">
+      <positionableLines/>
+    </FkGl>
+    <FkGl bkCl="ff000000" childEdge="" nm="TestApril.MultiColumns.fk_MultiColumns_Columns" parentEdge="" positioner="">
+      <positionableLines/>
+    </FkGl>
+    <FkGl bkCl="ff000000" childEdge="NORTH" nm="TestApril.MultiColumns.fk_MultiColumns_InstanceAttributeScenarioData" parentEdge="SOUTH" positioner="">
+      <positionableLines/>
+    </FkGl>
+    <FkGl bkCl="ff000000" childEdge="NORTH" nm="TestApril.MultiColumnValues.fk_MultiColumnValues_MultiColumns" parentEdge="SOUTH" positioner="">
+      <positionableLines/>
+    </FkGl>
+    <FkGl bkCl="ff000000" childEdge="WEST" nm="TestApril.Networks.fk_Networks_Projects" parentEdge="EAST" positioner="">
+      <positionableLines/>
+    </FkGl>
+    <FkGl bkCl="ff000000" childEdge="SOUTH" nm="TestApril.NodeAttributeCategory.fk_NodeAttributeCategory_NodeAttributeCategory" parentEdge="NORTH" positioner="">
+      <positionableLines/>
+    </FkGl>
+    <FkGl bkCl="ff000000" childEdge="NORTH" nm="TestApril.NodeAttributeCategory.fk_NodeAttributeCategory_NodeAttributeCategoryCV" parentEdge="SOUTH" positioner="">
+      <positionableLines/>
+    </FkGl>
+    <FkGl bkCl="ff000000" childEdge="EAST" nm="TestApril.NodeInstanceAttributeScenarioData.fk_NodeInstanceData_InstanceAttributeScenarioData" parentEdge="NORTH" positioner="">
+      <positionableLines/>
+    </FkGl>
+    <FkGl bkCl="ff000000" childEdge="WEST" nm="TestApril.NodeInstanceAttributeScenarioData.fk_NodeInstanceData_NodeInstances" parentEdge="EAST" positioner="">
+      <positionableLines/>
+    </FkGl>
+    <FkGl bkCl="ff000000" childEdge="SOUTH" nm="TestApril.NodeInstances.fk_NodeInstances_Networks" parentEdge="NORTH" positioner="">
+      <positionableLines/>
+    </FkGl>
+    <FkGl bkCl="ff000000" childEdge="" nm="TestApril.NodeInstances.fk_NodeInstances_NodeObjects" parentEdge="" positioner="">
+      <positionableLines/>
+    </FkGl>
+    <FkGl bkCl="ff000000" childEdge="NORTH" nm="TestApril.NodeInstances.fk_NodeInstances_SpatialReference" parentEdge="WEST" positioner="">
+      <positionableLines/>
+    </FkGl>
+    <FkGl bkCl="ff000000" childEdge="SOUTH" nm="TestApril.NodeObjectAttributes.fk_NodeObjectAttributes_Attributes" parentEdge="NORTH" positioner="">
+      <positionableLines/>
+    </FkGl>
+    <FkGl bkCl="ff000000" childEdge="NORTH" nm="TestApril.NodeObjectAttributes.fk_NodeObjectAttributes_NodeAttributeCategory" parentEdge="SOUTH" positioner="">
+      <positionableLines/>
+    </FkGl>
+    <FkGl bkCl="ff000000" childEdge="WEST" nm="TestApril.NodeObjectAttributes.fk_NodeObjectAttributes_NodeObjects" parentEdge="EAST" positioner="">
+      <positionableLines/>
+    </FkGl>
+    <FkGl bkCl="ff000000" childEdge="SOUTH" nm="TestApril.NodeObjectCategory.fk_NodeObjectCategory_NodeObjectCategory" parentEdge="NORTH" positioner="">
+      <positionableLines/>
+    </FkGl>
+    <FkGl bkCl="ff000000" childEdge="NORTH" nm="TestApril.NodeObjectCategory.fk_NodeObjectCategory_NodeObjectCategoryCV" parentEdge="SOUTH" positioner="">
+      <positionableLines/>
+    </FkGl>
+    <FkGl bkCl="ff000000" childEdge="NORTH" nm="TestApril.NodeObjects.fk_NodeObjects_NodeObjectCategoryCV" parentEdge="SOUTH" positioner="">
+      <positionableLines/>
+    </FkGl>
+    <FkGl bkCl="ff000000" childEdge="NORTH" nm="TestApril.NodeObjects.fk_NodeObjects_NodeObjectNameCV" parentEdge="SOUTH" positioner="">
+      <positionableLines/>
+    </FkGl>
+    <FkGl bkCl="ff000000" childEdge="SOUTH" nm="TestApril.NodeObjects.fk_NodeObjects_Projects" parentEdge="EAST" positioner="">
+      <positionableLines/>
+    </FkGl>
+    <FkGl bkCl="ff000000" childEdge="SOUTH" nm="TestApril.Organization.fk_Organization_Organization" parentEdge="NORTH" positioner="">
+      <positionableLines/>
+    </FkGl>
+    <FkGl bkCl="ff000000" childEdge="NORTH" nm="TestApril.Organization.fk_Organization_OrganizationType" parentEdge="SOUTH" positioner="">
+      <positionableLines/>
+    </FkGl>
+    <FkGl bkCl="ff000000" childEdge="NORTH" nm="TestApril.Parameter.fk_Parameter_InstanceAttributeScenarioData" parentEdge="SOUTH" positioner="">
+      <positionableLines/>
+    </FkGl>
+    <FkGl bkCl="ff000000" childEdge="WEST" nm="TestApril.PoliticalJurisdictionalNodeInstace.fk_PoliticalJurisdictionalNodeInstace_NodeInstances" parentEdge="NORTH" positioner="">
+      <positionableLines/>
+    </FkGl>
+    <FkGl bkCl="ff000000" childEdge="NORTH" nm="TestApril.PoliticalJurisdictionalNodeInstace.fk_PoliticalJurisdictionalNodeInstace_PoliticalJurisdictions" parentEdge="SOUTH" positioner="">
+      <positionableLines/>
+    </FkGl>
+    <FkGl bkCl="ff000000" childEdge="NORTH" nm="TestApril.Projects.fk_Projects_Users" parentEdge="SOUTH" positioner="">
+      <positionableLines/>
+    </FkGl>
+    <FkGl bkCl="ff000000" childEdge="NORTH" nm="TestApril.Samples.fk_Samples_SampleMediumCV" parentEdge="SOUTH" positioner="">
+      <positionableLines/>
+    </FkGl>
+    <FkGl bkCl="ff000000" childEdge="NORTH" nm="TestApril.Samples.fk_Samples_SampleType" parentEdge="SOUTH" positioner="">
+      <positionableLines/>
+    </FkGl>
+    <FkGl bkCl="ff000000" childEdge="EAST" nm="TestApril.ScenarioData.fk_ScenarioData_InstanceAttributeScenarioData" parentEdge="WEST" positioner="">
+      <positionableLines/>
+    </FkGl>
+    <FkGl bkCl="ff000000" childEdge="WEST" nm="TestApril.ScenarioData.fk_ScenarioData_Scenarios" parentEdge="EAST" positioner="">
+      <positionableLines/>
+    </FkGl>
+    <FkGl bkCl="ff000000" childEdge="WEST" nm="TestApril.Scenarios.fk_Scenarios_Networks" parentEdge="EAST" positioner="">
+      <positionableLines/>
+    </FkGl>
+    <FkGl bkCl="ff000000" childEdge="WEST" nm="TestApril.SeasonalParameter.fk_SeasonalParameter_InstanceAttributeScenarioData" parentEdge="SOUTH" positioner="">
+      <positionableLines/>
+    </FkGl>
+    <FkGl bkCl="ff000000" childEdge="SOUTH" nm="TestApril.SourceData.fk_SourceData_InstanceAttributeScenarioData" parentEdge="NORTH" positioner="">
+      <positionableLines/>
+    </FkGl>
+    <FkGl bkCl="ff000000" childEdge="EAST" nm="TestApril.SourceData.fk_SourceData_Sources" parentEdge="SOUTH" positioner="">
+      <positionableLines/>
+    </FkGl>
+    <FkGl bkCl="ff000000" childEdge="SOUTH" nm="TestApril.Sources.fk_Sources_Models" parentEdge="NORTH" positioner="">
+      <positionableLines/>
+    </FkGl>
+    <FkGl bkCl="ff000000" childEdge="WEST" nm="TestApril.Sources.fk_Sources_Organization" parentEdge="EAST" positioner="">
+      <positionableLines/>
+    </FkGl>
+    <FkGl bkCl="ff000000" childEdge="NORTH" nm="TestApril.Sources.fk_Sources_Samples" parentEdge="SOUTH" positioner="">
+      <positionableLines/>
+    </FkGl>
+    <FkGl bkCl="ff000000" childEdge="WEST" nm="TestApril.TextDescriptorControlled.fk_TextDescriptorControlled_InstanceAttributeScenarioData" parentEdge="SOUTH" positioner="">
+      <positionableLines/>
+    </FkGl>
+    <FkGl bkCl="ff000000" childEdge="NORTH" nm="TestApril.TextDescriptorControlled.fk_TextDescriptorControlled_TextValueControlledCV" parentEdge="SOUTH" positioner="">
+      <positionableLines/>
+    </FkGl>
+    <FkGl bkCl="ff000000" childEdge="NORTH" nm="TestApril.TextDescriptorFree.fk_TextDescriptorFree_InstanceAttributeScenarioData" parentEdge="EAST" positioner="">
+      <positionableLines/>
+    </FkGl>
+    <FkGl bkCl="ff000000" childEdge="SOUTH" nm="TestApril.TimeSeries.fk_TimeSeries_CensorCodeCV" parentEdge="NORTH" positioner="">
+      <positionableLines/>
+    </FkGl>
+    <FkGl bkCl="ff000000" childEdge="WEST" nm="TestApril.TimeSeries.fk_TimeSeries_InstanceAttributeScenarioData" parentEdge="EAST" positioner="">
+      <positionableLines/>
+    </FkGl>
+    <FkGl bkCl="ff000000" childEdge="NORTH" nm="TestApril.TimeSeries.fk_TimeSeries_TimeSeriesMetadata" parentEdge="SOUTH" positioner="">
+      <positionableLines/>
+    </FkGl>
+    <FkGl bkCl="ff000000" childEdge="SOUTH" nm="TestApril.TimeSeriesMetadata.fk_TimeSeriesMetadata_Units" parentEdge="NORTH" positioner="">
+      <positionableLines/>
+    </FkGl>
+    <FkGl bkCl="ff000000" childEdge="EAST" nm="TestApril.Users.fk_Users_Peopel" parentEdge="WEST" positioner="">
+      <positionableLines/>
+    </FkGl>
+    <Notes/>
+    <Zones/>
+  </Dgm>
+  <RnmMgr NxRnmId="171">
+    <RnmCh ObjCls="Schema" ParCls="Database" ParNme="newDb" SupCls="" SupNme="">
+      <Rnm id="55" nNm="TestApril" oNm="WaMDaMApril"/>
+      <Rnm id="54" nNm="WaMDaMApril" oNm="WaMDaM"/>
+      <Rnm id="1" nNm="WaMDaM" oNm="schemaA"/>
+    </RnmCh>
+    <RnmCh ObjCls="Column" ParCls="Table" ParNme="Users" SupCls="Schema" SupNme="WaMDaM">
+      <Rnm id="2" nNm="UserID" oNm="Id"/>
+    </RnmCh>
+    <RnmCh ObjCls="Column" ParCls="Table" ParNme="Projects" SupCls="Schema" SupNme="WaMDaM">
+      <Rnm id="3" nNm="ProjectID" oNm="Id"/>
+    </RnmCh>
+    <RnmCh ObjCls="Column" ParCls="Table" ParNme="NodeObjects" SupCls="Schema" SupNme="WaMDaM">
+      <Rnm id="4" nNm="NodeObjectID" oNm="Id"/>
+    </RnmCh>
+    <RnmCh ObjCls="Column" ParCls="Table" ParNme="LinkObjects" SupCls="Schema" SupNme="WaMDaM">
+      <Rnm id="5" nNm="LinkObjectID" oNm="NodeObjectID"/>
+    </RnmCh>
+    <RnmCh ObjCls="Column" ParCls="Table" ParNme="LinkObjects" SupCls="Schema" SupNme="WaMDaM">
+      <Rnm id="6" nNm="LinkObjectName" oNm="NodeObjectName"/>
+    </RnmCh>
+    <RnmCh ObjCls="Column" ParCls="Table" ParNme="LinkObjects" SupCls="Schema" SupNme="WaMDaM">
+      <Rnm id="7" nNm="LinkObjectCode" oNm="NodeObjectCode"/>
+    </RnmCh>
+    <RnmCh ObjCls="Column" ParCls="Table" ParNme="NodeObjectAttributes" SupCls="Schema" SupNme="WaMDaM">
+      <Rnm id="12" nNm="NodeObjectAttributeID" oNm="LinkObjectAttributeID"/>
+      <Rnm id="10" nNm="LinkObjectAttributeID" oNm="ObjectAttributeID"/>
+      <Rnm id="8" nNm="ObjectAttributeID" oNm="Id"/>
+    </RnmCh>
+    <RnmCh ObjCls="Column" ParCls="Table" ParNme="LinkObjectAttributes" SupCls="Schema" SupNme="WaMDaM">
+      <Rnm id="9" nNm="LinkObjectAttributeID" oNm="ObjectAttributeID"/>
+    </RnmCh>
+    <RnmCh ObjCls="Column" ParCls="Table" ParNme="Attributes" SupCls="Schema" SupNme="WaMDaM">
+      <Rnm id="11" nNm="AttributesID" oNm="Id"/>
+    </RnmCh>
+    <RnmCh ObjCls="Column" ParCls="Table" ParNme="Networks" SupCls="Schema" SupNme="WaMDaM">
+      <Rnm id="13" nNm="NetworkID" oNm="Id"/>
+    </RnmCh>
+    <RnmCh ObjCls="Column" ParCls="Table" ParNme="Scenarios" SupCls="Schema" SupNme="WaMDaM">
+      <Rnm id="14" nNm="ScenarioID" oNm="Id"/>
+    </RnmCh>
+    <RnmCh ObjCls="Column" ParCls="Table" ParNme="ScenarioData" SupCls="Schema" SupNme="WaMDaM">
+      <Rnm id="15" nNm="ScenarioDataID" oNm="Id"/>
+    </RnmCh>
+    <RnmCh ObjCls="Column" ParCls="Table" ParNme="AttributeScenarioData" SupCls="Schema" SupNme="WaMDaM">
+      <Rnm id="27" nNm="InstanceAttributeScenarioDataID" oNm="InstanceAttributeScenarioData"/>
+      <Rnm id="16" nNm="InstanceAttributeScenarioData" oNm="Id"/>
+    </RnmCh>
+    <RnmCh ObjCls="Column" ParCls="Table" ParNme="LinkInstanceAttributeScenarioData" SupCls="Schema" SupNme="WaMDaM">
+      <Rnm id="17" nNm="LinkInstanceDataID" oNm="Id"/>
+    </RnmCh>
+    <RnmCh ObjCls="Column" ParCls="Table" ParNme="LinkInstances" SupCls="Schema" SupNme="WaMDaM">
+      <Rnm id="18" nNm="LinkInstanceID" oNm="Id"/>
+    </RnmCh>
+    <RnmCh ObjCls="Column" ParCls="Table" ParNme="NodeInstances" SupCls="Schema" SupNme="WaMDaM">
+      <Rnm id="19" nNm="NodeInstanceID" oNm="LinkInstanceID"/>
+    </RnmCh>
+    <RnmCh ObjCls="Column" ParCls="Table" ParNme="NodeInstances" SupCls="Schema" SupNme="WaMDaM">
+      <Rnm id="20" nNm="NodeInstanceName" oNm="LinkInstanceName"/>
+    </RnmCh>
+    <RnmCh ObjCls="Column" ParCls="Table" ParNme="LinkInstances" SupCls="Schema" SupNme="WaMDaM">
+      <Rnm id="21" nNm="StartNodeInstanceID" oNm="NodeInstanceID"/>
+    </RnmCh>
+    <RnmCh ObjCls="Column" ParCls="Table" ParNme="Methods" SupCls="Schema" SupNme="WaMDaM">
+      <Rnm id="22" nNm="MethodID" oNm="Id"/>
+    </RnmCh>
+    <RnmCh ObjCls="Column" ParCls="Table" ParNme="Sources" SupCls="Schema" SupNme="WaMDaM">
+      <Rnm id="23" nNm="SourceID" oNm="Id"/>
+    </RnmCh>
+    <RnmCh ObjCls="Column" ParCls="Table" ParNme="SourceData" SupCls="Schema" SupNme="WaMDaM">
+      <Rnm id="24" nNm="SouceDataID" oNm="Id"/>
+    </RnmCh>
+    <RnmCh ObjCls="Column" ParCls="Table" ParNme="NodeInstanceAttributeScenarioData" SupCls="Schema" SupNme="WaMDaM">
+      <Rnm id="26" nNm="NodeInstanceDataID" oNm="Id"/>
+    </RnmCh>
+    <RnmCh ObjCls="Column" ParCls="Table" ParNme="NodeInstanceAttributeScenarioData" SupCls="Schema" SupNme="WaMDaM">
+      <Rnm id="28" nNm="InstanceAttributeScenarioDataID" oNm="InstanceAttributeScenarioData"/>
+    </RnmCh>
+    <RnmCh ObjCls="Column" ParCls="Table" ParNme="LinkInstanceAttributeScenarioData" SupCls="Schema" SupNme="WaMDaM">
+      <Rnm id="29" nNm="InstanceAttributeScenarioDataID" oNm="InstanceAttributeScenarioData"/>
+    </RnmCh>
+    <RnmCh ObjCls="Column" ParCls="Table" ParNme="ScenarioData" SupCls="Schema" SupNme="WaMDaM">
+      <Rnm id="30" nNm="InstanceAttributeScenarioDataID" oNm="InstanceAttributeScenarioData"/>
+    </RnmCh>
+    <RnmCh ObjCls="Column" ParCls="Table" ParNme="Models" SupCls="Schema" SupNme="WaMDaM">
+      <Rnm id="31" nNm="ModelID" oNm="Id"/>
+    </RnmCh>
+    <RnmCh ObjCls="Column" ParCls="Table" ParNme="Samples" SupCls="Schema" SupNme="WaMDaM">
+      <Rnm id="32" nNm="SampleID" oNm="Id"/>
+    </RnmCh>
+    <RnmCh ObjCls="Column" ParCls="Table" ParNme="LabMethods" SupCls="Schema" SupNme="WaMDaM">
+      <Rnm id="33" nNm="LabMethodID" oNm="Id"/>
+    </RnmCh>
+    <RnmCh ObjCls="Column" ParCls="Table" ParNme="PoliticalJurisdictionalNodeInstace" SupCls="Schema" SupNme="WaMDaM">
+      <Rnm id="36" nNm="PoliticalJurisdictionNodeInstaceID" oNm="PoliticalJurisdictionalNodeInstaceID"/>
+      <Rnm id="34" nNm="PoliticalJurisdictionalNodeInstaceID" oNm="Id"/>
+    </RnmCh>
+    <RnmCh ObjCls="Column" ParCls="Table" ParNme="PoliticalJurisdictions" SupCls="Schema" SupNme="WaMDaM">
+      <Rnm id="35" nNm="PoliticalJurisdictionID" oNm="Id"/>
+    </RnmCh>
+    <RnmCh ObjCls="Table" ParCls="Schema" ParNme="TestApril" SupCls="" SupNme="">
+      <Rnm id="37" nNm="PoliticalJurisdictions" oNm="PoliticalJurisdictional"/>
+    </RnmCh>
+    <RnmCh ObjCls="Column" ParCls="Table" ParNme="TimeSeries" SupCls="Schema" SupNme="WaMDaM">
+      <Rnm id="38" nNm="TimeSeriesID" oNm="Id"/>
+    </RnmCh>
+    <RnmCh ObjCls="Table" ParCls="Schema" ParNme="TestApril" SupCls="" SupNme="">
+      <Rnm id="41" nNm="TextDescriptorControlled" oNm="TextDescriptor"/>
+      <Rnm id="39" nNm="TextDescriptor" oNm="Text"/>
+    </RnmCh>
+    <RnmCh ObjCls="Column" ParCls="Table" ParNme="TextDescriptorControlled" SupCls="Schema" SupNme="WaMDaM">
+      <Rnm id="42" nNm="TextControlledID" oNm="TextID"/>
+      <Rnm id="40" nNm="TextID" oNm="Id"/>
+    </RnmCh>
+    <RnmCh ObjCls="Column" ParCls="Table" ParNme="TextDescriptorFree" SupCls="Schema" SupNme="WaMDaM">
+      <Rnm id="43" nNm="TextFreeID" oNm="TextControlledID"/>
+    </RnmCh>
+    <RnmCh ObjCls="Table" ParCls="Schema" ParNme="TestApril" SupCls="" SupNme="">
+      <Rnm id="44" nNm="BinaryData" oNm="Binary"/>
+    </RnmCh>
+    <RnmCh ObjCls="Column" ParCls="Table" ParNme="BinaryData" SupCls="Schema" SupNme="WaMDaM">
+      <Rnm id="45" nNm="BinaryID" oNm="Id"/>
+    </RnmCh>
+    <RnmCh ObjCls="Column" ParCls="Table" ParNme="Parameter" SupCls="Schema" SupNme="WaMDaM">
+      <Rnm id="46" nNm="ParameterID" oNm="Id"/>
+    </RnmCh>
+    <RnmCh ObjCls="Column" ParCls="Table" ParNme="SeasonalParameter" SupCls="Schema" SupNme="WaMDaM">
+      <Rnm id="47" nNm="SeasonalParameterID" oNm="Id"/>
+    </RnmCh>
+    <RnmCh ObjCls="Column" ParCls="Table" ParNme="MultiColumns" SupCls="Schema" SupNme="WaMDaM">
+      <Rnm id="48" nNm="MultiColumnID" oNm="Id"/>
+    </RnmCh>
+    <RnmCh ObjCls="Column" ParCls="Table" ParNme="Columns" SupCls="Schema" SupNme="WaMDaM">
+      <Rnm id="49" nNm="ColumnID" oNm="Id"/>
+    </RnmCh>
+    <RnmCh ObjCls="Column" ParCls="Table" ParNme="MultiColumnValues" SupCls="Schema" SupNme="WaMDaM">
+      <Rnm id="52" nNm="MultiColumnValueID" oNm="MultiColumnValues"/>
+      <Rnm id="50" nNm="MultiColumnValues" oNm="Id"/>
+    </RnmCh>
+    <RnmCh ObjCls="Table" ParCls="Schema" ParNme="TestApril" SupCls="" SupNme="">
+      <Rnm id="51" nNm="MultiColumnValues" oNm="MultiColumnValue"/>
+    </RnmCh>
+    <RnmCh ObjCls="Column" ParCls="Table" ParNme="FileBased" SupCls="Schema" SupNme="WaMDaM">
+      <Rnm id="53" nNm="FileBasedID" oNm="Id"/>
+    </RnmCh>
+    <RnmCh ObjCls="Column" ParCls="Table" ParNme="PoliticalJurisdictions" SupCls="Schema" SupNme="TestApril">
+      <Rnm id="56" nNm="County" oNm="County/District"/>
+    </RnmCh>
+    <RnmCh ObjCls="Column" ParCls="Table" ParNme="NodeObjectNameCV" SupCls="Schema" SupNme="TestApril">
+      <Rnm id="114" nNm="NodeObjectName" oNm="NodeObjectNameCV"/>
+      <Rnm id="111" nNm="NodeObjectNameCV" oNm="NodeObjectName"/>
+      <Rnm id="57" nNm="NodeObjectName" oNm="Id"/>
+    </RnmCh>
+    <RnmCh ObjCls="Column" ParCls="Table" ParNme="LinkObjectNameCV" SupCls="Schema" SupNme="TestApril">
+      <Rnm id="58" nNm="LinkObjectName" oNm="NodeObjectName"/>
+    </RnmCh>
+    <RnmCh ObjCls="Column" ParCls="Table" ParNme="NodeAttributeCategoryCV" SupCls="Schema" SupNme="TestApril">
+      <Rnm id="59" nNm="NodeAttributeCategoty" oNm="Id"/>
+    </RnmCh>
+    <RnmCh ObjCls="Table" ParCls="Schema" ParNme="TestApril" SupCls="" SupNme="">
+      <Rnm id="60" nNm="LinkAttributeCategoryCV" oNm="LinkAttributeCategory"/>
+    </RnmCh>
+    <RnmCh ObjCls="Table" ParCls="Schema" ParNme="TestApril" SupCls="" SupNme="">
+      <Rnm id="61" nNm="NodeAttributeCategoryCV" oNm="NodeAttributeCategory"/>
+    </RnmCh>
+    <RnmCh ObjCls="Column" ParCls="Table" ParNme="AttributeNameCV" SupCls="Schema" SupNme="TestApril">
+      <Rnm id="63" nNm="AttributeName" oNm="AttributeNameCV"/>
+      <Rnm id="62" nNm="AttributeNameCV" oNm="Id"/>
+    </RnmCh>
+    <RnmCh ObjCls="Column" ParCls="Table" ParNme="Attributes" SupCls="Schema" SupNme="TestApril">
+      <Rnm id="108" nNm="AttributeNameCV" oNm="AttributeName"/>
+      <Rnm id="64" nNm="AttributeName" oNm="AttributeNameCV"/>
+    </RnmCh>
+    <RnmCh ObjCls="Column" ParCls="Table" ParNme="LinkAttributeCategoryCV" SupCls="Schema" SupNme="TestApril">
+      <Rnm id="65" nNm="LinkAttributeCategoty" oNm="NodeAttributeCategoty"/>
+    </RnmCh>
+    <RnmCh ObjCls="Column" ParCls="Table" ParNme="LinkObjectAttributes" SupCls="Schema" SupNme="TestApril">
+      <Rnm id="66" nNm="LinkAttributeCategoty" oNm="NodeAttributeCategoty"/>
+    </RnmCh>
+    <RnmCh ObjCls="Column" ParCls="Table" ParNme="VerticalDatumCV" SupCls="Schema" SupNme="TestApril">
+      <Rnm id="67" nNm="VerticalDatum" oNm="Id"/>
+    </RnmCh>
+    <RnmCh ObjCls="Column" ParCls="Table" ParNme="SpatialReference" SupCls="Schema" SupNme="TestApril">
+      <Rnm id="68" nNm="SpatialReferenceID" oNm="Id"/>
+    </RnmCh>
+    <RnmCh ObjCls="Column" ParCls="Table" ParNme="ValueTypeCV" SupCls="Schema" SupNme="TestApril">
+      <Rnm id="69" nNm="ValueType" oNm="Id"/>
+    </RnmCh>
+    <RnmCh ObjCls="Column" ParCls="Table" ParNme="AttributeFormatCV" SupCls="Schema" SupNme="TestApril">
+      <Rnm id="70" nNm="AttributeFormat" oNm="Id"/>
+    </RnmCh>
+    <RnmCh ObjCls="Column" ParCls="Table" ParNme="SampleMediumCV" SupCls="Schema" SupNme="TestApril">
+      <Rnm id="72" nNm="SampleMedium" oNm="SampleMediumCV"/>
+      <Rnm id="71" nNm="SampleMediumCV" oNm="Id"/>
+    </RnmCh>
+    <RnmCh ObjCls="Column" ParCls="Table" ParNme="DataTypeCV" SupCls="Schema" SupNme="TestApril">
+      <Rnm id="73" nNm="DataType" oNm="Id"/>
+    </RnmCh>
+    <RnmCh ObjCls="Column" ParCls="Table" ParNme="Units" SupCls="Schema" SupNme="TestApril">
+      <Rnm id="75" nNm="UnitID" oNm="Units"/>
+      <Rnm id="74" nNm="Units" oNm="Id"/>
+    </RnmCh>
+    <RnmCh ObjCls="Column" ParCls="Table" ParNme="CensorCodeCV" SupCls="Schema" SupNme="TestApril">
+      <Rnm id="76" nNm="CensorCode" oNm="Id"/>
+    </RnmCh>
+    <RnmCh ObjCls="Column" ParCls="Table" ParNme="TextValueControlledCV" SupCls="Schema" SupNme="TestApril">
+      <Rnm id="77" nNm="TextValueControlled" oNm="Id"/>
+    </RnmCh>
+    <RnmCh ObjCls="Table" ParCls="Schema" ParNme="TestApril" SupCls="" SupNme="">
+      <Rnm id="78" nNm="TextValueControlledCV" oNm="TextValueCV"/>
+    </RnmCh>
+    <RnmCh ObjCls="Column" ParCls="Table" ParNme="SampleType" SupCls="Schema" SupNme="TestApril">
+      <Rnm id="80" nNm="Definition" oNm="SampleTypeID"/>
+      <Rnm id="79" nNm="SampleTypeID" oNm="Id"/>
+    </RnmCh>
+    <RnmCh ObjCls="Column" ParCls="Table" ParNme="TimeSeriesMetadata" SupCls="Schema" SupNme="TestApril">
+      <Rnm id="81" nNm="TimeSereisMetadataID" oNm="Id"/>
+    </RnmCh>
+    <RnmCh ObjCls="Column" ParCls="Table" ParNme="TimeSeriesMetadata" SupCls="Schema" SupNme="TestApril">
+      <Rnm id="82" nNm="TimeUnitID" oNm="UnitID"/>
+    </RnmCh>
+    <RnmCh ObjCls="Column" ParCls="Table" ParNme="NodeObjectAttributes" SupCls="Schema" SupNme="TestApril">
+      <Rnm id="83" nNm="AttributeID" oNm="AttributesID"/>
+    </RnmCh>
+    <RnmCh ObjCls="Column" ParCls="Table" ParNme="Attributes" SupCls="Schema" SupNme="TestApril">
+      <Rnm id="84" nNm="AttributeID" oNm="AttributesID"/>
+    </RnmCh>
+    <RnmCh ObjCls="Column" ParCls="Table" ParNme="NodeAttributeCategory" SupCls="Schema" SupNme="TestApril">
+      <Rnm id="98" nNm="NodeAttributeCategotyID" oNm="NodeCategotyID"/>
+      <Rnm id="88" nNm="NodeCategotyID" oNm="CategotyID"/>
+      <Rnm id="85" nNm="CategotyID" oNm="Definition"/>
+    </RnmCh>
+    <RnmCh ObjCls="Column" ParCls="Table" ParNme="LinkAttributeCategory" SupCls="Schema" SupNme="TestApril">
+      <Rnm id="106" nNm="LinkAttributeCategotyCV" oNm="LinkAttributeCategoty"/>
+      <Rnm id="86" nNm="LinkAttributeCategoty" oNm="NodeAttributeCategoty"/>
+    </RnmCh>
+    <RnmCh ObjCls="Column" ParCls="Table" ParNme="LinkAttributeCategory" SupCls="Schema" SupNme="TestApril">
+      <Rnm id="87" nNm="LinkCategotyID" oNm="CategotyID"/>
+    </RnmCh>
+    <RnmCh ObjCls="Column" ParCls="Table" ParNme="LinkObjectCategory" SupCls="Schema" SupNme="TestApril">
+      <Rnm id="89" nNm="LinkObjectCategoryID" oNm="Id"/>
+    </RnmCh>
+    <RnmCh ObjCls="Column" ParCls="Table" ParNme="LinkObjectCategoryCV" SupCls="Schema" SupNme="TestApril">
+      <Rnm id="90" nNm="LinkObjectCategory" oNm="Id"/>
+    </RnmCh>
+    <RnmCh ObjCls="Column" ParCls="Table" ParNme="NodeObjectCategory" SupCls="Schema" SupNme="TestApril">
+      <Rnm id="102" nNm="NodeObjectCategoryCV" oNm="NodeObjectCategory"/>
+      <Rnm id="91" nNm="NodeObjectCategory" oNm="LinkObjectCategory"/>
+    </RnmCh>
+    <RnmCh ObjCls="Table" ParCls="Schema" ParNme="TestApril" SupCls="" SupNme="">
+      <Rnm id="92" nNm="NodeObjectCategory" oNm="NodeObjectCategoryCV"/>
+    </RnmCh>
+    <RnmCh ObjCls="Column" ParCls="Table" ParNme="NodeObjectCategory" SupCls="Schema" SupNme="TestApril">
+      <Rnm id="93" nNm="NodeObjectCategoryID" oNm="Definition"/>
+    </RnmCh>
+    <RnmCh ObjCls="Column" ParCls="Table" ParNme="LinkObjectCategory" SupCls="Schema" SupNme="TestApril">
+      <Rnm id="94" nNm="ParentLinkObjectCategoryID" oNm="LinkObjectCategory_LinkObjectCategoryID"/>
+    </RnmCh>
+    <RnmCh ObjCls="Column" ParCls="Table" ParNme="LinkAttributeCategory" SupCls="Schema" SupNme="TestApril">
+      <Rnm id="95" nNm="ParentLinkAttributeCategoryID" oNm="LinkAttributeCategory_LinkCategotyID"/>
+    </RnmCh>
+    <RnmCh ObjCls="Column" ParCls="Table" ParNme="NodeAttributeCategory" SupCls="Schema" SupNme="TestApril">
+      <Rnm id="96" nNm="ParentNodeAttributeCategoryID" oNm="NodeAttributeCategory_CategotyID"/>
+    </RnmCh>
+    <RnmCh ObjCls="Column" ParCls="Table" ParNme="NodeObjectCategory" SupCls="Schema" SupNme="TestApril">
+      <Rnm id="97" nNm="ParentNodeObjectCategoryID" oNm="NodeObjectCategory_NodeObjectCategoryID"/>
+    </RnmCh>
+    <RnmCh ObjCls="Column" ParCls="Table" ParNme="NodeObjectCategoryCV" SupCls="Schema" SupNme="TestApril">
+      <Rnm id="113" nNm="NodeObjectCategory" oNm="NodeObjectCategoryCV"/>
+      <Rnm id="112" nNm="NodeObjectCategoryCV" oNm="NodeObjectCategory"/>
+      <Rnm id="99" nNm="NodeObjectCategory" oNm="LinkObjectCategory"/>
+    </RnmCh>
+    <RnmCh ObjCls="Column" ParCls="Table" ParNme="Organization" SupCls="Schema" SupNme="TestApril">
+      <Rnm id="100" nNm="OrganizationID" oNm="Id"/>
+    </RnmCh>
+    <RnmCh ObjCls="Column" ParCls="Table" ParNme="Organization" SupCls="Schema" SupNme="TestApril">
+      <Rnm id="101" nNm="ParentOrganizationID" oNm="Organization_OrganizationID"/>
+    </RnmCh>
+    <RnmCh ObjCls="Column" ParCls="Table" ParNme="NodeObjects" SupCls="Schema" SupNme="TestApril">
+      <Rnm id="103" nNm="NodeObjectNameCV" oNm="NodeObjectName"/>
+    </RnmCh>
+    <RnmCh ObjCls="Column" ParCls="Table" ParNme="LinkObjects" SupCls="Schema" SupNme="TestApril">
+      <Rnm id="104" nNm="LinkObjectNameCV" oNm="LinkObjectName"/>
+    </RnmCh>
+    <RnmCh ObjCls="Column" ParCls="Table" ParNme="LinkObjectCategory" SupCls="Schema" SupNme="TestApril">
+      <Rnm id="105" nNm="LinkObjectCategoryCV" oNm="LinkObjectCategory"/>
+    </RnmCh>
+    <RnmCh ObjCls="Column" ParCls="Table" ParNme="NodeAttributeCategory" SupCls="Schema" SupNme="TestApril">
+      <Rnm id="107" nNm="NodeAttributeCategotyCV" oNm="NodeAttributeCategoty"/>
+    </RnmCh>
+    <RnmCh ObjCls="Column" ParCls="Table" ParNme="OrganizationType" SupCls="Schema" SupNme="TestApril">
+      <Rnm id="110" nNm="OrganizationTypeCV" oNm="OrganizationType"/>
+      <Rnm id="109" nNm="OrganizationType" oNm="VerticalDatum"/>
+    </RnmCh>
+    <RnmCh ObjCls="Column" ParCls="Table" ParNme="LinkInstances" SupCls="Schema" SupNme="TestApril">
+      <Rnm id="115" nNm="ExistingOrProposed" oNm="ProposedOrExisting"/>
+    </RnmCh>
+    <RnmCh ObjCls="Column" ParCls="Table" ParNme="Scenarios" SupCls="Schema" SupNme="TestApril">
+      <Rnm id="117" nNm="ReferenceStudyName" oNm="ReferenceStudy"/>
+      <Rnm id="116" nNm="ReferenceStudy" oNm="Reference"/>
+    </RnmCh>
+    <RnmCh ObjCls="Column" ParCls="Table" ParNme="NodeInstances" SupCls="Schema" SupNme="TestApril">
+      <Rnm id="118" nNm="ExistingOrProposed" oNm="ProposedOrExisting"/>
+    </RnmCh>
+    <RnmCh ObjCls="Column" ParCls="Table" ParNme="Parameter" SupCls="Schema" SupNme="TestApril">
+      <Rnm id="119" nNm="Assumptions" oNm="Assumption"/>
+    </RnmCh>
+    <RnmCh ObjCls="Column" ParCls="Table" ParNme="Peopel" SupCls="Schema" SupNme="TestApril">
+      <Rnm id="120" nNm="PersonID" oNm="Id"/>
+    </RnmCh>
+    <RnmCh ObjCls="Column" ParCls="Table" ParNme="MethodTypeCV" SupCls="Schema" SupNme="TestApril">
+      <Rnm id="121" nNm="MethodType" oNm="VerticalDatum"/>
+    </RnmCh>
+    <RnmCh ObjCls="Column" ParCls="Table" ParNme="Methods" SupCls="Schema" SupNme="TestApril">
+      <Rnm id="122" nNm="MethodTypeCV" oNm="MethodType"/>
+    </RnmCh>
+    <RnmCh ObjCls="Column" ParCls="Table" ParNme="Affiliations" SupCls="Schema" SupNme="TestApril">
+      <Rnm id="123" nNm="AffiliationID" oNm="SourceID"/>
+    </RnmCh>
+    <RnmCh ObjCls="Column" ParCls="Table" ParNme="Affiliations" SupCls="Schema" SupNme="TestApril">
+      <Rnm id="124" nNm="AffiliationStartDate" oNm="SourceName"/>
+    </RnmCh>
+    <RnmCh ObjCls="Column" ParCls="Table" ParNme="AffiliationSources" SupCls="Schema" SupNme="TestApril">
+      <Rnm id="125" nNm="AffiliationSource" oNm="Id"/>
+    </RnmCh>
+    <RnmCh ObjCls="Table" ParCls="Schema" ParNme="TestApril" SupCls="" SupNme="">
+      <Rnm id="127" nNm="Samples" oNm="Samples_dup"/>
+    </RnmCh>
+    <RnmCh ObjCls="Table" ParCls="Schema" ParNme="TestApril" SupCls="" SupNme="">
+      <Rnm id="128" nNm="Sources" oNm="Sources_dup2"/>
+    </RnmCh>
+    <RnmCh ObjCls="Table" ParCls="Schema" ParNme="TestApril" SupCls="" SupNme="">
+      <Rnm id="129" nNm="SourceData" oNm="SourceData_dup"/>
+    </RnmCh>
+    <RnmCh ObjCls="Table" ParCls="Schema" ParNme="TestApril" SupCls="" SupNme="">
+      <Rnm id="130" nNm="AffiliationSources" oNm="AffiliationSources_dup"/>
+    </RnmCh>
+    <RnmCh ObjCls="Table" ParCls="Schema" ParNme="TestApril" SupCls="" SupNme="">
+      <Rnm id="131" nNm="SourceData" oNm="SourceData_dup"/>
+    </RnmCh>
+    <RnmCh ObjCls="Table" ParCls="Schema" ParNme="TestApril" SupCls="" SupNme="">
+      <Rnm id="150" nNm="AttributeScenarioData" oNm="InstanceAttributeScenarioData"/>
+      <Rnm id="132" nNm="InstanceAttributeScenarioData" oNm="InstanceAttributeScenarioData_dup"/>
+    </RnmCh>
+    <RnmCh ObjCls="Table" ParCls="Schema" ParNme="TestApril" SupCls="" SupNme="">
+      <Rnm id="133" nNm="Parameter" oNm="Parameter_dup"/>
+    </RnmCh>
+    <RnmCh ObjCls="Table" ParCls="Schema" ParNme="TestApril" SupCls="" SupNme="">
+      <Rnm id="134" nNm="SeasonalParameter" oNm="SeasonalParameter_dup"/>
+    </RnmCh>
+    <RnmCh ObjCls="Table" ParCls="Schema" ParNme="TestApril" SupCls="" SupNme="">
+      <Rnm id="135" nNm="FileBased" oNm="FileBased_dup"/>
+    </RnmCh>
+    <RnmCh ObjCls="Table" ParCls="Schema" ParNme="TestApril" SupCls="" SupNme="">
+      <Rnm id="136" nNm="MultiColumns" oNm="MultiColumns_dup2"/>
+    </RnmCh>
+    <RnmCh ObjCls="Table" ParCls="Schema" ParNme="TestApril" SupCls="" SupNme="">
+      <Rnm id="137" nNm="Columns" oNm="Columns_dup"/>
+    </RnmCh>
+    <RnmCh ObjCls="Table" ParCls="Schema" ParNme="TestApril" SupCls="" SupNme="">
+      <Rnm id="138" nNm="MultiColumnValues" oNm="MultiColumnValues_dup"/>
+    </RnmCh>
+    <RnmCh ObjCls="Table" ParCls="Schema" ParNme="TestApril" SupCls="" SupNme="">
+      <Rnm id="139" nNm="BinaryData" oNm="BinaryData_dup"/>
+    </RnmCh>
+    <RnmCh ObjCls="Table" ParCls="Schema" ParNme="TestApril" SupCls="" SupNme="">
+      <Rnm id="140" nNm="TextDescriptorFree" oNm="TextDescriptorFree_dup"/>
+    </RnmCh>
+    <RnmCh ObjCls="Table" ParCls="Schema" ParNme="TestApril" SupCls="" SupNme="">
+      <Rnm id="141" nNm="TextDescriptorControlled" oNm="TextDescriptorControlled_dup"/>
+    </RnmCh>
+    <RnmCh ObjCls="Table" ParCls="Schema" ParNme="TestApril" SupCls="" SupNme="">
+      <Rnm id="142" nNm="TimeSeriesMetadata" oNm="TimeSeriesMetadata_dup"/>
+    </RnmCh>
+    <RnmCh ObjCls="Table" ParCls="Schema" ParNme="TestApril" SupCls="" SupNme="">
+      <Rnm id="143" nNm="TimeSeries" oNm="TimeSeries_dup"/>
+    </RnmCh>
+    <RnmCh ObjCls="Table" ParCls="Schema" ParNme="TestApril" SupCls="" SupNme="">
+      <Rnm id="144" nNm="SourceData" oNm="SourceData_dup"/>
+    </RnmCh>
+    <RnmCh ObjCls="Table" ParCls="Schema" ParNme="TestApril" SupCls="" SupNme="">
+      <Rnm id="153" nNm="LinkInstanceAttributeScenarioData" oNm="LinkInstanceData"/>
+      <Rnm id="145" nNm="LinkInstanceData" oNm="LinkInstanceData_dup"/>
+    </RnmCh>
+    <RnmCh ObjCls="Table" ParCls="Schema" ParNme="TestApril" SupCls="" SupNme="">
+      <Rnm id="152" nNm="NodeInstanceAttributeScenarioData" oNm="NodeInstanceData"/>
+      <Rnm id="146" nNm="NodeInstanceData" oNm="NodeInstanceData_dup"/>
+    </RnmCh>
+    <RnmCh ObjCls="Table" ParCls="Schema" ParNme="TestApril" SupCls="" SupNme="">
+      <Rnm id="147" nNm="ScenarioData" oNm="ScenarioData_dup"/>
+    </RnmCh>
+    <RnmCh ObjCls="Column" ParCls="Table" ParNme="TextDescriptorControlled" SupCls="Schema" SupNme="TestApril">
+      <Rnm id="148" nNm="Definition" oNm="Description"/>
+    </RnmCh>
+    <RnmCh ObjCls="Column" ParCls="Table" ParNme="NodeObjects" SupCls="Schema" SupNme="TestApril">
+      <Rnm id="149" nNm="NodeObjectCategoryID" oNm="NodeObjectCategory"/>
+    </RnmCh>
+    <RnmCh ObjCls="Column" ParCls="Table" ParNme="AttributeScenarioData" SupCls="Schema" SupNme="TestApril">
+      <Rnm id="151" nNm="AttributeScenarioDataID" oNm="InstanceAttributeScenarioDataID"/>
+    </RnmCh>
+    <RnmCh ObjCls="Column" ParCls="Table" ParNme="TimeSeries" SupCls="Schema" SupNme="TestApril">
+      <Rnm id="154" nNm="AttributeScenarioDataID" oNm="InstanceAttributeScenarioDataID"/>
+    </RnmCh>
+    <RnmCh ObjCls="Column" ParCls="Table" ParNme="Columns" SupCls="Schema" SupNme="TestApril">
+      <Rnm id="155" nNm="AttributeScenarioDataID" oNm="InstanceAttributeScenarioDataID"/>
+    </RnmCh>
+    <RnmCh ObjCls="Column" ParCls="Table" ParNme="MultiColumns" SupCls="Schema" SupNme="TestApril">
+      <Rnm id="156" nNm="AttributeScenarioDataID" oNm="InstanceAttributeScenarioDataID"/>
+    </RnmCh>
+    <RnmCh ObjCls="Column" ParCls="Table" ParNme="TextDescriptorFree" SupCls="Schema" SupNme="TestApril">
+      <Rnm id="157" nNm="AttributeScenarioDataID" oNm="InstanceAttributeScenarioDataID"/>
+    </RnmCh>
+    <RnmCh ObjCls="Column" ParCls="Table" ParNme="SeasonalParameter" SupCls="Schema" SupNme="TestApril">
+      <Rnm id="158" nNm="AttributeScenarioDataID" oNm="InstanceAttributeScenarioDataID"/>
+    </RnmCh>
+    <RnmCh ObjCls="Column" ParCls="Table" ParNme="BinaryData" SupCls="Schema" SupNme="TestApril">
+      <Rnm id="159" nNm="AttributeScenarioDataID" oNm="InstanceAttributeScenarioDataID"/>
+    </RnmCh>
+    <RnmCh ObjCls="Column" ParCls="Table" ParNme="FileBased" SupCls="Schema" SupNme="TestApril">
+      <Rnm id="160" nNm="AttributeScenarioDataID" oNm="InstanceAttributeScenarioDataID"/>
+    </RnmCh>
+    <RnmCh ObjCls="Column" ParCls="Table" ParNme="Parameter" SupCls="Schema" SupNme="TestApril">
+      <Rnm id="161" nNm="AttributeScenarioDataID" oNm="InstanceAttributeScenarioDataID"/>
+    </RnmCh>
+    <RnmCh ObjCls="Column" ParCls="Table" ParNme="TextDescriptorControlled" SupCls="Schema" SupNme="TestApril">
+      <Rnm id="162" nNm="AttributeScenarioDataID" oNm="InstanceAttributeScenarioDataID"/>
+    </RnmCh>
+    <RnmCh ObjCls="Column" ParCls="Table" ParNme="LinkInstanceAttributeScenarioData" SupCls="Schema" SupNme="TestApril">
+      <Rnm id="163" nNm="AttributeScenarioDataID" oNm="InstanceAttributeScenarioDataID"/>
+    </RnmCh>
+    <RnmCh ObjCls="Column" ParCls="Table" ParNme="LinkInstanceAttributeScenarioData" SupCls="Schema" SupNme="TestApril">
+      <Rnm id="164" nNm="LinkInstanceAttributeScenarioDataID" oNm="LinkInstanceDataID"/>
+    </RnmCh>
+    <RnmCh ObjCls="Column" ParCls="Table" ParNme="NodeInstanceAttributeScenarioData" SupCls="Schema" SupNme="TestApril">
+      <Rnm id="165" nNm="AttributeScenarioDataID" oNm="InstanceAttributeScenarioDataID"/>
+    </RnmCh>
+    <RnmCh ObjCls="Column" ParCls="Table" ParNme="NodeInstanceAttributeScenarioData" SupCls="Schema" SupNme="TestApril">
+      <Rnm id="166" nNm="NodeInstanceAttributeScenarioDataID" oNm="NodeInstanceDataID"/>
+    </RnmCh>
+    <RnmCh ObjCls="Column" ParCls="Table" ParNme="ScenarioData" SupCls="Schema" SupNme="TestApril">
+      <Rnm id="167" nNm="AttributeScenarioDataID" oNm="InstanceAttributeScenarioDataID"/>
+    </RnmCh>
+    <RnmCh ObjCls="Column" ParCls="Table" ParNme="SourceData" SupCls="Schema" SupNme="TestApril">
+      <Rnm id="168" nNm="AttributeScenarioData" oNm="InstanceAttributeScenarioData"/>
+    </RnmCh>
+    <RnmCh ObjCls="Column" ParCls="Table" ParNme="Samples" SupCls="Schema" SupNme="TestApril">
+      <Rnm id="169" nNm="SampleTypeCV" oNm="SampleType"/>
+    </RnmCh>
+    <RnmCh ObjCls="Column" ParCls="Table" ParNme="Samples" SupCls="Schema" SupNme="TestApril">
+      <Rnm id="170" nNm="SampleMediumCV" oNm="SampleMedium"/>
+    </RnmCh>
+  </RnmMgr>
+  <DbDocOptionMgr>
+    <BasicOptionMgr>
+      <Name>db.doc.option.mgr</Name>
+      <BoolOpt lbl="Diagrams" nm="doc.diagrams" on="1" spl="0"/>
+      <BoolOpt lbl="Foreign Keys" nm="doc.fks" on="1" spl="0"/>
+      <BoolOpt lbl="Indexes" nm="doc.indexes" on="1" spl="0"/>
+      <BoolOpt lbl="Overwrite CSS File" nm="doc.overwrite.css" on="1" spl="0"/>
+      <BoolOpt lbl="Procedures" nm="doc.procs" on="1" spl="0"/>
+      <BoolOpt lbl="Schemas" nm="doc.schemas" on="1" spl="0"/>
+      <BoolOpt lbl="Sequences" nm="doc.sequences" on="1" spl="0"/>
+      <BoolOpt lbl="Tables" nm="doc.tables" on="1" spl="0"/>
+      <BoolOpt lbl="Triggers" nm="doc.triggers" on="1" spl="0"/>
+      <BoolOpt lbl="Views" nm="doc.views" on="1" spl="0"/>
+    </BasicOptionMgr>
+  </DbDocOptionMgr>
+  <OpenEditors>
+    <OpenEditor ClsNm="Diagram" fqn="null.WaMDaM" selected="1"/>
+  </OpenEditors>
+  <TreePaths>
+    <TreePath/>
+    <TreePath>/Schemas (1)</TreePath>
+    <TreePath>/Schemas (1)/TestApril</TreePath>
+    <TreePath>/Schemas (1)/TestApril/Tables (60)</TreePath>
+    <TreePath>/Diagrams (1)</TreePath>
+    <TreePath>/Diagrams (1)/WaMDaM</TreePath>
+    <TreePath>/Diagrams (1)/WaMDaM/Zones (0)</TreePath>
+  </TreePaths>
+</Db>
