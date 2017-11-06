@@ -4,16 +4,16 @@
 ![](/schemas/Older_key_schemas/5.png)
 
 
-### Schema August 2015 (WaM-DaM GitHub repo)
-![](/schemas/Older_key_schemas/4.png)
+### Schema August 2015 (CUAHSI Conference, Tuscaloosa, AL) 
+![](/schemas/Older_key_schemas/4.jpg)
 
 
-### Schema April 2014 (iEMS, San Diego, CA)
-![](/schemas/Older_key_schemas/3.png)
+### Schema April 2014 (iEMS, San Diego, CA) 
+![](/schemas/Older_key_schemas/3.jpg)
 
 
-### Schema June 2014 (EWRI CONGRESS in Portland, OR)
+### Schema June 2014 (EWRI CONGRESS in Portland, OR) 
 ![](/schemas/Older_key_schemas/2.png)
 
-### Schema Nov 2013 
-![](/schemas/Older_key_schemas/1.png)
+### Schema Nov 2013 (earlier desings) 
+![](/schemas/Older_key_schemas/1.jpg)
