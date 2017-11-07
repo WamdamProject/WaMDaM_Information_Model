@@ -4,11 +4,32 @@ The Water Management Data Model (WaMDaM) is information model to organize water 
 
 ## 1. Information Model Concepts and their description
 
+abc 
+
+![](Documentation/WaMDaM_Conceptual.jpg)
+
+
+**1. Dataset Structure**
+
+
+**2. Networks**
+
+
+**3. Metadata**
+
+
+**4. Data Values**
+
+
+**5. Controlled Vocabulary**
+
+<a href="add URL here" target="_blank"> Controlled vocabulary tables</a> 
 
 
 ## 2. Entity Relationship diagrams for WaMDaM schema 1.0
 
-Documentation of the mapping 
+WaMDaM schema or entity relationship diagram is available at this interactive site. 
+![](https://wamdamproject.github.io/WaMDaM_Information_Model/diagrams/01_WaMDaM.html)
 
 
 ## 3. Script to create blank WaMDaM databases OR copies of db to restore 
