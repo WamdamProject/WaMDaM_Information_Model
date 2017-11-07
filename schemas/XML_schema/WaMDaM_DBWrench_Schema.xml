@@ -691,6 +691,10 @@
         <DT arr="0" ds="Integer" en="" id="4" ln="null" sc="null" sg="1" un="0"/>
         <Cm>Primary key identifier</Cm>
       </Cl>
+      <Cl au="0" df="" nm="DualValue " nu="0">
+        <DT arr="0" ds="Binary" en="" id="-2" ln="1" sc="null" sg="1" un="0"/>
+        <Cm>0 or 1 to indicate Dual-Status </Cm>
+      </Cl>
       <Cl au="0" df="" nm="DualValueMeaningCV" nu="0">
         <DT arr="0" ds="VarChar" en="" id="12" ln="255" sc="null" sg="1" un="0"/>
         <Cm>Dual value of the attribute (e.g., active, or inactive)</Cm>
@@ -1481,11 +1485,11 @@
     <TbGl bkCl="ffb22c2c" sch="DataValues" tbl="ElectronicFiles" x="2184" y="657"/>
     <TbGl bkCl="ffb22c2c" sch="DataValues" tbl="MultiAttributeSeries" x="1770" y="1112"/>
     <TbGl bkCl="ffb22c2c" sch="DataValues" tbl="MultiAttributeSeriesValues" x="2210" y="1100"/>
-    <TbGl bkCl="ffb22c2c" sch="DataValues" tbl="NumericValues" x="1985" y="166"/>
+    <TbGl bkCl="ffb22c2c" sch="DataValues" tbl="NumericValues" x="1990" y="184"/>
     <TbGl bkCl="ffb22c2c" sch="DataValues" tbl="DescriptorValues" x="1997" y="475"/>
     <TbGl bkCl="ffb22c2c" sch="DataValues" tbl="TimeSeries" x="1857" y="768"/>
     <TbGl bkCl="ffb22c2c" sch="DataValues" tbl="TimeSeriesValues" x="2214" y="884"/>
-    <TbGl bkCl="ffb22c2c" sch="DataValues" tbl="SeasonalNumericValues" x="1994" y="285"/>
+    <TbGl bkCl="ffb22c2c" sch="DataValues" tbl="SeasonalNumericValues" x="1990" y="298"/>
     <TbGl bkCl="ff999999" sch="DatasetStructure" tbl="WaMDaMVersion" x="29" y="256"/>
     <FkGl bkCl="ff000000" childEdge="WEST" nm="DatasetStructure.Attributes.fk_Attributes_ObjectTypes" parentEdge="EAST" positioner="OneLineUserLinkPositioner">
       <positionableLines>
@@ -1547,14 +1551,14 @@
     </FkGl>
     <FkGl bkCl="ff000000" childEdge="WEST" nm="DataValues.NumericValues.fk_NumericValues_DataValuesMapper" parentEdge="NORTH" positioner="TwoLineUserLinkPositioner">
       <positionableLines>
-        <positionableLine lineRole="PARENT_LINE" x1="1874" x2="1874" y1="612" y2="220"/>
-        <positionableLine lineRole="CHILD_LINE" x1="1985" x2="1878" y1="216" y2="216"/>
+        <positionableLine lineRole="PARENT_LINE" x1="1874" x2="1874" y1="612" y2="238"/>
+        <positionableLine lineRole="CHILD_LINE" x1="1990" x2="1878" y1="234" y2="234"/>
       </positionableLines>
     </FkGl>
     <FkGl bkCl="ff000000" childEdge="WEST" nm="DataValues.SeasonalNumericValues.fk_SeasonalNumericValues_DataValuesMapper" parentEdge="NORTH" positioner="TwoLineUserLinkPositioner">
       <positionableLines>
-        <positionableLine lineRole="PARENT_LINE" x1="1914" x2="1914" y1="612" y2="368"/>
-        <positionableLine lineRole="CHILD_LINE" x1="1994" x2="1918" y1="364" y2="364"/>
+        <positionableLine lineRole="PARENT_LINE" x1="1914" x2="1914" y1="612" y2="381"/>
+        <positionableLine lineRole="CHILD_LINE" x1="1990" x2="1918" y1="377" y2="377"/>
       </positionableLines>
     </FkGl>
     <FkGl bkCl="ff000000" childEdge="NORTH" nm="DataValues.TimeSeries.fk_TimeSeries_DataValuesMapper" parentEdge="SOUTH" positioner="OneLineUserLinkPositioner">
