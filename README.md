@@ -23,7 +23,6 @@ abc
 
 **5. Controlled Vocabulary**
 
-<a href="add URL here" target="_blank"> Controlled vocabulary tables</a> 
 
 
 ## 2. Entity Relationship diagrams for WaMDaM schema 1.0
@@ -41,21 +40,27 @@ WaMDaM schema or entity relationship diagram is available at this interactive si
 
 
 ## 4. WaMDaM Wizard to load water management data from Excel and other sources into WaMDaM SQLite database 
+The WaMDaM Wizard is an open-source, cross-platform, Python-based graphical user software to interact with WaMDaM database. By using the Wizard, users are not expected to understand the underlying WaMDaM database of schema
 
-
+[Download the Wizard GUI ](https://github.com/WamdamProject/WaMDaM_Wizard#download-the-wizard-gui-for-windows-7-and-10-64-bit-operating-systems)
 
 
 ## 5. Data Use Cases to demonstrate WaMDaM capabilities 
 
+Demonstrate how WaMDaM enables systematic data query and comparisons across multiple different models and datasets.
 
+[use cases and application](https://github.com/WamdamProject/WaMDaM_UseCases)
 
 
 ## 6. Controlled Vocabularies
+View and the online moderated registry which aims to promote consistent terminology (i.e., Controlled Vocabularies-(CVs)) to describe water system components and their attributes across datasets, models, and users, while still retaining the native terms. Registering your model's native terms against these CVs will allow you to relate, query, and compare all of your water management data within a single database. Submit new terms to support your data and expand the registery.  
 
+[Controlled Vocabularies](http://vocabulary.wamdam.org/)
 
 
 ## 7. Publications throughout the development of WaMDaM
-
+List of all the presentations and publications on WaMDaM products since inspection Edit
+[Publications](https://github.com/WamdamProject/WaMDaM_Publications)
 
 
 
