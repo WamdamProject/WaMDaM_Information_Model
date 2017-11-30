@@ -42,8 +42,8 @@ CREATE TABLE CV_AttributeName (
 );
 
 CREATE TABLE CV_DescriptorValues (
-	Name VARCHAR (255)  NOT NULL PRIMARY KEY,
-	Term VARCHAR (255)  NOT NULL,
+	Term VARCHAR (255)  NOT NULL PRIMARY KEY,
+	Name VARCHAR (255)  NOT NULL,
 	AttributeName VARCHAR (255)  NOT NULL,
 	Definition VARCHAR (5000)  NULL,
 	Category VARCHAR (255)  NULL,
@@ -53,7 +53,7 @@ CREATE TABLE CV_DescriptorValues (
 CREATE TABLE CV_DualValueMeaning (
 	Name VARCHAR (255)  NOT NULL PRIMARY KEY,
 	Term VARCHAR (255)  NOT NULL,
-	BooleanValue BINARY (1)  NOT NULL,
+	BooleanValue BIT   NOT NULL,
 	Definition VARCHAR (5000)  NULL,
 	Category VARCHAR (255)  NULL,
 	SourceVocabularyURI VARCHAR (255)  NULL
@@ -137,7 +137,7 @@ CREATE TABLE CV_Units (
 /************************* CREATE DATASETSTRUCTURE *************************/
 /***************************************************************************/
 
-CREATE TABLE AttributeCategory (
+CREATE TABLE AttributeCategories (
 	AttributeCategoryID INTEGER  AUTO_INCREMENT NOT NULL PRIMARY KEY,
 	AttributeCategoryName VARCHAR (255)  NOT NULL,
 	CategoryDefinition TEXT   NULL
@@ -162,7 +162,7 @@ CREATE TABLE Attributes (
 	ON UPDATE NO ACTION ON DELETE NO ACTION,
 	FOREIGN KEY (ObjectTypeID) REFERENCES ObjectTypes (ObjectTypeID)
 	ON UPDATE NO ACTION ON DELETE NO ACTION,
-	FOREIGN KEY (AttributeCategoryID) REFERENCES AttributeCategory (AttributeCategoryID)
+	FOREIGN KEY (AttributeCategoryID) REFERENCES AttributeCategories (AttributeCategoryID)
 	ON UPDATE NO ACTION ON DELETE NO ACTION
 );
 
@@ -176,7 +176,7 @@ CREATE TABLE Datasets (
 	ON UPDATE NO ACTION ON DELETE NO ACTION
 );
 
-CREATE TABLE ObjectCategory (
+CREATE TABLE ObjectCategories (
 	ObjectCategoryID INTEGER  AUTO_INCREMENT NOT NULL PRIMARY KEY,
 	ObjectCategoryName VARCHAR (255)  NOT NULL,
 	CategoryDefinition TEXT   NULL
@@ -187,7 +187,7 @@ CREATE TABLE ObjectTypes (
 	ObjectType VARCHAR (255)  NOT NULL,
 	ObjectTypeCV VARCHAR (255)  NULL,
 	ObjectTypologyCV VARCHAR (50)  NOT NULL,
-	Icons BLOB   NULL,
+	Icon BLOB   NULL,
 	Description TEXT   NULL,
 	ObjectCategoryID INTEGER   NULL,
 	DatasetID INTEGER   NOT NULL,
@@ -197,7 +197,7 @@ CREATE TABLE ObjectTypes (
 	ON UPDATE NO ACTION ON DELETE NO ACTION,
 	FOREIGN KEY (DatasetID) REFERENCES Datasets (DatasetID)
 	ON UPDATE NO ACTION ON DELETE NO ACTION,
-	FOREIGN KEY (ObjectCategoryID) REFERENCES ObjectCategory (ObjectCategoryID)
+	FOREIGN KEY (ObjectCategoryID) REFERENCES ObjectCategories (ObjectCategoryID)
 	ON UPDATE NO ACTION ON DELETE NO ACTION
 );
 
@@ -218,14 +218,15 @@ CREATE TABLE DescriptorValues (
 	DescriptorValue VARCHAR (500)  NOT NULL,
 	DescriptorValueCV VARCHAR (255)  NULL,
 	DataValuesMapperID INTEGER   NOT NULL,
-	FOREIGN KEY (DataValuesMapperID) REFERENCES DataValuesMapper (DataValuesMapperID)
+	FOREIGN KEY (DescriptorValueCV) REFERENCES CV_DescriptorValues (Term)
 	ON UPDATE NO ACTION ON DELETE NO ACTION,
-	FOREIGN KEY (DescriptorValueCV) REFERENCES CV_DescriptorValues (Name)
+	FOREIGN KEY (DataValuesMapperID) REFERENCES DataValuesMapper (DataValuesMapperID)
 	ON UPDATE NO ACTION ON DELETE NO ACTION
 );
 
 CREATE TABLE DualValues (
 	DualValueID INTEGER  AUTO_INCREMENT NOT NULL PRIMARY KEY,
+	DualValue  BIT   NOT NULL,
 	DualValueMeaningCV VARCHAR (255)  NOT NULL,
 	DataValuesMapperID INTEGER   NOT NULL,
 	FOREIGN KEY (DualValueMeaningCV) REFERENCES CV_DualValueMeaning (Name)
@@ -289,7 +290,7 @@ CREATE TABLE SeasonalNumericValues (
 
 CREATE TABLE TimeSeries (
 	TimeSeriesID INTEGER  AUTO_INCREMENT NOT NULL PRIMARY KEY,
-	WaterOrCalendarYear VARCHAR (50)  NOT NULL,
+	YearType VARCHAR (50)  NOT NULL,
 	AggregationStatistiCV VARCHAR (255)  NOT NULL,
 	AggregationInterval DOUBLE   NOT NULL,
 	IntervalTimeUnitCV VARCHAR (255)  NOT NULL,
@@ -383,7 +384,7 @@ CREATE TABLE Connections (
 	ON UPDATE NO ACTION ON DELETE NO ACTION
 );
 
-CREATE TABLE InstanceCategory (
+CREATE TABLE InstanceCategories (
 	InstanceCategoryID INTEGER  AUTO_INCREMENT NOT NULL PRIMARY KEY,
 	InstanceCategory VARCHAR (255)  NOT NULL,
 	CategoryDefinition TEXT   NULL
@@ -399,11 +400,11 @@ CREATE TABLE Instances (
 	InstanceCategoryID INTEGER   NULL,
 	FOREIGN KEY (InstanceNameCV) REFERENCES CV_InstanceName (Name)
 	ON UPDATE NO ACTION ON DELETE NO ACTION,
-	FOREIGN KEY (InstanceCategoryID) REFERENCES InstanceCategory (InstanceCategoryID)
+	FOREIGN KEY (InstanceCategoryID) REFERENCES InstanceCategories (InstanceCategoryID)
 	ON UPDATE NO ACTION ON DELETE NO ACTION
 );
 
-CREATE TABLE Mapping (
+CREATE TABLE Mappings (
 	MappingID INTEGER  AUTO_INCREMENT NOT NULL PRIMARY KEY,
 	AttributeID INTEGER   NOT NULL,
 	InstanceID INTEGER   NOT NULL,
@@ -434,11 +435,11 @@ CREATE TABLE MasterNetworks (
 	ON UPDATE NO ACTION ON DELETE NO ACTION
 );
 
-CREATE TABLE ScenarioMapping (
+CREATE TABLE ScenarioMappings (
 	ScenarioMappingID INTEGER  AUTO_INCREMENT NOT NULL PRIMARY KEY,
 	ScenarioID INTEGER   NOT NULL,
 	MappingID INTEGER   NOT NULL,
-	FOREIGN KEY (MappingID) REFERENCES Mapping (MappingID)
+	FOREIGN KEY (MappingID) REFERENCES Mappings (MappingID)
 	ON UPDATE NO ACTION ON DELETE NO ACTION,
 	FOREIGN KEY (ScenarioID) REFERENCES Scenarios (ScenarioID)
 	ON UPDATE NO ACTION ON DELETE NO ACTION
