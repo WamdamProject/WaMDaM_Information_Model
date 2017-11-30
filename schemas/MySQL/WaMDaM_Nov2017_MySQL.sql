@@ -46,8 +46,8 @@ CREATE TABLE CV_AttributeName (
 );
 
 CREATE TABLE CV_DescriptorValues (
-	Name VARCHAR (255)  NOT NULL PRIMARY KEY,
-	Term VARCHAR (255)  NOT NULL,
+	Term VARCHAR (255)  NOT NULL PRIMARY KEY,
+	Name VARCHAR (255)  NOT NULL,
 	AttributeName VARCHAR (255)  NOT NULL,
 	Definition VARCHAR (5000)  NULL,
 	Category VARCHAR (255)  NULL,
@@ -57,7 +57,7 @@ CREATE TABLE CV_DescriptorValues (
 CREATE TABLE CV_DualValueMeaning (
 	Name VARCHAR (255)  NOT NULL PRIMARY KEY,
 	Term VARCHAR (255)  NOT NULL,
-	BooleanValue BINARY (1)  NOT NULL,
+	BooleanValue TINYINT(1)   NOT NULL,
 	Definition VARCHAR (5000)  NULL,
 	Category VARCHAR (255)  NULL,
 	SourceVocabularyURI VARCHAR (255)  NULL
@@ -142,7 +142,7 @@ CREATE TABLE CV_Units (
 /***************************************************************************/
 USE WaMDaM;
 
-CREATE TABLE AttributeCategory (
+CREATE TABLE AttributeCategories (
 	AttributeCategoryID INT  AUTO_INCREMENT NOT NULL PRIMARY KEY,
 	AttributeCategoryName VARCHAR (255)  NOT NULL,
 	CategoryDefinition TEXT   NULL
@@ -169,7 +169,7 @@ CREATE TABLE Datasets (
 	Description TEXT   NULL
 );
 
-CREATE TABLE ObjectCategory (
+CREATE TABLE ObjectCategories (
 	ObjectCategoryID INT  AUTO_INCREMENT NOT NULL PRIMARY KEY,
 	ObjectCategoryName VARCHAR (255)  NOT NULL,
 	CategoryDefinition TEXT   NULL
@@ -180,7 +180,7 @@ CREATE TABLE ObjectTypes (
 	ObjectType VARCHAR (255)  NOT NULL,
 	ObjectTypeCV VARCHAR (255)  NULL,
 	ObjectTypologyCV VARCHAR (50)  NOT NULL,
-	Icons BLOB   NULL,
+	Icon BLOB   NULL,
 	Description TEXT   NULL,
 	ObjectCategoryID INT   NULL,
 	DatasetID INT   NOT NULL
@@ -208,6 +208,7 @@ CREATE TABLE DescriptorValues (
 
 CREATE TABLE DualValues (
 	DualValueID INT  AUTO_INCREMENT NOT NULL PRIMARY KEY,
+	DualValue  TINYINT(1)   NOT NULL,
 	DualValueMeaningCV VARCHAR (255)  NOT NULL,
 	DataValuesMapperID INT   NOT NULL
 );
@@ -251,7 +252,7 @@ CREATE TABLE SeasonalNumericValues (
 
 CREATE TABLE TimeSeries (
 	TimeSeriesID INT  AUTO_INCREMENT NOT NULL PRIMARY KEY,
-	WaterOrCalendarYear VARCHAR (50)  NOT NULL,
+	YearType VARCHAR (50)  NOT NULL,
 	AggregationStatistiCV VARCHAR (255)  NOT NULL,
 	AggregationInterval DOUBLE   NOT NULL,
 	IntervalTimeUnitCV VARCHAR (255)  NOT NULL,
@@ -325,7 +326,7 @@ CREATE TABLE Connections (
 	EndNodeInstanceID INT   NOT NULL
 );
 
-CREATE TABLE InstanceCategory (
+CREATE TABLE InstanceCategories (
 	InstanceCategoryID INT  AUTO_INCREMENT NOT NULL PRIMARY KEY,
 	InstanceCategory VARCHAR (255)  NOT NULL,
 	CategoryDefinition TEXT   NULL
@@ -341,7 +342,7 @@ CREATE TABLE Instances (
 	InstanceCategoryID INT   NULL
 );
 
-CREATE TABLE Mapping (
+CREATE TABLE Mappings (
 	MappingID INT  AUTO_INCREMENT NOT NULL PRIMARY KEY,
 	AttributeID INT   NOT NULL,
 	InstanceID INT   NOT NULL,
@@ -358,7 +359,7 @@ CREATE TABLE MasterNetworks (
 	Description TEXT   NULL
 );
 
-CREATE TABLE ScenarioMapping (
+CREATE TABLE ScenarioMappings (
 	ScenarioMappingID INT  AUTO_INCREMENT NOT NULL PRIMARY KEY,
 	ScenarioID INT   NOT NULL,
 	MappingID INT   NOT NULL
@@ -393,7 +394,7 @@ FOREIGN KEY (ObjectTypeID) REFERENCES ObjectTypes (ObjectTypeID)
 ON UPDATE NO ACTION ON DELETE NO ACTION;
 
 ALTER TABLE Attributes ADD CONSTRAINT fk_ObjectAttributes_AttributeCategory
-FOREIGN KEY (AttributeCategoryID) REFERENCES AttributeCategory (AttributeCategoryID)
+FOREIGN KEY (AttributeCategoryID) REFERENCES AttributeCategories (AttributeCategoryID)
 ON UPDATE NO ACTION ON DELETE NO ACTION;
 
 ALTER TABLE Datasets ADD CONSTRAINT fk_Datasets_Sources
@@ -413,15 +414,15 @@ FOREIGN KEY (DatasetID) REFERENCES Datasets (DatasetID)
 ON UPDATE NO ACTION ON DELETE NO ACTION;
 
 ALTER TABLE ObjectTypes ADD CONSTRAINT fk_ObjectTypes_ObjectCategory
-FOREIGN KEY (ObjectCategoryID) REFERENCES ObjectCategory (ObjectCategoryID)
+FOREIGN KEY (ObjectCategoryID) REFERENCES ObjectCategories (ObjectCategoryID)
+ON UPDATE NO ACTION ON DELETE NO ACTION;
+
+ALTER TABLE DescriptorValues ADD CONSTRAINT fk_DescriptorValues_CV_DescriptorValues
+FOREIGN KEY (DescriptorValueCV) REFERENCES CV_DescriptorValues (Term)
 ON UPDATE NO ACTION ON DELETE NO ACTION;
 
 ALTER TABLE DescriptorValues ADD CONSTRAINT fk_DescriptorValues_DataValuesMapper
 FOREIGN KEY (DataValuesMapperID) REFERENCES DataValuesMapper (DataValuesMapperID)
-ON UPDATE NO ACTION ON DELETE NO ACTION;
-
-ALTER TABLE DescriptorValues ADD CONSTRAINT fk_TextControlled_CV_TextControlledValue
-FOREIGN KEY (DescriptorValueCV) REFERENCES CV_DescriptorValues (Name)
 ON UPDATE NO ACTION ON DELETE NO ACTION;
 
 ALTER TABLE DualValues ADD CONSTRAINT fk_BooleanValues_CV_BooleanValueMeaning
@@ -513,26 +514,26 @@ FOREIGN KEY (InstanceNameCV) REFERENCES CV_InstanceName (Name)
 ON UPDATE NO ACTION ON DELETE NO ACTION;
 
 ALTER TABLE Instances ADD CONSTRAINT fk_Instances_InstanceCategory
-FOREIGN KEY (InstanceCategoryID) REFERENCES InstanceCategory (InstanceCategoryID)
+FOREIGN KEY (InstanceCategoryID) REFERENCES InstanceCategories (InstanceCategoryID)
 ON UPDATE NO ACTION ON DELETE NO ACTION;
 
-ALTER TABLE Mapping ADD CONSTRAINT fk_Mapping_Attributes
+ALTER TABLE Mappings ADD CONSTRAINT fk_Mapping_Attributes
 FOREIGN KEY (AttributeID) REFERENCES Attributes (AttributeID)
 ON UPDATE NO ACTION ON DELETE NO ACTION;
 
-ALTER TABLE Mapping ADD CONSTRAINT fk_Mapping_DataValuesMapper
+ALTER TABLE Mappings ADD CONSTRAINT fk_Mapping_DataValuesMapper
 FOREIGN KEY (DataValuesMapperID) REFERENCES DataValuesMapper (DataValuesMapperID)
 ON UPDATE NO ACTION ON DELETE NO ACTION;
 
-ALTER TABLE Mapping ADD CONSTRAINT fk_Mapping_Instances
+ALTER TABLE Mappings ADD CONSTRAINT fk_Mapping_Instances
 FOREIGN KEY (InstanceID) REFERENCES Instances (InstanceID)
 ON UPDATE NO ACTION ON DELETE NO ACTION;
 
-ALTER TABLE Mapping ADD CONSTRAINT fk_Mapping_Methods
+ALTER TABLE Mappings ADD CONSTRAINT fk_Mapping_Methods
 FOREIGN KEY (MethodID) REFERENCES Methods (MethodID)
 ON UPDATE NO ACTION ON DELETE NO ACTION;
 
-ALTER TABLE Mapping ADD CONSTRAINT fk_Mapping_Sources
+ALTER TABLE Mappings ADD CONSTRAINT fk_Mapping_Sources
 FOREIGN KEY (SourceID) REFERENCES Sources (SourceID)
 ON UPDATE NO ACTION ON DELETE NO ACTION;
 
@@ -544,11 +545,11 @@ ALTER TABLE MasterNetworks ADD CONSTRAINT fk_MasterNetworks_CV_VerticalDatum
 FOREIGN KEY (VerticalDatumCV) REFERENCES CV_ElevationDatum (Name)
 ON UPDATE NO ACTION ON DELETE NO ACTION;
 
-ALTER TABLE ScenarioMapping ADD CONSTRAINT fk_ScenarioMapping_Mapping
-FOREIGN KEY (MappingID) REFERENCES Mapping (MappingID)
+ALTER TABLE ScenarioMappings ADD CONSTRAINT fk_ScenarioMapping_Mapping
+FOREIGN KEY (MappingID) REFERENCES Mappings (MappingID)
 ON UPDATE NO ACTION ON DELETE NO ACTION;
 
-ALTER TABLE ScenarioMapping ADD CONSTRAINT fk_ScenarioMapping_Scenarios
+ALTER TABLE ScenarioMappings ADD CONSTRAINT fk_ScenarioMapping_Scenarios
 FOREIGN KEY (ScenarioID) REFERENCES Scenarios (ScenarioID)
 ON UPDATE NO ACTION ON DELETE NO ACTION;
 
