@@ -48,8 +48,8 @@ create table WaMDaM.CV_AttributeName (
 	sourcevocabularyuri varchar (255) NULL
 );
 create table WaMDaM.CV_DescriptorValues (
-	name varchar (255) NOT NULL primary key,
-	term varchar (255) NOT NULL,
+	term varchar (255) NOT NULL primary key,
+	name varchar (255) NOT NULL,
 	attributename varchar (255) NOT NULL,
 	definition varchar (5000) NULL,
 	category varchar (255) NULL,
@@ -58,7 +58,7 @@ create table WaMDaM.CV_DescriptorValues (
 create table WaMDaM.CV_DualValueMeaning (
 	name varchar (255) NOT NULL primary key,
 	term varchar (255) NOT NULL,
-	booleanvalue bit varying (1) NOT NULL,
+	booleanvalue boolean  NOT NULL,
 	definition varchar (5000) NULL,
 	category varchar (255) NULL,
 	sourcevocabularyuri varchar (255) NULL
@@ -132,7 +132,7 @@ create table WaMDaM.CV_Units (
 /************************* CREATE DATASETSTRUCTURE *************************/
 /***************************************************************************/
 
-create table WaMDaM.AttributeCategory (
+create table WaMDaM.AttributeCategories (
 	attributecategoryid serial  NOT NULL primary key,
 	attributecategoryname varchar (255) NOT NULL,
 	categorydefinition text  NULL
@@ -156,7 +156,7 @@ create table WaMDaM.Datasets (
 	sourceid integer  NOT NULL,
 	description text  NULL
 );
-create table WaMDaM.ObjectCategory (
+create table WaMDaM.ObjectCategories (
 	objectcategoryid serial  NOT NULL primary key,
 	objectcategoryname varchar (255) NOT NULL,
 	categorydefinition text  NULL
@@ -166,7 +166,7 @@ create table WaMDaM.ObjectTypes (
 	objecttype varchar (255) NOT NULL,
 	objecttypecv varchar (255) NULL,
 	objecttypologycv varchar (50) NOT NULL,
-	icons bytea  NULL,
+	icon bytea  NULL,
 	description text  NULL,
 	objectcategoryid integer  NULL,
 	datasetid integer  NOT NULL
@@ -189,6 +189,7 @@ create table WaMDaM.DescriptorValues (
 );
 create table WaMDaM.DualValues (
 	dualvalueid serial  NOT NULL primary key,
+	dualvalue  boolean  NOT NULL,
 	dualvaluemeaningcv varchar (255) NOT NULL,
 	datavaluesmapperid integer  NOT NULL
 );
@@ -226,7 +227,7 @@ create table WaMDaM.SeasonalNumericValues (
 );
 create table WaMDaM.TimeSeries (
 	timeseriesid serial  NOT NULL primary key,
-	waterorcalendaryear varchar (50) NOT NULL,
+	yeartype varchar (50) NOT NULL,
 	aggregationstatisticv varchar (255) NOT NULL,
 	aggregationinterval double precision  NOT NULL,
 	intervaltimeunitcv varchar (255) NOT NULL,
@@ -291,7 +292,7 @@ create table WaMDaM.Connections (
 	startnodeinstanceid integer  NOT NULL,
 	endnodeinstanceid integer  NOT NULL
 );
-create table WaMDaM.InstanceCategory (
+create table WaMDaM.InstanceCategories (
 	instancecategoryid serial  NOT NULL primary key,
 	instancecategory varchar (255) NOT NULL,
 	categorydefinition text  NULL
@@ -305,7 +306,7 @@ create table WaMDaM.Instances (
 	description text  NULL,
 	instancecategoryid integer  NULL
 );
-create table WaMDaM.Mapping (
+create table WaMDaM.Mappings (
 	mappingid serial  NOT NULL primary key,
 	attributeid integer  NOT NULL,
 	instanceid integer  NOT NULL,
@@ -320,7 +321,7 @@ create table WaMDaM.MasterNetworks (
 	verticaldatumcv varchar (255) NOT NULL,
 	description text  NULL
 );
-create table WaMDaM.ScenarioMapping (
+create table WaMDaM.ScenarioMappings (
 	scenariomappingid serial  NOT NULL primary key,
 	scenarioid integer  NOT NULL,
 	mappingid integer  NOT NULL
@@ -353,7 +354,7 @@ foreign key (ObjectTypeID) References WaMDaM.ObjectTypes (ObjectTypeID)
 on update no Action on delete cascade;
 
 alter table WaMDaM.Attributes add constraint fk_ObjectAttributes_AttributeCategory
-foreign key (AttributeCategoryID) References WaMDaM.AttributeCategory (AttributeCategoryID)
+foreign key (AttributeCategoryID) References WaMDaM.AttributeCategories (AttributeCategoryID)
 on update no Action on delete cascade;
 
 alter table WaMDaM.Datasets add constraint fk_Datasets_Sources
@@ -373,15 +374,15 @@ foreign key (DatasetID) References WaMDaM.Datasets (DatasetID)
 on update no Action on delete cascade;
 
 alter table WaMDaM.ObjectTypes add constraint fk_ObjectTypes_ObjectCategory
-foreign key (ObjectCategoryID) References WaMDaM.ObjectCategory (ObjectCategoryID)
+foreign key (ObjectCategoryID) References WaMDaM.ObjectCategories (ObjectCategoryID)
+on update no Action on delete cascade;
+
+alter table WaMDaM.DescriptorValues add constraint fk_DescriptorValues_CV_DescriptorValues
+foreign key (DescriptorValueCV) References WaMDaM.CV_DescriptorValues (Term)
 on update no Action on delete cascade;
 
 alter table WaMDaM.DescriptorValues add constraint fk_DescriptorValues_DataValuesMapper
 foreign key (DataValuesMapperID) References WaMDaM.DataValuesMapper (DataValuesMapperID)
-on update no Action on delete cascade;
-
-alter table WaMDaM.DescriptorValues add constraint fk_TextControlled_CV_TextControlledValue
-foreign key (DescriptorValueCV) References WaMDaM.CV_DescriptorValues (Name)
 on update no Action on delete cascade;
 
 alter table WaMDaM.DualValues add constraint fk_BooleanValues_CV_BooleanValueMeaning
@@ -473,26 +474,26 @@ foreign key (InstanceNameCV) References WaMDaM.CV_InstanceName (Name)
 on update no Action on delete cascade;
 
 alter table WaMDaM.Instances add constraint fk_Instances_InstanceCategory
-foreign key (InstanceCategoryID) References WaMDaM.InstanceCategory (InstanceCategoryID)
+foreign key (InstanceCategoryID) References WaMDaM.InstanceCategories (InstanceCategoryID)
 on update no Action on delete cascade;
 
-alter table WaMDaM.Mapping add constraint fk_Mapping_Attributes
+alter table WaMDaM.Mappings add constraint fk_Mapping_Attributes
 foreign key (AttributeID) References WaMDaM.Attributes (AttributeID)
 on update no Action on delete cascade;
 
-alter table WaMDaM.Mapping add constraint fk_Mapping_DataValuesMapper
+alter table WaMDaM.Mappings add constraint fk_Mapping_DataValuesMapper
 foreign key (DataValuesMapperID) References WaMDaM.DataValuesMapper (DataValuesMapperID)
 on update no Action on delete cascade;
 
-alter table WaMDaM.Mapping add constraint fk_Mapping_Instances
+alter table WaMDaM.Mappings add constraint fk_Mapping_Instances
 foreign key (InstanceID) References WaMDaM.Instances (InstanceID)
 on update no Action on delete cascade;
 
-alter table WaMDaM.Mapping add constraint fk_Mapping_Methods
+alter table WaMDaM.Mappings add constraint fk_Mapping_Methods
 foreign key (MethodID) References WaMDaM.Methods (MethodID)
 on update no Action on delete cascade;
 
-alter table WaMDaM.Mapping add constraint fk_Mapping_Sources
+alter table WaMDaM.Mappings add constraint fk_Mapping_Sources
 foreign key (SourceID) References WaMDaM.Sources (SourceID)
 on update no Action on delete cascade;
 
@@ -504,11 +505,11 @@ alter table WaMDaM.MasterNetworks add constraint fk_MasterNetworks_CV_VerticalDa
 foreign key (VerticalDatumCV) References WaMDaM.CV_ElevationDatum (Name)
 on update no Action on delete cascade;
 
-alter table WaMDaM.ScenarioMapping add constraint fk_ScenarioMapping_Mapping
-foreign key (MappingID) References WaMDaM.Mapping (MappingID)
+alter table WaMDaM.ScenarioMappings add constraint fk_ScenarioMapping_Mapping
+foreign key (MappingID) References WaMDaM.Mappings (MappingID)
 on update no Action on delete cascade;
 
-alter table WaMDaM.ScenarioMapping add constraint fk_ScenarioMapping_Scenarios
+alter table WaMDaM.ScenarioMappings add constraint fk_ScenarioMapping_Scenarios
 foreign key (ScenarioID) References WaMDaM.Scenarios (ScenarioID)
 on update no Action on delete cascade;
 
