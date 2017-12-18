@@ -23,16 +23,16 @@ The documentations of the model and its design are found at [docs.wamdam.org](ht
 * [SQLite](/database_schemas/SQLite)
 
 
+## 4. Use the WaMDaM Wizard to load water management data from Excel and other sources into WaMDaM database 
+The [WaMDaM Wizard][3] is an open-source, cross-platform, Python-based graphical user software to interact with WaMDaM database. By using the Wizard, users are not expected to understand the underlying WaMDaM database of schema
+[3]:https://github.com/WamdamProject/WaMDaM_Wizard
 
-## 4. WaMDaM Wizard to load water management data from Excel and other sources into WaMDaM SQLite database 
-The WaMDaM Wizard is an open-source, cross-platform, Python-based graphical user software to interact with WaMDaM database. By using the Wizard, users are not expected to understand the underlying WaMDaM database of schema
-
-[Download the Wizard GUI ](https://github.com/WamdamProject/WaMDaM_Wizard#download-the-wizard-gui-for-windows-7-and-10-64-bit-operating-systems)
 
 ## 6. Controlled Vocabularies
-View and the online moderated registry which aims to promote consistent terminology (i.e., Controlled Vocabularies-(CVs)) to describe water system components and their attributes across datasets, models, and users, while still retaining the native terms. Registering your model's native terms against these CVs will allow you to relate, query, and compare all of your water management data within a single database. Submit new terms to support your data and expand the registery.  
+View and the [WaMDaM online moderated registry][4] which aims to promote consistent terminology (i.e., Controlled Vocabularies-(CVs)) to describe water system components and their attributes across datasets, models, and users, while still retaining the native terms. Registering your model's native terms against these CVs will allow you to relate, query, and compare all of your water management data within a single database. Submit new terms to support your data and expand the registery. Check out the [registry souce code][]  
 
-[Controlled Vocabularies](http://vocabulary.wamdam.org/)
+[4]:https://github.com/WamdamProject/WaMDaM_ControlledVocabularies
+[5]:(http://vocabulary.wamdam.org
 
 
 ### Licensing  
