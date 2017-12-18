@@ -4627,8 +4627,8 @@
   </DbDocOptionMgr>
   <OpenEditors>
     <OpenEditor ClsNm="Diagram" fqn="null.02_WaMDaM_WCVs" selected="0"/>
-    <OpenEditor ClsNm="Diagram" fqn="null.01_WaMDaM" selected="1"/>
     <OpenEditor ClsNm="Diagram" fqn="null.03_CVs" selected="0"/>
+    <OpenEditor ClsNm="Diagram" fqn="null.01_WaMDaM" selected="1"/>
   </OpenEditors>
   <TreePaths>
     <TreePath/>
