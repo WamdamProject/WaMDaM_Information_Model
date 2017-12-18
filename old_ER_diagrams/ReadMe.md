@@ -21,4 +21,4 @@ Check out the history of the [different ER diagrams][1] using Microsoft Visio fo
 ![](/old_ER_diagrams/1.jpg)
 
 
-[1]:/WaMDaM_Schema_version_history
+[1]:/old_ER_diagrams/WaMDaM_Schema_version_history
