@@ -17,10 +17,10 @@ The documentations of the model and its design are found at [docs.wamdam.org](ht
 [2]:/XML_schema
 
 ## 3. Script to create blank WaMDaM databases OR copies of db to restore 
-* [Microsoft SQL Server](schemas/MS_SQL_Server)
-* [MySQL](schemas/MySQL)
-* [PostgreSQL](/schemas/PostgreSQL)
-* [SQLite](/schemas/SQLite)
+* [Microsoft SQL Server](database_schemas/MS_SQL_Server)
+* [MySQL](database_schemas/MySQL)
+* [PostgreSQL](/database_schemas/PostgreSQL)
+* [SQLite](/database_schemas/SQLite)
 
 
 
