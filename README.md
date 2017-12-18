@@ -10,13 +10,14 @@ The documentations of the model and its design are found at [docs.wamdam.org](ht
 
 ## 2. Entity Relationship diagrams for WaMDaM schema 1.0
 
-* Check out the interactive [WaMDaM schema or entity relationship diagram][1]. 
+* Check out the interactive [WaMDaM schema or entity relationship diagram][1]. This HTML site files are hosted in the [docs][21] folder  
 * Here is the [XML DbWrench schema file][2]  
 * For fun, check out the [older WaMDaM ER diagrams since inception][20]
 
 [1]:http://schema.wamdam.org/diagrams/01_WaMDaM.html  
 [2]:/XML_schema  
 [20]:/old_ER_diagrams 
+[21]:/docs
 
 ## 3. Script to create blank WaMDaM databases OR copies of db to restore 
 * [Microsoft SQL Server](database_schemas/MS_SQL_Server)
