@@ -4,32 +4,17 @@ The Water Management Data Model (WaMDaM) is information model to organize water 
 
 ## 1. Information Model Concepts and their description
 
-abc 
-
+The documentations of the model and its design are found at [docs.wamdam.org](http://docs.wamdam.org/DesignDocumentation/Desing_Req/)
 ![](Documentation/WaMDaM_Conceptual.jpg)
-
-
-**1. Dataset Structure**
-
-
-**2. Networks**
-
-
-**3. Metadata**
-
-
-**4. Data Values**
-
-
-**5. Controlled Vocabulary**
-
 
 
 ## 2. Entity Relationship diagrams for WaMDaM schema 1.0
 
-WaMDaM schema or entity relationship diagram is available at this interactive site. 
-![](https://wamdamproject.github.io/WaMDaM_Information_Model/diagrams/01_WaMDaM.html)
+* Check out the interactive [WaMDaM schema or entity relationship diagram][1]. 
+* Here is the [XML DbWrench schema file][2] 
 
+[1]:http://schema.wamdam.org/diagrams/01_WaMDaM.html
+[2]:/XML_schema
 
 ## 3. Script to create blank WaMDaM databases OR copies of db to restore 
 * [Microsoft SQL Server](schemas/MS_SQL_Server)
@@ -44,24 +29,10 @@ The WaMDaM Wizard is an open-source, cross-platform, Python-based graphical user
 
 [Download the Wizard GUI ](https://github.com/WamdamProject/WaMDaM_Wizard#download-the-wizard-gui-for-windows-7-and-10-64-bit-operating-systems)
 
-
-## 5. Data Use Cases to demonstrate WaMDaM capabilities 
-
-Demonstrate how WaMDaM enables systematic data query and comparisons across multiple different models and datasets.
-
-[use cases and application](https://github.com/WamdamProject/WaMDaM_UseCases)
-
-
 ## 6. Controlled Vocabularies
 View and the online moderated registry which aims to promote consistent terminology (i.e., Controlled Vocabularies-(CVs)) to describe water system components and their attributes across datasets, models, and users, while still retaining the native terms. Registering your model's native terms against these CVs will allow you to relate, query, and compare all of your water management data within a single database. Submit new terms to support your data and expand the registery.  
 
 [Controlled Vocabularies](http://vocabulary.wamdam.org/)
-
-
-## 7. Publications throughout the development of WaMDaM
-List of all the presentations and publications on WaMDaM products since inspection Edit
-[Publications](https://github.com/WamdamProject/WaMDaM_Publications)
-
 
 
 ### Licensing  
