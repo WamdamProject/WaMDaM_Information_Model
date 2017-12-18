@@ -7,7 +7,7 @@ Check out the history of the [different ER diagrams][1] using Microsoft Visio fo
 
 
 ## 4. Schema August 2015 (CUAHSI Conference, Tuscaloosa, AL)    
-![](old_ER_diagrams/4.jpg)  
+![](/old_ER_diagrams/4.jpg)  
 
 
 ## 3. Schema April 2014 (iEMS, San Diego, CA)    
