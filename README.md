@@ -23,12 +23,12 @@ The documentations of the model and its design are found at [docs.wamdam.org](ht
 * [SQLite](/database_schemas/SQLite)
 
 
-### Use the DDL Utility here to create DDL for SQLite, MySQL, PostgreSQL, and Microsoft SQL Server from one XML file. 
+## 4. Use the DDL Utility here to create DDL for SQLite, MySQL, PostgreSQL, and Microsoft SQL Server from one XML file. 
 [DDL Generator Utility][10]
 
 [10]:https://github.com/WamdamProject/WaMDaM_DDL_generator
 
-
+--------------------------------------------------------------------------------------------------------------------------
 ### Use the WaMDaM Wizard to load water management data from Excel and other sources into WaMDaM database 
 The [WaMDaM Wizard][3] is an open-source, cross-platform, Python-based graphical user software to interact with WaMDaM database. By using the Wizard, users are not expected to understand the underlying WaMDaM database of schema
 [3]:https://github.com/WamdamProject/WaMDaM_Wizard
