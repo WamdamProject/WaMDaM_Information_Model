@@ -4,7 +4,7 @@
 **1. Use query window to create a new db using script**  
 Open MySQL Workbench, create a new server connection. Remember the user name for use later.  
 Create a New SQL Tab for Executing queries
-Simply copy all this [script](/schemas/MySQL/WaMDaM_Nov2017_MySQL.sql) and paste into the new window of "create query"
+Simply copy all this [script](/database_schemas/MySQL/WaMDaM_MySQL.sql) and paste into the new window of "create query"
 Then click execute. The script should run successfully and create the 41 empty tables of WaMDaM  
 
 Attention: MySQL Workbench is configured by default to create lower case tables. See [direction here][1] on how to configure it to create upper case table names
@@ -13,5 +13,5 @@ Attention: MySQL Workbench is configured by default to create lower case tables.
 
 
 **2. Use a "Restore" option**    
-Alternatively, you could restore a [copy](/schemas/MySQL/Blank_db_copy) of WaMDaM MySQL database
+Alternatively, you could restore a [copy](/database_schemas/MySQL/Blank_db_copy) of WaMDaM MySQL database
 
