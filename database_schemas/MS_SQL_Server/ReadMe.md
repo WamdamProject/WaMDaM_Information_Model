@@ -9,4 +9,4 @@ Then click "execute". The script should run successfully and create the 41 empty
 
 **2. Attach a blank copy to MS SQL Server database**  
 
-Use this WaMDaM [copy](/schemas/MS_SQL_Server/blank_db_copy) and attach it to the MS SQL Server database
+Use this WaMDaM [copy](/database_schemas/MS_SQL_Server/blank_db_copy) and attach it to the MS SQL Server database
