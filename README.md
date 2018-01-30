@@ -1,5 +1,7 @@
 # WaMDaM_Information_Model
 
+[![DOI](https://zenodo.org/badge/92693811.svg)](https://zenodo.org/badge/latestdoi/92693811)
+
 The Water Management Data Model (WaMDaM) is information model to organize water management data with contextual metadata and controlled vocabulary for multiple datasets and models. WaMDaM is implemented in a relational model and works for SQLite, MySQL, PostgreSQL, and Microsoft SQL Server. 
 
 ## 1. Information Model Concepts and their description
