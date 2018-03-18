@@ -10,12 +10,13 @@ Check out the history of the [different ER diagrams][1] using Microsoft Visio fo
 ![](/old_ER_diagrams/4.jpg)  
 
 
-## 3. Schema April 2014 (iEMS, San Diego, CA)    
+## 3. Schema June 2014 (EWRI CONGRESS in Portland, OR)     
+![](/old_ER_diagrams/2.png)
+
+
+## 2. Schema April 2014 (iEMS, San Diego, CA)    
 ![](/old_ER_diagrams/3.jpg)  
 
-
-## 2. Schema June 2014 (EWRI CONGRESS in Portland, OR)     
-![](/old_ER_diagrams/2.png)
 
 ## 1. Schema Nov 2013 (earlier desings)    
 ![](/old_ER_diagrams/1.jpg)
