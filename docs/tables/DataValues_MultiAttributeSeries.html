@@ -31,13 +31,13 @@
 </td><td class="PkCol"> </td><td class="PkCol">Primary key identifier</td><td class="PkCol"> </td>
 </tr>
 <tr>
-<td class="FkCol"> </td><td class="FkCol"><a href="../columns/DataValues_MultiAttributeSeries_AttributeNameID.html">AttributeNameID</a></td><td class="FkCol">Integer</td><td class="FkCol"> </td><td class="FkCol"> </td><td class="FkCol"> </td><td class="FkCol">Foreign key identifier that references the attributes that comprise the columns of the MultiColumnArray</td><td class="FkCol">
+<td class="FkCol"> </td><td class="FkCol"><a href="../columns/DataValues_MultiAttributeSeries_MappingID_Attribute.html">MappingID_Attribute</a></td><td class="FkCol">Integer</td><td class="FkCol"> </td><td class="FkCol"> </td><td class="FkCol"> </td><td class="FkCol">Foreign key identifier that references the attributes that comprise the columns of the MultiColumnArray</td><td class="FkCol">
 <p class="boolImg">
 <img src="../images/ok12d.gif"></p>
 </td>
 </tr>
 <tr>
-<td class="FkCol"> </td><td class="FkCol"><a href="../columns/DataValues_MultiAttributeSeries_DataValuesMapperID.html">DataValuesMapperID</a></td><td class="FkCol">Integer</td><td class="FkCol"> </td><td class="FkCol"> </td><td class="FkCol"> </td><td class="FkCol">Foreign key identifier for a DataValuesMapper record</td><td class="FkCol">
+<td class="FkCol"> </td><td class="FkCol"><a href="../columns/DataValues_MultiAttributeSeries_ValuesMapperID.html">ValuesMapperID</a></td><td class="FkCol">Integer</td><td class="FkCol"> </td><td class="FkCol"> </td><td class="FkCol"> </td><td class="FkCol">Foreign key identifier for a DataValuesMapper record</td><td class="FkCol">
 <p class="boolImg">
 <img src="../images/ok12d.gif"></p>
 </td>
@@ -55,10 +55,10 @@
 <td class="header">Name</td><td class="header">Parent Table</td><td class="header">Child Table</td><td class="header">Parent Columns</td><td class="header">Child Columns</td>
 </tr>
 <tr>
-<td><a href="../foreignKeys/DataValues_MultiAttributeSeries_fk_MultiAttributeSeries_DataValuesMapper.html">fk_MultiAttributeSeries_DataValuesMapper</a></td><td><a href="../tables/DataValues_DataValuesMapper.html">DataValues.DataValuesMapper</a></td><td><a href="../tables/DataValues_MultiAttributeSeries.html">DataValues.MultiAttributeSeries</a></td><td>DataValuesMapperID</td><td>DataValuesMapperID</td>
+<td><a href="../foreignKeys/DataValues_MultiAttributeSeries_fk_MultiAttributeSeries_DataValuesMapper.html">fk_MultiAttributeSeries_DataValuesMapper</a></td><td><a href="../tables/DataValues_ValuesMapper.html">DataValues.ValuesMapper</a></td><td><a href="../tables/DataValues_MultiAttributeSeries.html">DataValues.MultiAttributeSeries</a></td><td>ValuesMapperID</td><td>ValuesMapperID</td>
 </tr>
 <tr>
-<td><a href="../foreignKeys/DataValues_MultiAttributeSeries_fk_MultiColumnArray_DataValuesMapper.html">fk_MultiColumnArray_DataValuesMapper</a></td><td><a href="../tables/DataValues_DataValuesMapper.html">DataValues.DataValuesMapper</a></td><td><a href="../tables/DataValues_MultiAttributeSeries.html">DataValues.MultiAttributeSeries</a></td><td>DataValuesMapperID</td><td>AttributeNameID</td>
+<td><a href="../foreignKeys/DataValues_MultiAttributeSeries_fk_MultiColumnArray_DataValuesMapper.html">fk_MultiColumnArray_DataValuesMapper</a></td><td><a href="../tables/DataValues_ValuesMapper.html">DataValues.ValuesMapper</a></td><td><a href="../tables/DataValues_MultiAttributeSeries.html">DataValues.MultiAttributeSeries</a></td><td>ValuesMapperID</td><td>MappingID_Attribute</td>
 </tr>
 </table>
 <br>
