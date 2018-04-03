@@ -55,14 +55,6 @@ create table WaMDaM.CV_DescriptorValues (
 	category varchar (255) NULL,
 	sourcevocabularyuri varchar (255) NULL
 );
-create table WaMDaM.CV_DualValueMeaning (
-	name varchar (255) NOT NULL primary key,
-	term varchar (255) NOT NULL,
-	booleanvalue boolean  NOT NULL,
-	definition varchar (5000) NULL,
-	category varchar (255) NULL,
-	sourcevocabularyuri varchar (255) NULL
-);
 create table WaMDaM.CV_ElectronicFileFormat (
 	name varchar (255) NOT NULL primary key,
 	term varchar (255) NOT NULL,

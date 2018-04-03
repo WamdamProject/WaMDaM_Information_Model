@@ -54,15 +54,6 @@ CREATE TABLE CV_DescriptorValues (
 	SourceVocabularyURI VARCHAR (255)  NULL
 );
 
-CREATE TABLE CV_DualValueMeaning (
-	Name VARCHAR (255)  NOT NULL PRIMARY KEY,
-	Term VARCHAR (255)  NOT NULL,
-	BooleanValue TINYINT(1)   NOT NULL,
-	Definition VARCHAR (5000)  NULL,
-	Category VARCHAR (255)  NULL,
-	SourceVocabularyURI VARCHAR (255)  NULL
-);
-
 CREATE TABLE CV_ElectronicFileFormat (
 	Name VARCHAR (255)  NOT NULL PRIMARY KEY,
 	Term VARCHAR (255)  NOT NULL,

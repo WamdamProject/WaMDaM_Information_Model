@@ -67,15 +67,6 @@ CREATE TABLE WaMDaM.CV_DescriptorValues (
 	SourceVocabularyURI varchar (255)  NULL,
 	PRIMARY KEY (Term)
 )
-CREATE TABLE WaMDaM.CV_DualValueMeaning (
-	Name varchar (255)  NOT NULL,
-	Term varchar (255)  NOT NULL,
-	BooleanValue bit   NOT NULL,
-	Definition varchar (5000)  NULL,
-	Category varchar (255)  NULL,
-	SourceVocabularyURI varchar (255)  NULL,
-	PRIMARY KEY (Name)
-)
 CREATE TABLE WaMDaM.CV_ElectronicFileFormat (
 	Name varchar (255)  NOT NULL,
 	Term varchar (255)  NOT NULL,
