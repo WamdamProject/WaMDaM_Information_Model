@@ -6,7 +6,7 @@
 </header>
 <body>
 <div class="logo">
-<p>WaMDaM1.0 [WaMDaM_DBWrench_Schema.xml]</p>
+<p>WaMDaM1.01 [WaMDaM_DBWrench_Schema_1.01.xml]</p>
 </div>
 <div class="horzMenu">
 <a class="horzMenu" href="../index.html"> Home</a><a class="horzMenu" href="../tables/index.html">Tables</a><a class="horzMenu" href="../schemas/index.html">Schemas</a><a class="horzMenu" href="../diagrams/index.html">Diagrams</a><a class="horzMenu" href="../foreignKeys/index.html">Foreign Keys</a><a class="horzMenu" href="../indexes/index.html">Indexes</a>
@@ -34,7 +34,7 @@
 <td> </td><td><a href="../columns/ResourceStruct_ResourceTypes_ResourceType.html">ResourceType</a></td><td>VarChar(255)</td><td> </td><td> </td><td> </td><td>Full text name of the Resource type that represents a model or a dataset that groups many system components (e.g., Water Evaluation and Planning system)</td><td> </td>
 </tr>
 <tr>
-<td> </td><td><a href="../columns/ResourceStruct_ResourceTypes_ResourceAcronym.html">ResourceAcronym</a></td><td>VarChar(255)</td><td> </td><td> </td><td> </td><td>Text name acronym like WEAP, WASH</td><td> </td>
+<td> </td><td><a href="../columns/ResourceStruct_ResourceTypes_ResourceTypeAcronym.html">ResourceTypeAcronym</a></td><td>VarChar(255)</td><td> </td><td> </td><td> </td><td>Text name acronym like WEAP, WASH</td><td> </td>
 </tr>
 <tr>
 <td class="FkCol"> </td><td class="FkCol"><a href="../columns/ResourceStruct_ResourceTypes_MethodID.html">MethodID</a></td><td class="FkCol">Integer</td><td class="FkCol"> </td><td class="FkCol"> </td><td class="FkCol"> </td><td class="FkCol">Foreigh key identifier for a method the resource types uses (e.g., WEAP simulation method)</td><td class="FkCol">
@@ -61,7 +61,7 @@
 <td class="header">Name</td><td class="header">Parent Table</td><td class="header">Child Table</td><td class="header">Parent Columns</td><td class="header">Child Columns</td>
 </tr>
 <tr>
-<td><a href="../foreignKeys/ResourceStruct_ResourceTypes_fk_Datasets_Methods.html">fk_Datasets_Methods</a></td><td><a href="../tables/Metadata_Methods.html">Metadata.Methods</a></td><td><a href="../tables/ResourceStruct_ResourceTypes.html">ResourceStruct.ResourceTypes</a></td><td>MethodID</td><td>MethodID</td>
+<td><a href="../foreignKeys/ResourceStruct_ResourceTypes_fk_ResourceTypes_Methods.html">fk_ResourceTypes_Methods</a></td><td><a href="../tables/Metadata_Methods.html">Metadata.Methods</a></td><td><a href="../tables/ResourceStruct_ResourceTypes.html">ResourceStruct.ResourceTypes</a></td><td>MethodID</td><td>MethodID</td>
 </tr>
 </table>
 <br>
