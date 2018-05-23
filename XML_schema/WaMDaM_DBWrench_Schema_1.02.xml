@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><Db flnm="WaMDaM_DBWrench_Schema_1.02" nm="WaMDaM1.01" ver="1.3.4">
+<?xml version="1.0" encoding="UTF-8"?><Db flnm="WaMDaM_DBWrench_Schema_1.02" nm="WaMDaM1.02" ver="1.3.4">
   <VerLbl/>
   <VerNotes/>
   <DefTblOpts/>
@@ -4658,9 +4658,7 @@
       <BoolOpt lbl="Views" nm="doc.views" on="1" spl="1"/>
     </BasicOptionMgr>
   </DbDocOptionMgr>
-  <OpenEditors>
-    <OpenEditor ClsNm="Diagram" fqn="null.01_WaMDaM" selected="1"/>
-  </OpenEditors>
+  <OpenEditors/>
   <TreePaths>
     <TreePath/>
     <TreePath>/Schemas (5)</TreePath>
