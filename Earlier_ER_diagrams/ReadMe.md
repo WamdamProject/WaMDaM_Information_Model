@@ -2,8 +2,8 @@
 
 Check out the history of the [different ER diagrams][1] using Microsoft Visio for earlier versions and and DbWrench for later ones. The five key ER diagrams are below 
 
-## 5. Final Schema Nov 2017    
-![](/Earlier_ER_diagrams/5.png) 
+## 5. Final Schema Nov 2018    
+![](/Earlier_ER_diagrams/5.jpg) 
 
 
 ## 4. Schema August 2015 (CUAHSI Conference, Tuscaloosa, AL)    
