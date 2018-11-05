@@ -2,7 +2,12 @@
 
 Check out the history of the [different ER diagrams][1] using Microsoft Visio for earlier versions and and DbWrench for later ones. The five key ER diagrams are below 
 
+# Key feedback from collaborators and colleagues on WaMDaM designs, presentations, and earlier draft writings
+
+
+
 ## 5. Final Schema Nov 2018    
+
 ![](/Earlier_ER_diagrams/5.jpg) 
 
 
