@@ -28,4 +28,4 @@ Check out the history of the [different ER diagrams][1] using Microsoft Visio fo
 
 
 [1]:/Earlier_ER_diagrams/WaMDaM_Schema_version_history
-[1]:/Earlier_ER_diagrams/Key_feedback.md
+[2]:/Earlier_ER_diagrams/Key_feedback.md
