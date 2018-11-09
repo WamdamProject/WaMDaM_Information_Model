@@ -139,8 +139,8 @@ CREATE TABLE WaMDaM.CV_Units (
 	UnitSystem varchar (255)  NULL,
 	UnitAbbreviation char (50)  NOT NULL,
 	SourceVocabularyURI varchar (5000)  NULL,
-	ConversionFactor float   NULL,
-	ConversionRelation varchar (255)  NULL,
+	LinearFactor float   NULL,
+	ConstantFactor float   NULL,
 	PRIMARY KEY (Name)
 )
 /***************************************************************************/

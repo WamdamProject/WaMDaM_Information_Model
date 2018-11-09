@@ -119,8 +119,8 @@ create table WaMDaM.CV_Units (
 	unitsystem varchar (255) NULL,
 	unitabbreviation char (50) NOT NULL,
 	sourcevocabularyuri varchar (5000) NULL,
-	conversionfactor double precision  NULL,
-	conversionrelation varchar (255) NULL
+	linearfactor double precision  NULL,
+	constantfactor double precision  NULL
 );
 /***************************************************************************/
 /**************************** CREATE DATAVALUES ****************************/

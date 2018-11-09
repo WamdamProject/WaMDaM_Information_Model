@@ -126,8 +126,8 @@ CREATE TABLE CV_Units (
 	UnitSystem VARCHAR (255)  NULL,
 	UnitAbbreviation char (50)  NOT NULL,
 	SourceVocabularyURI VARCHAR (5000)  NULL,
-	ConversionFactor FLOAT   NULL,
-	ConversionRelation VARCHAR (255)  NULL
+	LinearFactor FLOAT   NULL,
+	ConstantFactor FLOAT   NULL
 );
 
 /***************************************************************************/
