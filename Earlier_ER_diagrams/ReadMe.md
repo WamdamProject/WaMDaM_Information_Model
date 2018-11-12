@@ -4,7 +4,7 @@ Check out the history of the [different ER diagrams][1] using Microsoft Visio fo
 
 ## Key feedback from collaborators and colleagues on WaMDaM designs, presentations, and earlier draft writings
 
-[Key feedback][2]
+We solicited feedback from the following [conference and professional presentations][2]
 
 ## 5. Final Schema Nov 2018    
 
@@ -28,4 +28,4 @@ Check out the history of the [different ER diagrams][1] using Microsoft Visio fo
 
 
 [1]:/Earlier_ER_diagrams/WaMDaM_Schema_version_history
-[2]:/Earlier_ER_diagrams/Key_feedback.md
+[2]:/https://github.com/WamdamProject/WaMDaM-software-ecosystem/blob/master/mkdocs/Edit_MD_Files/Publications.md
