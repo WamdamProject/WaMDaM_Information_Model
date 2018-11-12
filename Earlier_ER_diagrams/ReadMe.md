@@ -28,4 +28,4 @@ We solicited feedback from the following [conference and professional presentati
 
 
 [1]:/Earlier_ER_diagrams/WaMDaM_Schema_version_history
-[2]:/https://github.com/WamdamProject/WaMDaM-software-ecosystem/blob/master/mkdocs/Edit_MD_Files/Publications.md
+[2]:https://github.com/WamdamProject/WaMDaM-software-ecosystem/blob/master/mkdocs/Edit_MD_Files/Publications.md
