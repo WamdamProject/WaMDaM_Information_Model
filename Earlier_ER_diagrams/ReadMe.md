@@ -19,7 +19,7 @@ We solicited feedback from the following [conference and professional presentati
 ![](/Earlier_ER_diagrams/2.png)
 
 
-## 2. Schema April 2014 (iEMS, San Diego, CA)    
+## 2. Schema April 2014 [(iEMS, San Diego, CA)][3]    
 ![](/Earlier_ER_diagrams/3.jpg)  
 
 
@@ -29,3 +29,4 @@ We solicited feedback from the following [conference and professional presentati
 
 [1]:/Earlier_ER_diagrams/WaMDaM_Schema_version_history
 [2]:https://github.com/WamdamProject/WaMDaM-software-ecosystem/blob/master/mkdocs/Edit_MD_Files/Publications.md
+[3]:https://github.com/WamdamProject/WaMDaM-software-ecosystem/blob/master/mkdocs/Edit_MD_Files/Publications.md#peer-reviewed-conference-articles
