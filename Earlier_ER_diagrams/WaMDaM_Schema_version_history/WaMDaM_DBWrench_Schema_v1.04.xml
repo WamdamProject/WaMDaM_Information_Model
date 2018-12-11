@@ -373,12 +373,12 @@
         <DT arr="0" ds="VarChar" en="" id="12" ln="5000" sc="null" sg="1" un="0"/>
         <Cm>A link to a description of or a formal specification of the spatial reference system.	</Cm>
       </Cl>
-      <Cl au="0" df="" nm="ConversionFactor" nu="1">
+      <Cl au="0" df="" nm="LinearFactor" nu="1">
         <DT arr="0" ds="Float" en="" id="6" ln="null" sc="null" sg="1" un="0"/>
         <Cm>See HydraPlatform http://umwrg.github.io/HydraPlatform/devdocs/techdocs/units_and_dimensions.html?highlight=unit</Cm>
       </Cl>
-      <Cl au="0" df="" nm="ConversionRelation" nu="1">
-        <DT arr="0" ds="VarChar" en="" id="12" ln="255" sc="null" sg="1" un="0"/>
+      <Cl au="0" df="" nm="ConstantFactor" nu="1">
+        <DT arr="0" ds="Float" en="" id="6" ln="null" sc="null" sg="1" un="0"/>
         <Cm>See HydraPlatform http://umwrg.github.io/HydraPlatform/devdocs/techdocs/units_and_dimensions.html?highlight=unit</Cm>
       </Cl>
       <UniqueConstraints/>
@@ -1942,7 +1942,7 @@ The default is 1. It takes values like 1000000 for a million. </Cm>
       <Zone bkCl="ffbfb2ff" h="923" nm="Controlled Vocabularies (CVs):  Register your dataset terms against master vocabularies @ http://vocabulary.wamdam.org" w="570" x="9" y="16"/>
     </Zones>
   </Dgm>
-  <RnmMgr NxRnmId="1289">
+  <RnmMgr NxRnmId="1291">
     <RnmCh ObjCls="Schema" ParCls="Database" ParNme="newDb" SupCls="" SupNme="">
       <Rnm id="656" nNm="Core" oNm="WaMDaMCore"/>
       <Rnm id="307" nNm="WaMDaMCore" oNm="TestApril"/>
@@ -4608,6 +4608,12 @@ The default is 1. It takes values like 1000000 for a million. </Cm>
     <RnmCh ObjCls="Column" ParCls="Table" ParNme="FreeText" SupCls="Schema" SupNme="DataValues">
       <Rnm id="1287" nNm="FreeTextValue" oNm="CategoricalValue"/>
     </RnmCh>
+    <RnmCh ObjCls="Column" ParCls="Table" ParNme="CV_Units" SupCls="Schema" SupNme="CVs">
+      <Rnm id="1289" nNm="LinearFactor" oNm="ConversionFactor"/>
+    </RnmCh>
+    <RnmCh ObjCls="Column" ParCls="Table" ParNme="CV_Units" SupCls="Schema" SupNme="CVs">
+      <Rnm id="1290" nNm="ConstantFactor" oNm="ConversionRelation"/>
+    </RnmCh>
   </RnmMgr>
   <DbDocOptionMgr>
     <BasicOptionMgr>
@@ -4632,6 +4638,7 @@ The default is 1. It takes values like 1000000 for a million. </Cm>
     <TreePath>/Schemas (5)</TreePath>
     <TreePath>/Schemas (5)/CVs</TreePath>
     <TreePath>/Schemas (5)/CVs/Tables (13)</TreePath>
+    <TreePath>/Schemas (5)/CVs/Tables (13)/CV_Units</TreePath>
     <TreePath>/Diagrams (3)</TreePath>
     <TreePath>/Diagrams (3)/01_WaMDaM</TreePath>
     <TreePath>/Diagrams (3)/01_WaMDaM/Notes (0)</TreePath>
